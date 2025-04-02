@@ -1,0 +1,25 @@
+.callToAction {
+  text-align: center;
+  margin-top: 40px;
+}
+.header {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+.subHeader {
+  font-size: 16px;
+  color: #555;
+  margin: 10px 0;
+}
+.ctaButton {
+  background-color: #007bff;
+  color: white;
+  font-size: 18px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
