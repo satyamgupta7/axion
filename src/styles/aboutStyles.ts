@@ -73,7 +73,7 @@ const aboutStyles = {
     display: "flex",
     justifyContent: "space-between",
     gap: "2rem",
-    marginTop: "4rem", // spacing between sections
+    marginTop: "4rem",
     flexWrap: "wrap",
   },
   card: {
@@ -81,19 +81,19 @@ const aboutStyles = {
     padding: "2rem",
     borderRadius: "0.5rem",
     boxShadow: "0 10px 30px rgba(0, 0, 0, 0.1)",
-    width: "30%", // width of each card
-    minWidth: "280px", // ensures cards don't shrink too much
-    marginBottom: "2rem", // space at the bottom of each card
+    width: "30%",
+    minWidth: "280px",
+    marginBottom: "2rem",
   },
   cardTitle: {
-    fontSize: "1.25rem", // size of card title
-    fontWeight: "600", // font weight for title
-    marginBottom: "1rem", // space below the title
-    color: "#004080", // main text color
+    fontSize: "1.25rem",
+    fontWeight: "600",
+    marginBottom: "1rem",
+    color: "#004080",
   },
   cardText: {
-    fontSize: "1rem", // size of card text
-    color: "#6b6b6b", // text color
+    fontSize: "1rem",
+    color: "#6b6b6b",
   },
 };
 

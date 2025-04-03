@@ -14,7 +14,7 @@ const Contact = () => {
         <div style={contactStyles.contentSection}>
           <h1 style={contactStyles.heading}>Contact Us</h1>
           <p style={contactStyles.paragraph}>
-            Feel free to share your questions, feedback, or inquiries. We're
+            Feel free to share your questions, feedback, or inquiries. We are
             available around the clock to assist you.
           </p>
           <ul style={contactStyles.list}>
