@@ -62,11 +62,11 @@ const WhyChoose = () => {
     <section id="features" className="py-12 md:py-16 lg:py-20">
       <div className="container">
         {/* Centered Title */}
-        <div className="mb-4 flex justify-center">
+        <div className="mb-2 flex justify-center">
           <SectionTitle title="Why Choose AxionGen?" paragraph="" center />
         </div>
 
-        <div className="flex flex-col gap-6 md:flex-row md:items-start md:gap-8">
+        <div className="flex flex-col gap-4 md:flex-row md:items-start md:gap-6">
           {/* Left Side Content List */}
           <div className="w-full space-y-3 md:w-1/2">
             {contentData.map((item, index) => (
@@ -134,21 +134,15 @@ const WhyChoose = () => {
           </div>
         </div>
 
-        {/* CTA Button & Subheading */}
-        <div className="mt-6 flex flex-col items-center text-center">
+        {/* CTA Buttons */}
+        <div className="mt-8 flex flex-col items-center justify-center space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
           <Link
-            href=""
-            className="flex items-center rounded-sm bg-primary px-5 py-2 text-sm font-semibold text-white duration-300 ease-in-out hover:bg-primary/80 md:px-6 md:py-3 md:text-base"
+            href="#internship"
+            className="flex items-center justify-center rounded-md bg-primary px-8 py-4 text-base font-semibold text-white shadow-md duration-300 ease-in-out hover:bg-primary/80"
           >
             Join our Internship Program{" "}
             <FaArrowRight className="ml-2 text-lg" />
           </Link>
-
-          {/* Subheading */}
-          <p className="mt-3 max-w-2xl text-xs text-gray-700 md:text-sm lg:text-base">
-            Learn our four-step framework strategy to land internships and jobs
-            in the industry, implemented by the top 1% of people in India.
-          </p>
         </div>
       </div>
     </section>

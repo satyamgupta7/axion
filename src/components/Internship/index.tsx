@@ -75,14 +75,14 @@ const internshipPrograms = [
 ];
 
 const Internship = () => {
-  const [activeTab, setActiveTab] = useState("data-analytics");
+  const [activeTab, setActiveTab] = useState("full-stack-development");
 
   const selectedProgram = internshipPrograms.find(
     (program) => program.id === activeTab,
   );
 
   return (
-    <section id="internship" className="px-8 py-16 md:px-16 md:py-20 lg:py-28">
+    <section id="internship" className="px-8 py-12 md:px-16 md:py-16 lg:py-20">
       <div className="container">
         <h2 className="text-center text-4xl font-bold text-gray-900 dark:text-white">
           Explore Our Internship Programs

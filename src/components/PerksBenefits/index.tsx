@@ -53,14 +53,10 @@ const roadmapSteps = [
 
 const PerksBenefits = () => {
   return (
-    <section className="bg-gray-900 px-6 py-20 md:px-16 lg:py-28">
+    <section className="bg-gray-400 px-8 py-12 md:px-16 md:py-16 lg:py-20">
       <div className="container mx-auto text-center">
         {/* Heading & Subheading */}
         <h2 className="text-4xl font-bold text-white">Perks & Benefits</h2>
-        <p className="mt-4 text-lg text-gray-300">
-          Boost your career and expand your portfolio with our immersive
-          internship program packed with exclusive benefits.
-        </p>
 
         {/* Cards Grid */}
         <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">

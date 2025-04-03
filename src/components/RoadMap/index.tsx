@@ -69,7 +69,7 @@ const RoadMap = () => {
   }, []);
 
   return (
-    <section className="bg-gray-900 px-6 py-20 md:px-16 lg:py-28">
+    <section className="bg-gray-400 px-8 py-12 md:px-16 md:py-16 lg:py-20">
       <div className="container mx-auto">
         <h2 className="text-center text-4xl font-bold text-white">
           🚀 Roadmap of Internship Journey

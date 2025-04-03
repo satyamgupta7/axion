@@ -16,7 +16,7 @@ const testimonialData: Testimonial[] = [
     designation: "Software Engineer @TCS",
     content:
       "The internship program was an incredible learning experience. The mentors provided hands-on training and real-world projects, making it the perfect place to start a tech career.",
-    image: "/images/testimonials/auth-01.png",
+    image: "/images/testimonials/person1.jpeg",
     star: 5,
   },
   {
@@ -25,7 +25,7 @@ const testimonialData: Testimonial[] = [
     designation: "Frontend Developer @Infosys",
     content:
       "Absolutely loved my time at this company! The work culture, guidance, and exposure to modern tech stacks helped me sharpen my skills and gain confidence.",
-    image: "/images/testimonials/auth-02.png",
+    image: "/images/testimonials/person1.jpeg",
     star: 5,
   },
   {
@@ -34,7 +34,7 @@ const testimonialData: Testimonial[] = [
     designation: "Full Stack Developer @Wipro",
     content:
       "This internship transformed my career! Working with real-time projects and learning from experienced professionals helped me land my dream job in IT.",
-    image: "/images/testimonials/auth-03.png",
+    image: "/images/testimonials/person1.jpeg",
     star: 5,
   },
   {
@@ -43,7 +43,7 @@ const testimonialData: Testimonial[] = [
     designation: "UI/UX Designer @HCL",
     content:
       "A truly enriching experience! The structured training, supportive mentors, and hands-on projects made this internship extremely valuable.",
-    image: "/images/testimonials/auth-01.png",
+    image: "/images/testimonials/person1.jpeg",
     star: 5,
   },
   {
@@ -52,7 +52,7 @@ const testimonialData: Testimonial[] = [
     designation: "Data Analyst @Capgemini",
     content:
       "The best place to kickstart an IT career! I learned practical industry skills, worked on real datasets, and improved my problem-solving abilities.",
-    image: "/images/testimonials/auth-02.png",
+    image: "/images/testimonials/person1.jpeg",
     star: 5,
   },
   {
@@ -61,14 +61,14 @@ const testimonialData: Testimonial[] = [
     designation: "DevOps Engineer @Tech Mahindra",
     content:
       "Amazing learning experience! The internship provided excellent hands-on exposure to the latest DevOps tools, and the mentors were always ready to help.",
-    image: "/images/testimonials/auth-03.png",
+    image: "/images/testimonials/person1.jpeg",
     star: 5,
   },
 ];
 
 const Testimonials = () => {
   return (
-    <section className="relative z-10 bg-gray-100 py-16 text-gray-900 md:py-20 lg:py-28">
+    <section className="relative z-10 bg-gray-100 px-8 py-12 md:px-16 md:py-16 lg:py-20">
       <div className="container">
         <SectionTitle title="Success Stories" paragraph="" center />
 

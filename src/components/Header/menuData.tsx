@@ -49,24 +49,24 @@ const menuData: Menu[] = [
         path: "/placement",
         newTab: false,
       },
-      {
-        id: 23,
-        title: "Sign In Page",
-        path: "/signin",
-        newTab: false,
-      },
-      {
-        id: 24,
-        title: "Sign Up Page",
-        path: "/signup",
-        newTab: false,
-      },
-      {
-        id: 25,
-        title: "Error Page",
-        path: "/error",
-        newTab: false,
-      },
+      // {
+      //   id: 23,
+      //   title: "Sign In Page",
+      //   path: "/signin",
+      //   newTab: false,
+      // },
+      // {
+      //   id: 24,
+      //   title: "Sign Up Page",
+      //   path: "/signup",
+      //   newTab: false,
+      // },
+      // {
+      //   id: 25,
+      //   title: "Error Page",
+      //   path: "/error",
+      //   newTab: false,
+      // },
     ],
   },
   {

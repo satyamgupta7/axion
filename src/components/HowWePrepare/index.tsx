@@ -55,7 +55,7 @@ const roadmapSteps = [
 
 const HowWePrepare = () => {
   return (
-    <section className="bg-white px-6 py-20 md:px-16 lg:py-28">
+    <section className="bg-white px-8 py-12 md:px-16 md:py-16 lg:py-20">
       <div className="container mx-auto text-center">
         {/* Heading & Subheading */}
         <h2 className="text-4xl font-bold text-gray-900">How We Prepare You</h2>

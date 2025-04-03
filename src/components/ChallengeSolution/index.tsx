@@ -2,14 +2,18 @@ import { FaArrowRight, FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
 
 const ChallengeSolution = () => {
   return (
-    <section id="features" className="px-8 py-16 md:px-16 md:py-20 lg:py-28">
+    <section
+      id="features"
+      className="bg-gray-400 px-8 py-12 md:px-16 md:py-16 lg:py-20"
+    >
       <div className="container">
-        <h2 className="text-center text-4xl font-bold text-gray-900 dark:text-white">
+        {/* Reduced top & bottom space on header */}
+        <h2 className="mb-6 text-center text-4xl font-bold text-white">
           The Challenge & Our Solution
         </h2>
 
-        <div className="mt-12 flex flex-col items-center gap-8 md:flex-row">
-          {/* Left Side - Highlighted Challenge Card */}
+        <div className="mt-8 flex flex-col items-center gap-8 md:flex-row">
+          {/* Left Side - Challenge Card (Blue Gradient) */}
           <div className="relative w-full rounded-lg bg-gradient-to-r from-blue-600 to-indigo-700 p-12 text-white shadow-xl md:w-1/2">
             <FaQuoteLeft className="absolute left-4 top-4 text-5xl opacity-40" />
             <h3 className="text-4xl font-extrabold leading-snug">
@@ -24,8 +28,8 @@ const ChallengeSolution = () => {
             </p>
           </div>
 
-          {/* Right Side - Solution Section */}
-          <div className="w-full rounded-lg border border-gray-200 bg-white p-10 shadow-md md:w-1/2">
+          {/* Right Side - Solution Card (White) */}
+          <div className="w-full rounded-lg border border-gray-300 bg-white p-10 shadow-md md:w-1/2">
             <h3 className="text-2xl font-bold text-gray-900">
               AxionGen&apos;s Real-Time Internship Program bridges the gap:
             </h3>
