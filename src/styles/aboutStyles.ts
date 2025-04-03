@@ -1,4 +1,6 @@
-const aboutStyles = {
+import { CSSProperties } from "react";
+
+const aboutStyles: Record<string, CSSProperties> = {
   container: {
     position: "relative",
     width: "100%",
@@ -7,25 +9,24 @@ const aboutStyles = {
     alignItems: "center",
     justifyContent: "center",
     padding: "15vh 1vw",
-    flexDirection: "column",
+    flexDirection: "column" as const, // Fix TypeScript Error
     backgroundColor: "white",
   },
   overlay: {
     display: "flex",
     flexWrap: "wrap",
-    width: "95%", // Increased width
-    maxWidth: "1400px", // Wider max-width
+    width: "95%",
+    maxWidth: "1400px",
     borderRadius: "12px",
     padding: "5%",
-    background: "#004080",
+    backgroundColor: "#004080", // Change `background` to `backgroundColor`
     color: "#ffffff",
     justifyContent: "space-between",
   },
   contentSection: {
-    flex: "1 1 50%", // Left side occupies 50%
-    textAlign: "left", // Align content left
+    flex: "1 1 50%" as const, // Ensure its correctly typed
+    textAlign: "left",
   },
-
   heading: {
     fontSize: "2.5rem",
     fontWeight: "bold",
@@ -60,14 +61,14 @@ const aboutStyles = {
   button: {
     width: "100%",
     padding: "0.75rem",
-    background: "#0056b3",
+    backgroundColor: "#0056b3", // Change `background` to `backgroundColor`
     color: "#fff",
     border: "none",
     borderRadius: "6px",
     cursor: "pointer",
     fontSize: "1.2rem",
     fontWeight: "bold",
-    transition: "background 0.3s",
+    transition: "background-color 0.3s", // Correct transition property
   },
   cardContainer: {
     display: "flex",

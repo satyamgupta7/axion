@@ -1,13 +1,10 @@
-"use client"; // Mark this as a client component
-
+"use client";
 import { useState } from "react";
 import { AiOutlinePhone, AiOutlineMail } from "react-icons/ai";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import contactStyles from "@/styles/contactStyles";
 
 const Contact = () => {
-  const [userType, setUserType] = useState("individual");
-
   return (
     <div style={contactStyles.container}>
       <div style={contactStyles.overlay}>

@@ -1,13 +1,8 @@
-"use client"; // Mark this as a client component
-
-import { useState } from "react";
+"use client";
 import { AiOutlineCheckCircle } from "react-icons/ai";
-import { FaUsers } from "react-icons/fa";
 import aboutStyles from "@/styles/aboutStyles";
 
 const AboutSectionOne = () => {
-  const [userType, setUserType] = useState("individual");
-
   return (
     <div style={aboutStyles.container}>
       <div style={aboutStyles.overlay}>

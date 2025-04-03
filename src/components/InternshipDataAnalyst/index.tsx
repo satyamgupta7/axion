@@ -1,11 +1,7 @@
 "use client"; // Mark this as a client component
 
 import { useState } from "react";
-import {
-  AiFillStar,
-  AiOutlineCheckCircle,
-  AiOutlineStar,
-} from "react-icons/ai";
+import { AiFillStar, AiOutlineCheckCircle } from "react-icons/ai";
 import { FaUsers } from "react-icons/fa";
 import internshipStyles from "@/styles/internshipStyles";
 

@@ -1,4 +1,6 @@
-const internshipStyles = {
+import { CSSProperties } from "react";
+
+const internshipStyles: Record<string, CSSProperties> = {
   container: {
     position: "relative",
     width: "100%",
@@ -7,36 +9,36 @@ const internshipStyles = {
     alignItems: "center",
     justifyContent: "center",
     padding: "15vh 1vw",
-    flexDirection: "column",
+    flexDirection: "column" as const, // Fixed flexDirection typing
     backgroundColor: "white",
   },
   overlay: {
     display: "flex",
     flexWrap: "wrap",
-    width: "95%", // Increased width
-    maxWidth: "1400px", // Wider max-width
+    width: "95%",
+    maxWidth: "1400px",
     borderRadius: "12px",
     padding: "5%",
-    background: "#004080",
+    backgroundColor: "#004080", // Fixed `background`
     color: "#ffffff",
     justifyContent: "space-between",
   },
   contentSection: {
-    flex: "1 1 50%", // Left side occupies 50%
-    textAlign: "left", // Align content left
+    flex: "1 1 50%" as const, // Ensuring proper typing
+    textAlign: "left",
   },
   formSection: {
-    flex: "1 1 50%", // Right side (form) occupies 50%
+    flex: "1 1 50%" as const, // Ensure correct flex typing
     display: "flex",
     justifyContent: "center",
-    background: "#f5f5f5",
+    backgroundColor: "#f5f5f5", // Fixed `background`
     padding: "3%",
     borderRadius: "12px",
   },
   formCard: {
     width: "100%",
     maxWidth: "500px",
-    background: "#ffffff",
+    backgroundColor: "#ffffff",
     padding: "2rem",
     borderRadius: "12px",
     boxShadow: "0 4px 15px rgba(0, 0, 0, 0.1)",
@@ -111,14 +113,14 @@ const internshipStyles = {
   button: {
     width: "100%",
     padding: "0.75rem",
-    background: "#0056b3",
+    backgroundColor: "#0056b3", // Fixed `background`
     color: "#fff",
     border: "none",
     borderRadius: "6px",
     cursor: "pointer",
     fontSize: "1.2rem",
     fontWeight: "bold",
-    transition: "background 0.3s",
+    transition: "background-color 0.3s", // Fixed `transition`
   },
 };
 

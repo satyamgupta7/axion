@@ -1,4 +1,6 @@
-const contactStyles = {
+import { CSSProperties } from "react";
+
+const contactStyles: Record<string, CSSProperties> = {
   container: {
     position: "relative",
     width: "100%",
@@ -7,7 +9,7 @@ const contactStyles = {
     alignItems: "center",
     justifyContent: "center",
     padding: "15vh 1vw",
-    flexDirection: "column",
+    flexDirection: "column" as const, // Fix TypeScript error
     backgroundColor: "white",
   },
   overlay: {
@@ -17,26 +19,26 @@ const contactStyles = {
     maxWidth: "1400px",
     borderRadius: "12px",
     padding: "5%",
-    background: "#004080",
+    backgroundColor: "#004080", // Fixed background property
     color: "#ffffff",
     justifyContent: "space-between",
   },
   contentSection: {
-    flex: "1 1 50%", // Left side occupies 50%
-    textAlign: "left", // Align content left
+    flex: "1 1 50%" as const, // Ensuring proper typing
+    textAlign: "left",
   },
   formSection: {
-    flex: "1 1 45%", // Adjust the width of the form section to be a bit smaller
+    flex: "1 1 45%" as const, // Ensure correct flex typing
     display: "flex",
     justifyContent: "center",
-    background: "#f5f5f5",
+    backgroundColor: "#f5f5f5", // Changed `background` to `backgroundColor`
     padding: "3%",
     borderRadius: "12px",
   },
   formCard: {
     width: "100%",
-    maxWidth: "400px", // Reduced the max width of the form card
-    background: "#ffffff",
+    maxWidth: "400px",
+    backgroundColor: "#ffffff",
     padding: "2rem",
     borderRadius: "12px",
     boxShadow: "0 4px 15px rgba(0, 0, 0, 0.1)",
@@ -82,18 +84,18 @@ const contactStyles = {
   },
   textarea: {
     width: "100%",
-    height: "100px", // Adjust height for a better user experience
+    height: "100px",
     padding: "10px",
     border: "1px solid #ccc",
     borderRadius: "5px",
     fontSize: "16px",
-    resize: "vertical", // Allows users to resize the message box
+    resize: "vertical",
     marginBottom: "1rem",
   },
   formLabel: {
     fontWeight: "bold",
     fontSize: "20px",
-    color: "#ff5733", // Use a vibrant color like orange-red
+    color: "#ff5733",
     textAlign: "center",
     display: "block",
     marginBottom: "10px",
@@ -114,14 +116,14 @@ const contactStyles = {
   button: {
     width: "100%",
     padding: "0.75rem",
-    background: "#0056b3",
+    backgroundColor: "#0056b3", // Fixed `background` to `backgroundColor`
     color: "#fff",
     border: "none",
     borderRadius: "6px",
     cursor: "pointer",
     fontSize: "1.2rem",
     fontWeight: "bold",
-    transition: "background 0.3s",
+    transition: "background-color 0.3s", // Corrected transition property
   },
   icon: {
     marginRight: "10px",
