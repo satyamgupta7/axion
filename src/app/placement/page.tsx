@@ -4,8 +4,8 @@ import Placement from "@/components/Placement";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Placement | Axion",
-  description: "This is Placement Page for Axion",
+  title: "Placement | AxionGen",
+  description: "This is Placement Page for AxionGen",
   // other metadata
 };
 

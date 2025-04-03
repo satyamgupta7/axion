@@ -12,7 +12,7 @@ const AboutSectionOne = () => {
             Projects
           </h1>
           <p style={aboutStyles.paragraph}>
-            At Axion, we aim to bridge the gap between academic knowledge and
+            At AxionGen, we aim to bridge the gap between academic knowledge and
             real-world industry experience by providing internships,
             certifications, and industry-focused projects that help individuals
             enhance their skills and career prospects.

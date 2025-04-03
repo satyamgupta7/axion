@@ -3,8 +3,8 @@ import Link from "next/link";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Error Page | Axion",
-  description: "This is Error Page for Axion",
+  title: "Error Page | AxionGen",
+  description: "This is Error Page for AxionGen",
   // other metadata
 };
 

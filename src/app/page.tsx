@@ -12,8 +12,8 @@ import WhyChoose from "@/components/WhyChoose";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Axion",
-  description: "This is Home for Axion",
+  title: "AxionGen",
+  description: "This is Home for AxionGen",
   // other metadata
 };
 

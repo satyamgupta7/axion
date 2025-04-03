@@ -27,7 +27,7 @@ const ChallengeSolution = () => {
           {/* Right Side - Solution Section */}
           <div className="w-full rounded-lg border border-gray-200 bg-white p-10 shadow-md md:w-1/2">
             <h3 className="text-2xl font-bold text-gray-900">
-              Axion&apos;s Real-Time Internship Program bridges the gap:
+              AxionGen&apos;s Real-Time Internship Program bridges the gap:
             </h3>
             <ul className="mt-6 space-y-3 text-lg text-gray-700">
               <li>

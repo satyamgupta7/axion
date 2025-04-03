@@ -3,8 +3,8 @@ import IntershipWebDev from "@/components/InternshipWebDev";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Web Development Internship | Axion",
-  description: "This is Web Development Internship Page for Axion",
+  title: "Web Development Internship | AxionGen",
+  description: "This is Web Development Internship Page for AxionGen",
   // other metadata
 };
 

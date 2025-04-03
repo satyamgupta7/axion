@@ -61,7 +61,7 @@ const Header = () => {
                   height={30}
                   className="w-full dark:hidden"
                 /> */}
-                <div className="text-4xl font-bold">Axion</div>
+                <div className="text-4xl font-bold">AxionGen</div>
               </Link>
             </div>
             <div className="flex w-full items-center justify-between px-4">
