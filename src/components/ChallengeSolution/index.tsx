@@ -13,21 +13,21 @@ const ChallengeSolution = () => {
           <div className="relative w-full rounded-lg bg-gradient-to-r from-blue-600 to-indigo-700 p-12 text-white shadow-xl md:w-1/2">
             <FaQuoteLeft className="absolute left-4 top-4 text-5xl opacity-40" />
             <h3 className="text-4xl font-extrabold leading-snug">
-              "If you need a job, you need experience.
+              If you need a job, you need experience.
               <br />
-              But to gain experience, you need a job."
+              But to gain experience, you need a job.
             </h3>
             <FaQuoteRight className="absolute bottom-4 right-4 text-5xl opacity-40" />
             <p className="mt-6 text-lg font-medium opacity-90 md:text-xl">
               This is the paradox that many aspiring professionals face in
-              today's competitive job market.
+              today&apos;s competitive job market.
             </p>
           </div>
 
           {/* Right Side - Solution Section */}
           <div className="w-full rounded-lg border border-gray-200 bg-white p-10 shadow-md md:w-1/2">
             <h3 className="text-2xl font-bold text-gray-900">
-              Axion's Real-Time Internship Program bridges the gap:
+              Axion&apos;s Real-Time Internship Program bridges the gap:
             </h3>
             <ul className="mt-6 space-y-3 text-lg text-gray-700">
               <li>

@@ -54,8 +54,9 @@ const AboutSectionOne = () => {
             <p style={aboutStyles.cardText}>
               Our mission is to connect talented individuals with their ideal
               careers. We equip you with the essential tools, knowledge, and
-              real-world experience needed to thrive in today's fast-moving job
-              market, ensuring you are well-prepared for the challenges ahead.
+              real-world experience needed to thrive in today&apos fast-moving
+              job market, ensuring you are well-prepared for the challenges
+              ahead.
             </p>
           </div>
 
