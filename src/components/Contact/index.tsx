@@ -28,7 +28,7 @@ const Contact = () => {
               <div>
                 <strong>Email Us:</strong>
                 <br />
-                AxionGen.intern@gmail.com
+                Axion.intern@gmail.com
               </div>
             </li>
             <li style={contactStyles.listItem}>

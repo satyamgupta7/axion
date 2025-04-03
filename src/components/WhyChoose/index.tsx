@@ -63,7 +63,7 @@ const WhyChoose = () => {
       <div className="container">
         {/* Centered Title */}
         <div className="mb-4 flex justify-center">
-          <SectionTitle title="Why Choose Labmetrix?" paragraph="" center />
+          <SectionTitle title="Why Choose AxionGen?" paragraph="" center />
         </div>
 
         <div className="flex flex-col gap-6 md:flex-row md:items-start md:gap-8">
