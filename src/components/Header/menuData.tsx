@@ -8,7 +8,7 @@ const menuData: Menu[] = [
     submenu: [
       {
         id: 12,
-        title: "FullStack Development Internship",
+        title: "Full Stack Development Internship",
         path: "/internship/webdev",
         newTab: false,
       },
