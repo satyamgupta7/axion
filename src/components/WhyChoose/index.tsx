@@ -137,7 +137,7 @@ const WhyChoose = () => {
         {/* CTA Buttons */}
         <div className="mt-8 flex flex-col items-center justify-center space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
           <Link
-            href="#internship"
+            href="https://forms.gle/9gddAkJZyitpefzy8"
             className="flex items-center justify-center rounded-md bg-primary px-8 py-4 text-base font-semibold text-white shadow-md duration-300 ease-in-out hover:bg-primary/80"
           >
             Join our Internship Program{" "}
