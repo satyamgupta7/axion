@@ -4,6 +4,57 @@ import { useState } from "react";
 import { AiFillStar, AiOutlineCheckCircle } from "react-icons/ai";
 import { FaUsers } from "react-icons/fa";
 import internshipStyles from "@/styles/internshipStyles";
+import {
+  FaDatabase,
+  FaTable,
+  FaChartBar,
+  FaProjectDiagram,
+  FaTasks,
+  FaComments,
+} from "react-icons/fa";
+
+const techStack = [
+  {
+    title: "SQL",
+    icon: <FaDatabase size={40} color="#336791" />,
+    desc: "Query and manage relational databases efficiently.",
+  },
+  {
+    title: "Excel",
+    icon: <FaTable size={40} color="#217346" />,
+    desc: "Manipulate, analyze and visualize structured data.",
+  },
+  {
+    title: "Power BI",
+    icon: <FaChartBar size={40} color="#F2C811" />,
+    desc: "Create interactive reports and dashboards.",
+  },
+  {
+    title: "Python",
+    icon: <FaProjectDiagram size={40} color="#3776AB" />,
+    desc: "Automate tasks and perform data analysis using libraries like pandas and matplotlib.",
+  },
+  {
+    title: "Statistics",
+    icon: <FaChartBar size={40} color="#17A2B8" />,
+    desc: "Apply statistical methods to interpret and validate data.",
+  },
+  {
+    title: "Data Cleaning",
+    icon: <FaTasks size={40} color="#FF5733" />,
+    desc: "Prepare datasets by handling missing values and inconsistencies.",
+  },
+  {
+    title: "Google Sheets",
+    icon: <FaTable size={40} color="#0F9D58" />,
+    desc: "Collaborate and analyze data in real time with cloud spreadsheets.",
+  },
+  {
+    title: "Communication",
+    icon: <FaComments size={40} color="#0078D7" />,
+    desc: "Present insights and findings to stakeholders effectively.",
+  },
+];
 
 const InternshipDataAnalyst = () => {
   const [userType, setUserType] = useState("individual");
@@ -13,9 +64,12 @@ const InternshipDataAnalyst = () => {
       <div style={internshipStyles.overlay}>
         <div style={internshipStyles.contentSection}>
           <h1 style={internshipStyles.heading}>
-            Data Analyst Internship Program
+            Data Analyst{" "}
+            <span style={{ fontWeight: "bold", color: "#003366" }}>
+              Internship Program
+            </span>
           </h1>
-          <p style={internshipStyles.paragraph}>
+          <p style={{ ...internshipStyles.paragraph, color: "#f0f0f0" }}>
             Kickstart your career as a Data Analyst with our hands-on internship
             program. Learn to collect, clean, and analyze data to uncover
             valuable insights that drive business decisions. Gain practical
@@ -115,6 +169,32 @@ const InternshipDataAnalyst = () => {
               </button>
             </form>
           </div>
+        </div>
+      </div>
+
+      {/* Technologies Section */}
+      <div style={{ padding: "40px 20px", backgroundColor: "#f9f9f9" }}>
+        <h2
+          style={{
+            textAlign: "center",
+            marginBottom: "30px",
+            color: "#003366",
+            fontSize: "32px",
+            fontWeight: "bold",
+          }}
+        >
+          Key Technologies You Will Work on
+        </h2>
+        <div style={internshipStyles.techCardContainer}>
+          {techStack.map((tech, index) => (
+            <div key={index} style={internshipStyles.techCard}>
+              {tech.icon}
+              <h3 style={{ color: "#003366", fontWeight: "bold", margin: 0 }}>
+                {tech.title}
+              </h3>
+              <p style={{ marginTop: "10px" }}>{tech.desc}</p>
+            </div>
+          ))}
         </div>
       </div>
     </div>

@@ -3,8 +3,8 @@ import Success from "@/components/Success";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Success Page | AxionGen",
-  description: "This is Success Page for AxionGen",
+  title: "Inspiring Success Stories | AxionGen",
+  description: "This is Success Stories of AxionGen",
   // other metadata
 };
 

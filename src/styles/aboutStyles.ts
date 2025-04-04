@@ -19,19 +19,21 @@ const aboutStyles: Record<string, CSSProperties> = {
     maxWidth: "1400px",
     borderRadius: "12px",
     padding: "5%",
-    backgroundColor: "#004080", // Change `background` to `backgroundColor`
+    // backgroundColor: "#004080",
+    backgroundColor: "#9ca3af",
     color: "#ffffff",
     justifyContent: "space-between",
   },
   contentSection: {
-    flex: "1 1 50%" as const, // Ensure its correctly typed
+    flex: "1 1 50%" as const,
     textAlign: "left",
   },
   heading: {
     fontSize: "2.5rem",
     fontWeight: "bold",
     marginBottom: "1rem",
-    color: "#ffffff",
+    // color: "#ffffff",
+    color: "#001f4d",
   },
   paragraph: {
     fontSize: "1.1rem",

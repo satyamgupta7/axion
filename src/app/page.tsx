@@ -12,9 +12,22 @@ import WhyChoose from "@/components/WhyChoose";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "AxionGen",
-  description: "This is Home for AxionGen",
-  // other metadata
+  title: "AxionGen | Launch Your Tech Career",
+  description:
+    "Start your tech journey with AxionGen. Real-world projects, expert mentorship, and guaranteed placement. Join 10,000+ students transforming their careers.",
+  keywords: [
+    "AxionGen",
+    "Internship",
+    "Tech Career",
+    "Placement Program",
+    "Real Projects",
+    "Mentorship",
+    "Web Development",
+    "Full Stack Internship",
+    "Career Boost",
+    "IT Internship",
+  ],
+  authors: [{ name: "AxionGen Team", url: "https://axiongen.com/about" }],
 };
 
 export default function Home() {

@@ -2,8 +2,61 @@
 
 import { useState } from "react";
 import { AiFillStar, AiOutlineCheckCircle } from "react-icons/ai";
-import { FaUsers } from "react-icons/fa";
 import internshipStyles from "@/styles/internshipStyles";
+import {
+  FaUsers,
+  FaDatabase,
+  FaTable,
+  FaChartBar,
+  FaTasks,
+  FaFileAlt,
+  FaProjectDiagram,
+  FaSitemap,
+  FaComments,
+} from "react-icons/fa";
+
+const techStack = [
+  {
+    title: "SQL",
+    icon: <FaDatabase size={40} color="#336791" />,
+    desc: "Query and manage relational databases.",
+  },
+  {
+    title: "Excel",
+    icon: <FaTable size={40} color="#217346" />,
+    desc: "Perform data analysis and reporting.",
+  },
+  {
+    title: "Power BI",
+    icon: <FaChartBar size={40} color="#F2C811" />,
+    desc: "Visualize data and gain insights.",
+  },
+  {
+    title: "JIRA",
+    icon: <FaTasks size={40} color="#0052CC" />,
+    desc: "Track requirements and user stories.",
+  },
+  {
+    title: "Confluence",
+    icon: <FaFileAlt size={40} color="#172B4D" />,
+    desc: "Collaborate on documentation and analysis.",
+  },
+  {
+    title: "Agile Methodology",
+    icon: <FaProjectDiagram size={40} color="#28a745" />,
+    desc: "Deliver solutions iteratively and quickly.",
+  },
+  {
+    title: "Business Process Modeling",
+    icon: <FaSitemap size={40} color="#6f42c1" />,
+    desc: "Understand and improve workflows.",
+  },
+  {
+    title: "Communication Tools",
+    icon: <FaComments size={40} color="#0078D7" />,
+    desc: "Collaborate with stakeholders effectively.",
+  },
+];
 
 const InternshipBusinessAnalyst = () => {
   const [userType, setUserType] = useState("individual");
@@ -13,9 +66,12 @@ const InternshipBusinessAnalyst = () => {
       <div style={internshipStyles.overlay}>
         <div style={internshipStyles.contentSection}>
           <h1 style={internshipStyles.heading}>
-            Business Analyst Internship Program
+            Business Analyst{" "}
+            <span style={{ fontWeight: "bold", color: "#003366" }}>
+              Internship Program
+            </span>
           </h1>
-          <p style={internshipStyles.paragraph}>
+          <p style={{ ...internshipStyles.paragraph, color: "#f0f0f0" }}>
             Kickstart your career as a Business Analyst with our hands-on
             internship program. Learn how to bridge the gap between business
             needs and technology by mastering data analysis, requirement
@@ -116,6 +172,32 @@ const InternshipBusinessAnalyst = () => {
               </button>
             </form>
           </div>
+        </div>
+      </div>
+
+      {/* Technologies Section */}
+      <div style={{ padding: "40px 20px", backgroundColor: "#f9f9f9" }}>
+        <h2
+          style={{
+            textAlign: "center",
+            marginBottom: "30px",
+            color: "#003366",
+            fontSize: "32px",
+            fontWeight: "bold",
+          }}
+        >
+          Key Technologies You Will Work on
+        </h2>
+        <div style={internshipStyles.techCardContainer}>
+          {techStack.map((tech, index) => (
+            <div key={index} style={internshipStyles.techCard}>
+              {tech.icon}
+              <h3 style={{ color: "#003366", fontWeight: "bold", margin: 0 }}>
+                {tech.title}
+              </h3>
+              <p style={{ marginTop: "10px" }}>{tech.desc}</p>
+            </div>
+          ))}
         </div>
       </div>
     </div>

@@ -1,120 +1,49 @@
 "use client";
-
-import { useState } from "react";
-import {
-  AiFillStar,
-  AiOutlineCheckCircle,
-  AiOutlineStar,
-} from "react-icons/ai";
-import { FaUsers } from "react-icons/fa";
-import internshipStyles from "@/styles/internshipStyles";
+import { FaUserTie, FaUsers, FaGraduationCap } from "react-icons/fa";
+import placementStyles from "@/styles/placementStyles";
+import Brands from "../Brands";
+import Testimonials from "../Testimonials";
 
 const Success = () => {
-  const [userType, setUserType] = useState("individual");
-
   return (
-    <div style={internshipStyles.container}>
-      <div style={internshipStyles.overlay}>
-        <div style={internshipStyles.contentSection}>
-          <h1 style={internshipStyles.heading}>Success</h1>
-          <p style={internshipStyles.paragraph}>
-            Dive into the realm of data science with our all-encompassing
-            internship program, crafted to establish a solid foundation in this
-            ever-evolving field. Gain hands-on experience in analyzing,
-            interpreting, and visualizing vast datasets using state-of-the-art
-            tools and methodologies.
+    <div style={placementStyles.container}>
+      <div style={placementStyles.overlay}>
+        <div style={placementStyles.contentSection}>
+          <h1 style={placementStyles.heading}>
+            Inspiring <span style={placementStyles.highlight}>Success </span>{" "}
+            Stories
+          </h1>
+
+          <p style={placementStyles.paragraph}>
+            Hear inspiring stories of growth and success from those who have
+            experienced our programs firsthand.
           </p>
-          <ul style={internshipStyles.list}>
-            <li style={internshipStyles.listItem}>
-              <AiOutlineCheckCircle size={20} /> Work with industry experts on
-              real-time projects
-            </li>
-            <li style={internshipStyles.listItem}>
-              <AiOutlineCheckCircle size={20} /> Get the internship Certificate
-            </li>
-            <li style={internshipStyles.listItem}>
-              <AiOutlineCheckCircle size={20} /> Job Placement Assistance
-            </li>
-          </ul>
-          <div style={internshipStyles.reviewInternContainer}>
-            <span style={internshipStyles.reviewItem}>
-              {[...Array(5)].map((_, index) => (
-                <AiFillStar key={index} size={20} color="yellow" />
-              ))}
-              <span style={{ marginLeft: "8px" }}>350 Reviews</span>
-            </span>
-            <span style={internshipStyles.reviewItem}>
-              <FaUsers size={20} color="green" style={{ marginRight: "8px" }} />{" "}
-              2500 Interns
-            </span>
-          </div>
-        </div>
-        {/* Form Section */}
-        <div style={internshipStyles.formSection}>
-          <div style={internshipStyles.formCard}>
-            <div style={internshipStyles.radioContainer}>
-              <label>
-                <input
-                  type="radio"
-                  name="userType"
-                  value="individual"
-                  checked={userType === "individual"}
-                  onChange={() => setUserType("individual")}
-                />{" "}
-                Individual
-              </label>
-              <label>
-                <input
-                  type="radio"
-                  name="userType"
-                  value="corporate"
-                  checked={userType === "corporate"}
-                  onChange={() => setUserType("corporate")}
-                />{" "}
-                Corporate
-              </label>
+          <ul style={placementStyles.list}></ul>
+
+          <div style={placementStyles.statsContainer}>
+            <div style={placementStyles.statCard}>
+              <FaUserTie size={32} />
+              <h3 style={placementStyles.statNumber}>500+</h3>
+              <p style={placementStyles.statLabel}>Expert Mentors</p>
             </div>
-            <form style={internshipStyles.form}>
-              <input
-                type="text"
-                placeholder="Name *"
-                style={internshipStyles.input}
-              />
-              <div style={internshipStyles.phoneContainer}>
-                <input
-                  type="text"
-                  placeholder="🇮🇳 +91"
-                  style={internshipStyles.input2}
-                  disabled
-                />
-                <input
-                  type="text"
-                  placeholder="Phone *"
-                  style={internshipStyles.input}
-                />
-              </div>
-              <input
-                type="email"
-                placeholder="Email *"
-                style={internshipStyles.input}
-              />
-              <input
-                type="text"
-                placeholder="Current Location *"
-                style={internshipStyles.input}
-              />
-              <div style={internshipStyles.checkboxContainer}>
-                <input type="checkbox" id="terms" />
-                <label htmlFor="terms">
-                  I agree with the <a href="#">terms and conditions</a>
-                </label>
-              </div>
-              <button type="submit" style={internshipStyles.button}>
-                ENROLL NOW
-              </button>
-            </form>
+            <div style={placementStyles.statCard}>
+              <FaUsers size={32} />
+              <h3 style={placementStyles.statNumber}>10k+</h3>
+              <p style={placementStyles.statLabel}>Active Students</p>
+            </div>
+            <div style={placementStyles.statCard}>
+              <FaGraduationCap size={32} />
+              <h3 style={placementStyles.statNumber}>5k+</h3>
+              <p style={placementStyles.statLabel}>Placed Students</p>
+            </div>
           </div>
         </div>
+      </div>
+      <div style={{ width: "100%", marginTop: "2rem" }}>
+        <Testimonials />
+      </div>
+      <div style={{ width: "100%", marginTop: "2rem" }}>
+        <Brands />
       </div>
     </div>
   );

@@ -19,7 +19,8 @@ const contactStyles: Record<string, CSSProperties> = {
     maxWidth: "1400px",
     borderRadius: "12px",
     padding: "5%",
-    backgroundColor: "#004080", // Fixed background property
+    // backgroundColor: "#004080",
+    backgroundColor: "#9ca3af",
     color: "#ffffff",
     justifyContent: "space-between",
   },
@@ -48,7 +49,8 @@ const contactStyles: Record<string, CSSProperties> = {
     fontSize: "2.5rem",
     fontWeight: "bold",
     marginBottom: "1rem",
-    color: "#ffffff",
+    // color: "#ffffff",
+    color: "#001f4d",
   },
   paragraph: {
     fontSize: "1.1rem",

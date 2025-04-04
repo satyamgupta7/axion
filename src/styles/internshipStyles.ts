@@ -19,7 +19,8 @@ const internshipStyles: Record<string, CSSProperties> = {
     maxWidth: "1400px",
     borderRadius: "12px",
     padding: "5%",
-    backgroundColor: "#004080", // Fixed `background`
+    // backgroundColor: "#004080", // Fixed `background`
+    backgroundColor: "#9ca3af",
     color: "#ffffff",
     justifyContent: "space-between",
   },
@@ -121,6 +122,20 @@ const internshipStyles: Record<string, CSSProperties> = {
     fontSize: "1.2rem",
     fontWeight: "bold",
     transition: "background-color 0.3s", // Fixed `transition`
+  },
+  techCardContainer: {
+    display: "flex",
+    flexWrap: "wrap",
+    justifyContent: "center",
+    gap: "20px",
+  },
+  techCard: {
+    width: "180px",
+    backgroundColor: "#fff",
+    borderRadius: "10px",
+    padding: "20px",
+    textAlign: "center",
+    boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
   },
 };
 
