@@ -12,6 +12,9 @@ import {
 } from "react-icons/fa";
 import EnrollmentForm from "../EnrollmentForm";
 import RoadmapAnimation from "../RoadMapAnimation";
+import Framework from "../Framework";
+import TimerSection from "../TimerSection";
+import HiringPartner from "../HiringPartners";
 
 const internshipStyles: Record<string, CSSProperties> = {
   container: {
@@ -233,6 +236,9 @@ const InternshipDataScience = () => {
       >
         <RoadmapAnimation />
       </div>
+      <Framework />
+      <TimerSection />
+      <HiringPartner />
     </div>
   );
 };

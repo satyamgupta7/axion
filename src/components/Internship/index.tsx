@@ -45,7 +45,7 @@ const internshipPrograms = [
   {
     id: "data-analytics",
     title: "Data Analyst",
-    image: "/images/programs/DataAnalyst.jpg",
+    image: "/images/programs/DataAnalyst.JPG",
     icon: <FaChartBar className="mb-2 text-4xl text-white" />,
     content: {
       heading: "Data Analytics",
