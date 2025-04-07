@@ -1,91 +1,232 @@
-"use client"; // Mark this as a client component
-
-import { useState } from "react";
+"use client";
+import { CSSProperties } from "react";
 import { AiFillStar, AiOutlineCheckCircle } from "react-icons/ai";
-import internshipStyles from "@/styles/internshipStyles";
 import {
-  FaUsers,
-  FaDatabase,
-  FaTable,
   FaChartBar,
-  FaTasks,
+  FaFileExcel,
+  FaDatabase,
+  FaChartArea,
+  FaCode,
+  FaUsers,
+  FaChartLine,
   FaFileAlt,
   FaProjectDiagram,
-  FaSitemap,
-  FaComments,
+  FaUserTie,
 } from "react-icons/fa";
+import { SiTableau } from "react-icons/si";
 
-const techStack = [
+import EnrollmentForm from "../EnrollmentForm";
+import RoadmapAnimation from "../RoadMapAnimation";
+
+const internshipStyles: Record<string, CSSProperties> = {
+  container: {
+    position: "relative",
+    width: "100%",
+    minHeight: "100vh",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    padding: "15vh 1vw",
+    flexDirection: "column",
+    backgroundColor: "white",
+  },
+  overlay: {
+    display: "flex",
+    flexWrap: "wrap",
+    width: "95%",
+    maxWidth: "1400px",
+    borderRadius: "12px",
+    padding: "5%",
+    backgroundImage: "url('/images/programs/BusinessAnalyst.jpg')",
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+    color: "#ffffff",
+    justifyContent: "space-between",
+  },
+  contentSection: {
+    flex: "1 1 50%",
+    textAlign: "left",
+  },
+  heading: {
+    fontSize: "2.5rem",
+    fontWeight: "bold",
+    marginBottom: "20px",
+  },
+  paragraph: {
+    fontSize: "1.1rem",
+    lineHeight: "1.6",
+    marginBottom: "20px",
+  },
+  list: {
+    listStyle: "none",
+    padding: 0,
+    marginBottom: "20px",
+  },
+  listItem: {
+    display: "flex",
+    alignItems: "center",
+    gap: "10px",
+    marginBottom: "10px",
+    fontSize: "1rem",
+  },
+  reviewInternContainer: {
+    display: "flex",
+    gap: "20px",
+    alignItems: "center",
+  },
+  reviewItem: {
+    display: "flex",
+    alignItems: "center",
+    fontSize: "1rem",
+  },
+  formSection: {
+    flex: "1 1 40%",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  techCardContainer: {
+    display: "flex",
+    flexWrap: "wrap",
+    justifyContent: "center",
+    gap: "20px",
+  },
+  techCard: {
+    backgroundColor: "#fff",
+    padding: "20px",
+    borderRadius: "10px",
+    width: "200px",
+    textAlign: "center",
+    boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
+  },
+};
+
+interface TechStackItem {
+  title: string;
+  icon: React.ReactNode;
+  desc: string;
+}
+const techStack: TechStackItem[] = [
   {
-    title: "SQL",
-    icon: <FaDatabase size={40} color="#336791" />,
-    desc: "Query and manage relational databases.",
+    title: "Business Analysis",
+    icon: <FaChartLine size={40} color="#29ABE2" />,
+    desc: "Analyze business processes to identify improvement opportunities.",
   },
   {
-    title: "Excel",
-    icon: <FaTable size={40} color="#217346" />,
-    desc: "Perform data analysis and reporting.",
+    title: "Requirement Gathering",
+    icon: <FaFileAlt size={40} color="#336791" />,
+    desc: "Collect and document business needs and expectations.",
+  },
+  {
+    title: "Process Mapping",
+    icon: <FaProjectDiagram size={40} color="#20734F" />,
+    desc: "Visualize workflows to understand and optimize operations.",
+  },
+  {
+    title: "Stakeholder Management",
+    icon: <FaUserTie size={40} color="#F0AD4E" />,
+    desc: "Engage with stakeholders to ensure project alignment.",
+  },
+  {
+    title: "MS Office Suite",
+    icon: <FaUserTie size={40} color="#D83B01" />,
+    desc: "Create impactful documents, presentations, and spreadsheets.",
   },
   {
     title: "Power BI",
-    icon: <FaChartBar size={40} color="#F2C811" />,
-    desc: "Visualize data and gain insights.",
-  },
-  {
-    title: "JIRA",
-    icon: <FaTasks size={40} color="#0052CC" />,
-    desc: "Track requirements and user stories.",
-  },
-  {
-    title: "Confluence",
-    icon: <FaFileAlt size={40} color="#172B4D" />,
-    desc: "Collaborate on documentation and analysis.",
-  },
-  {
-    title: "Agile Methodology",
-    icon: <FaProjectDiagram size={40} color="#28a745" />,
-    desc: "Deliver solutions iteratively and quickly.",
-  },
-  {
-    title: "Business Process Modeling",
-    icon: <FaSitemap size={40} color="#6f42c1" />,
-    desc: "Understand and improve workflows.",
-  },
-  {
-    title: "Communication Tools",
-    icon: <FaComments size={40} color="#0078D7" />,
-    desc: "Collaborate with stakeholders effectively.",
+    icon: <FaUserTie size={40} color="#F2C811" />,
+    desc: "Turn data into insights through interactive dashboards.",
   },
 ];
 
-const InternshipBusinessAnalyst = () => {
-  const [userType, setUserType] = useState("individual");
+const techStack2: TechStackItem[] = [
+  {
+    title: "Data Analysis",
+    icon: <FaChartBar size={40} color="#29ABE2" />,
+    desc: "Extract insights from raw data.",
+  },
+  {
+    title: "SQL",
+    icon: <FaDatabase size={40} color="#336791" />,
+    desc: "Query and manage databases effectively.",
+  },
+  {
+    title: "Excel",
+    icon: <FaFileExcel size={40} color="#20734F" />,
+    desc: "Spreadsheet software for data manipulation.",
+  },
+  {
+    title: "Data Visualization",
+    icon: <FaChartArea size={40} color="#F0AD4E" />,
+    desc: "Present data through compelling visuals.",
+  },
+  {
+    title: "Python (Pandas)",
+    icon: <FaCode size={40} color="#3776AB" />,
+    desc: "Powerful library for data manipulation and analysis.",
+  },
+  {
+    title: "Tableau",
+    icon: <SiTableau size={40} color="#E97627" />,
+    desc: "Interactive data visualization tool.",
+  },
+];
 
+const ReviewStars = () =>
+  [...Array(5)].map((_, index) => (
+    <AiFillStar key={index} size={20} color="yellow" />
+  ));
+
+const TechStackSection = () => (
+  <div style={{ padding: "40px 20px", backgroundColor: "#f9f9f9" }}>
+    <h2
+      style={{
+        textAlign: "center",
+        marginBottom: "30px",
+        color: "#003366",
+        fontSize: "32px",
+        fontWeight: "bold",
+      }}
+    >
+      Key Skills You Will Master
+    </h2>
+    <div style={internshipStyles.techCardContainer}>
+      {techStack.map((tech) => (
+        <div key={tech.title} style={internshipStyles.techCard}>
+          {tech.icon}
+          <h3 style={{ color: "#003366", fontWeight: "bold", margin: 0 }}>
+            {tech.title}
+          </h3>
+          <p style={{ marginTop: "10px" }}>{tech.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+);
+
+const InternshipBusinessAnalyst = () => {
   return (
     <div style={internshipStyles.container}>
       <div style={internshipStyles.overlay}>
+        {/* Content Section */}
         <div style={internshipStyles.contentSection}>
           <h1 style={internshipStyles.heading}>
             Business Analyst{" "}
-            <span style={{ fontWeight: "bold", color: "#003366" }}>
+            <span style={{ fontWeight: "bold", color: "blue" }}>
               Internship Program
             </span>
           </h1>
           <p style={{ ...internshipStyles.paragraph, color: "#f0f0f0" }}>
-            Kickstart your career as a Business Analyst with our hands-on
-            internship program. Learn how to bridge the gap between business
-            needs and technology by mastering data analysis, requirement
-            gathering, and process optimization. Gain real-world experience in
-            creating data-driven insights, crafting reports, and collaborating
-            with stakeholders to drive strategic decisions. Develop expertise in
-            industry-standard tools like SQL, Excel, Power BI, and JIRA. Enhance
-            your problem-solving skills and become a key player in business
-            growth and transformation.
+            Kickstart your career as a Business Analyst through our
+            comprehensive internship program. Understand how to identify
+            business needs, analyze operations, and propose effective solutions
+            that drive growth. Build real-world experience using tools and
+            strategies widely adopted across industries.
           </p>
           <ul style={internshipStyles.list}>
             <li style={internshipStyles.listItem}>
-              <AiOutlineCheckCircle size={20} /> Work with industry experts on
-              real-time projects
+              <AiOutlineCheckCircle size={20} /> Work with industry expert on
+              real time projects
             </li>
             <li style={internshipStyles.listItem}>
               <AiOutlineCheckCircle size={20} /> Get the internship Certificate
@@ -96,109 +237,33 @@ const InternshipBusinessAnalyst = () => {
           </ul>
           <div style={internshipStyles.reviewInternContainer}>
             <span style={internshipStyles.reviewItem}>
-              {[...Array(5)].map((_, index) => (
-                <AiFillStar key={index} size={20} color="yellow" />
-              ))}
-              <span style={{ marginLeft: "8px" }}>350 Reviews</span>
+              <ReviewStars />
+              <span style={{ marginLeft: "8px" }}>380 Reviews</span>
             </span>
             <span style={internshipStyles.reviewItem}>
-              <FaUsers size={20} color="green" style={{ marginRight: "8px" }} />{" "}
-              2500 Interns
+              <FaUsers size={20} color="green" style={{ marginRight: "8px" }} />
+              2800 Interns
             </span>
           </div>
         </div>
+
         {/* Form Section */}
         <div style={internshipStyles.formSection}>
-          <div style={internshipStyles.formCard}>
-            <div style={internshipStyles.radioContainer}>
-              <label>
-                <input
-                  type="radio"
-                  name="userType"
-                  value="individual"
-                  checked={userType === "individual"}
-                  onChange={() => setUserType("individual")}
-                />{" "}
-                Individual
-              </label>
-              <label>
-                <input
-                  type="radio"
-                  name="userType"
-                  value="corporate"
-                  checked={userType === "corporate"}
-                  onChange={() => setUserType("corporate")}
-                />{" "}
-                Corporate
-              </label>
-            </div>
-            <form style={internshipStyles.form}>
-              <input
-                type="text"
-                placeholder="Name *"
-                style={internshipStyles.input}
-              />
-              <div style={internshipStyles.phoneContainer}>
-                <input
-                  type="text"
-                  placeholder="🇮🇳 +91"
-                  style={internshipStyles.input2}
-                  disabled
-                />
-                <input
-                  type="text"
-                  placeholder="Phone *"
-                  style={internshipStyles.input}
-                />
-              </div>
-              <input
-                type="email"
-                placeholder="Email *"
-                style={internshipStyles.input}
-              />
-              <input
-                type="text"
-                placeholder="Current Location *"
-                style={internshipStyles.input}
-              />
-              <div style={internshipStyles.checkboxContainer}>
-                <input type="checkbox" id="terms" />
-                <label htmlFor="terms">
-                  I agree with the <a href="#">terms and conditions</a>
-                </label>
-              </div>
-              <button type="submit" style={internshipStyles.button}>
-                ENROLL NOW
-              </button>
-            </form>
-          </div>
+          <EnrollmentForm />
         </div>
       </div>
 
       {/* Technologies Section */}
-      <div style={{ padding: "40px 20px", backgroundColor: "#f9f9f9" }}>
-        <h2
-          style={{
-            textAlign: "center",
-            marginBottom: "30px",
-            color: "#003366",
-            fontSize: "32px",
-            fontWeight: "bold",
-          }}
-        >
-          Key Technologies You Will Work on
-        </h2>
-        <div style={internshipStyles.techCardContainer}>
-          {techStack.map((tech, index) => (
-            <div key={index} style={internshipStyles.techCard}>
-              {tech.icon}
-              <h3 style={{ color: "#003366", fontWeight: "bold", margin: 0 }}>
-                {tech.title}
-              </h3>
-              <p style={{ marginTop: "10px" }}>{tech.desc}</p>
-            </div>
-          ))}
-        </div>
+      <TechStackSection />
+
+      <div
+        style={{
+          width: "100%",
+          borderRadius: "16px",
+          overflow: "hidden",
+        }}
+      >
+        <RoadmapAnimation />
       </div>
     </div>
   );

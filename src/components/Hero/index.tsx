@@ -51,17 +51,17 @@ const Hero = () => {
           <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-3">
             <div className="flex flex-col items-center rounded-lg bg-gray-100 p-6 shadow-md">
               <FaBriefcase className="flex-shrink-0 text-3xl text-blue-600" />
-              <h3 className="text-3xl font-bold text-black">5000+</h3>
+              <h3 className="text-3xl font-bold text-black">2000+</h3>
               <p className="text-gray-700">Working professionals</p>
             </div>
             <div className="flex flex-col items-center rounded-lg bg-gray-100 p-6 shadow-md">
               <FaUsers className="flex-shrink-0 text-3xl text-green-600" />
-              <h3 className="text-3xl font-bold text-black">10000+</h3>
+              <h3 className="text-3xl font-bold text-black">3000+</h3>
               <p className="text-gray-700">People transformed</p>
             </div>
             <div className="flex flex-col items-center rounded-lg bg-gray-100 p-6 shadow-md">
               <FaHandshake className="flex-shrink-0 text-3xl text-purple-600" />
-              <h3 className="text-3xl font-bold text-black">850+</h3>
+              <h3 className="text-3xl font-bold text-black">400+</h3>
               <p className="text-gray-700">Hiring Partners</p>
             </div>
           </div>

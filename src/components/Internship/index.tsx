@@ -7,13 +7,15 @@ import {
   FaDatabase,
   FaCode,
   FaBusinessTime,
+  FaNetworkWired,
+  FaShieldAlt,
 } from "react-icons/fa"; // Importing icons
 
 const internshipPrograms = [
   {
     id: "full-stack-development",
     title: "Full Stack Development",
-    image: "/images/programs/Full-Stack-Developer.webp",
+    image: "/images/programs/WebDev.webp",
     icon: <FaCode className="mb-2 text-4xl text-white" />,
     content: {
       heading: "Full Stack Development",
@@ -28,9 +30,8 @@ const internshipPrograms = [
   {
     id: "data-science",
     title: "Data Science",
-    image: "/images/programs/Data-Science.jpg",
+    image: "/images/programs/DataScience.jpg",
     icon: <FaDatabase className="mb-2 text-4xl text-white" />,
-
     content: {
       heading: "Data Science",
       description:
@@ -44,9 +45,8 @@ const internshipPrograms = [
   {
     id: "data-analytics",
     title: "Data Analyst",
-    image: "/images/programs/Data-Analytics.jpeg",
+    image: "/images/programs/DataAnalyst.jpg",
     icon: <FaChartBar className="mb-2 text-4xl text-white" />,
-
     content: {
       heading: "Data Analytics",
       description:
@@ -60,7 +60,7 @@ const internshipPrograms = [
   {
     id: "business-analyst",
     title: "Business Analyst",
-    image: "/images/programs/Business-Analyst.jpeg",
+    image: "/images/programs/BusinessAnalyst.jpg",
     icon: <FaBusinessTime className="mb-2 text-4xl text-white" />,
     content: {
       heading: "Business Analyst",
@@ -69,6 +69,36 @@ const internshipPrograms = [
       points: [
         "✅ Work with business intelligence tools like Power BI and Tableau.",
         "✅ Conduct market research and business process optimization.",
+      ],
+    },
+  },
+  {
+    id: "networking",
+    title: "Networking",
+    image: "/images/programs/Networking.webp",
+    icon: <FaNetworkWired className="mb-2 text-4xl text-white" />,
+    content: {
+      heading: "Networking",
+      description:
+        "Understand computer networks, protocols, and communication systems that form the backbone of the internet and enterprise infrastructures.",
+      points: [
+        "✅ Learn about TCP/IP, DNS, routing, and switching.",
+        "✅ Hands-on practice with Cisco Packet Tracer and network configuration.",
+      ],
+    },
+  },
+  {
+    id: "cyber-security",
+    title: "Cyber Security",
+    image: "/images/programs/CyberSecurity.jpg",
+    icon: <FaShieldAlt className="mb-2 text-4xl text-white" />,
+    content: {
+      heading: "Cyber Security",
+      description:
+        "Learn to protect systems and networks from cyber threats by mastering ethical hacking, security tools, and real-time attack simulations.",
+      points: [
+        "✅ Work with tools like Wireshark, Metasploit, and Kali Linux.",
+        "✅ Hands-on projects on penetration testing and vulnerability assessment.",
       ],
     },
   },
@@ -113,9 +143,11 @@ const Internship = () => {
               <Image
                 src={selectedProgram.image}
                 alt={selectedProgram.title}
-                width={100}
-                height={100}
+                // width={100}
+                // height={100}
                 className="h-full w-full object-cover"
+                fill
+                priority
               />
               <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-50">
                 {selectedProgram.icon} {/* Dynamically Render Icon */}

@@ -2,13 +2,13 @@
 import { CSSProperties } from "react";
 import { AiFillStar, AiOutlineCheckCircle } from "react-icons/ai";
 import {
+  FaLock,
+  FaShieldAlt,
+  FaNetworkWired,
+  FaKey,
+  FaUserSecret,
   FaUsers,
   FaDatabase,
-  FaChartLine,
-  FaBrain,
-  FaCodeBranch,
-  FaFileExcel,
-  FaCloud,
 } from "react-icons/fa";
 import EnrollmentForm from "../EnrollmentForm";
 import RoadmapAnimation from "../RoadMapAnimation";
@@ -32,7 +32,7 @@ const internshipStyles: Record<string, CSSProperties> = {
     maxWidth: "1400px",
     borderRadius: "12px",
     padding: "5%",
-    backgroundImage: "url('/images/programs/DataScience.jpg')",
+    backgroundImage: "url('/images/programs/CyberSecurity.jpg')",
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
     color: "#ffffff",
@@ -104,39 +104,34 @@ interface TechStackItem {
 
 const techStack: TechStackItem[] = [
   {
-    title: "Data Analysis",
-    icon: <FaChartLine size={40} color="#29ABE2" />,
-    desc: "Extract insights from raw data.",
+    title: "Network Security",
+    icon: <FaNetworkWired size={40} color="#007bff" />,
+    desc: "Secure your network infrastructure.",
   },
   {
-    title: "Machine Learning",
-    icon: <FaBrain size={40} color="#F0AD4E" />,
-    desc: "Build intelligent systems that learn from data.",
+    title: "Cryptography",
+    icon: <FaKey size={40} color="#ffc107" />,
+    desc: "Learn the art of secure communication.",
   },
   {
-    title: "Python",
-    icon: <FaCodeBranch size={40} color="#3776AB" />,
-    desc: "Essential programming language for data science.",
+    title: "Ethical Hacking",
+    icon: <FaUserSecret size={40} color="#28a745" />,
+    desc: "Identify vulnerabilities legally.",
   },
   {
-    title: "Data Visualization",
-    icon: <FaChartLine size={40} color="#27AE60" />,
-    desc: "Communicate findings through compelling visuals.",
+    title: "Data Security",
+    icon: <FaDatabase size={40} color="#dc3545" />,
+    desc: "Protect sensitive information.",
   },
   {
-    title: "Statistical Analysis",
-    icon: <FaDatabase size={40} color="#CB4335" />,
-    desc: "Understand data patterns and probabilities.",
+    title: "Firewalls & IDS",
+    icon: <FaShieldAlt size={40} color="#17a2b8" />,
+    desc: "Implement defense mechanisms.",
   },
   {
-    title: "Big Data",
-    icon: <FaCloud size={40} color="#9B59B6" />,
-    desc: "Work with and process large datasets.",
-  },
-  {
-    title: "Data Wrangling",
-    icon: <FaFileExcel size={40} color="#2ECC71" />,
-    desc: "Clean and transform data for analysis.",
+    title: "Risk Assessment",
+    icon: <FaLock size={40} color="#6c757d" />,
+    desc: "Analyze and mitigate security risks.",
   },
 ];
 
@@ -156,7 +151,7 @@ const TechStackSection = () => (
         fontWeight: "bold",
       }}
     >
-      Key Skills You Will Develop
+      Key Areas You Will Explore
     </h2>
     <div style={internshipStyles.techCardContainer}>
       {techStack.map((tech) => (
@@ -172,24 +167,26 @@ const TechStackSection = () => (
   </div>
 );
 
-const InternshipDataScience = () => {
+const IntershipCyberSecurity = () => {
   return (
     <div style={internshipStyles.container}>
       <div style={internshipStyles.overlay}>
         {/* Content Section */}
         <div style={internshipStyles.contentSection}>
           <h1 style={internshipStyles.heading}>
-            Data Science{" "}
-            <span style={{ fontWeight: "bold", color: "#001F33" }}>
+            Cyber Security{" "}
+            <span style={{ fontWeight: "bold", color: "blue" }}>
               Internship Program
             </span>
           </h1>
           <p style={{ ...internshipStyles.paragraph, color: "#f0f0f0" }}>
-            Unlock the power of data with our comprehensive Data Science
-            Internship Program. Learn the essential skills and tools to analyze
-            complex datasets, extract meaningful insights, and drive data-driven
-            decisions. Gain hands-on experience in statistical analysis, machine
-            learning, data visualization, and more.
+            Embark on a crucial journey into the world of digital defense with
+            our hands-on Cyber Security Internship Program. Learn to protect
+            systems and data from cyber threats using cutting-edge techniques
+            and tools. Gain practical experience in identifying vulnerabilities,
+            implementing security measures, and responding to incidents. Develop
+            a strong foundation in the principles of information security and
+            contribute to a safer digital landscape.
           </p>
           <ul style={internshipStyles.list}>
             <li style={internshipStyles.listItem}>
@@ -206,11 +203,11 @@ const InternshipDataScience = () => {
           <div style={internshipStyles.reviewInternContainer}>
             <span style={internshipStyles.reviewItem}>
               <ReviewStars />
-              <span style={{ marginLeft: "8px" }}>420 Reviews</span>
+              <span style={{ marginLeft: "8px" }}>280 Reviews</span>
             </span>
             <span style={internshipStyles.reviewItem}>
               <FaUsers size={20} color="green" style={{ marginRight: "8px" }} />
-              3000 Interns
+              1800 Interns
             </span>
           </div>
         </div>
@@ -237,4 +234,4 @@ const InternshipDataScience = () => {
   );
 };
 
-export default InternshipDataScience;
+export default IntershipCyberSecurity;

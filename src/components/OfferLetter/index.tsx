@@ -20,9 +20,9 @@ const OfferLetter = () => {
             className="from-yellow-500 mt-4 rounded-lg bg-gradient-to-r via-orange-500 to-red-500 px-4 
             py-2 text-lg font-semibold text-white shadow-sm md:text-xl"
           >
-            Join our Orientation Program at 6:00 PM to kickstart your internship
-            journey. Discover our 4-step Job Hunting Framework to gain skills,
-            experience, and network for career success!
+            Join our Orientation Program to kickstart your internship journey.
+            Discover our Future-Ready Framework to Fast-Track your career, gain
+            skills, experience, and network for career success!
           </p>
         </div>
 

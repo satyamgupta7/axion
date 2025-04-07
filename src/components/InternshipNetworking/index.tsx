@@ -2,14 +2,18 @@
 import { CSSProperties } from "react";
 import { AiFillStar, AiOutlineCheckCircle } from "react-icons/ai";
 import {
-  FaUsers,
-  FaDatabase,
-  FaChartLine,
-  FaBrain,
-  FaCodeBranch,
+  FaChartBar,
   FaFileExcel,
-  FaCloud,
+  FaDatabase,
+  FaChartArea,
+  FaCode,
+  FaUsers,
+  FaNetworkWired,
+  FaShieldAlt,
+  FaWifi,
+  FaTerminal,
 } from "react-icons/fa";
+import { SiCisco, SiTableau, SiWireshark } from "react-icons/si";
 import EnrollmentForm from "../EnrollmentForm";
 import RoadmapAnimation from "../RoadMapAnimation";
 
@@ -32,7 +36,7 @@ const internshipStyles: Record<string, CSSProperties> = {
     maxWidth: "1400px",
     borderRadius: "12px",
     padding: "5%",
-    backgroundImage: "url('/images/programs/DataScience.jpg')",
+    backgroundImage: "url('/images/programs/Networking.webp')",
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
     color: "#ffffff",
@@ -104,39 +108,34 @@ interface TechStackItem {
 
 const techStack: TechStackItem[] = [
   {
-    title: "Data Analysis",
-    icon: <FaChartLine size={40} color="#29ABE2" />,
-    desc: "Extract insights from raw data.",
+    title: "Networking Fundamentals",
+    icon: <FaNetworkWired size={40} color="#0D6EFD" />,
+    desc: "Understand core networking concepts and architectures.",
   },
   {
-    title: "Machine Learning",
-    icon: <FaBrain size={40} color="#F0AD4E" />,
-    desc: "Build intelligent systems that learn from data.",
+    title: "Routing & Switching",
+    icon: <SiCisco size={40} color="#1B365D" />,
+    desc: "Learn to configure and manage routers and switches.",
   },
   {
-    title: "Python",
-    icon: <FaCodeBranch size={40} color="#3776AB" />,
-    desc: "Essential programming language for data science.",
+    title: "Network Security",
+    icon: <FaShieldAlt size={40} color="#DC3545" />,
+    desc: "Protect network infrastructure from vulnerabilities.",
   },
   {
-    title: "Data Visualization",
-    icon: <FaChartLine size={40} color="#27AE60" />,
-    desc: "Communicate findings through compelling visuals.",
+    title: "Wireshark",
+    icon: <SiWireshark size={40} color="#00BFFF" />,
+    desc: "Analyze network traffic using Wireshark.",
   },
   {
-    title: "Statistical Analysis",
-    icon: <FaDatabase size={40} color="#CB4335" />,
-    desc: "Understand data patterns and probabilities.",
+    title: "Wireless Networking",
+    icon: <FaWifi size={40} color="#20C997" />,
+    desc: "Design and troubleshoot wireless networks.",
   },
   {
-    title: "Big Data",
-    icon: <FaCloud size={40} color="#9B59B6" />,
-    desc: "Work with and process large datasets.",
-  },
-  {
-    title: "Data Wrangling",
-    icon: <FaFileExcel size={40} color="#2ECC71" />,
-    desc: "Clean and transform data for analysis.",
+    title: "Command Line Tools",
+    icon: <FaTerminal size={40} color="#6C757D" />,
+    desc: "Use CLI tools for network diagnostics and configuration.",
   },
 ];
 
@@ -156,7 +155,7 @@ const TechStackSection = () => (
         fontWeight: "bold",
       }}
     >
-      Key Skills You Will Develop
+      Key Skills You Will Master
     </h2>
     <div style={internshipStyles.techCardContainer}>
       {techStack.map((tech) => (
@@ -172,24 +171,24 @@ const TechStackSection = () => (
   </div>
 );
 
-const InternshipDataScience = () => {
+const IntershipNetworking = () => {
   return (
     <div style={internshipStyles.container}>
       <div style={internshipStyles.overlay}>
         {/* Content Section */}
         <div style={internshipStyles.contentSection}>
           <h1 style={internshipStyles.heading}>
-            Data Science{" "}
-            <span style={{ fontWeight: "bold", color: "#001F33" }}>
+            Networking{" "}
+            <span style={{ fontWeight: "bold", color: "blue" }}>
               Internship Program
             </span>
           </h1>
           <p style={{ ...internshipStyles.paragraph, color: "#f0f0f0" }}>
-            Unlock the power of data with our comprehensive Data Science
-            Internship Program. Learn the essential skills and tools to analyze
-            complex datasets, extract meaningful insights, and drive data-driven
-            decisions. Gain hands-on experience in statistical analysis, machine
-            learning, data visualization, and more.
+            Begin your journey to becoming a skilled Network Engineer with our
+            hands-on internship program. Learn how to design, configure, secure,
+            and troubleshoot networks to ensure reliable communication and
+            connectivity. Gain real-world experience with industry-standard
+            networking tools, protocols, and best practices.
           </p>
           <ul style={internshipStyles.list}>
             <li style={internshipStyles.listItem}>
@@ -206,11 +205,11 @@ const InternshipDataScience = () => {
           <div style={internshipStyles.reviewInternContainer}>
             <span style={internshipStyles.reviewItem}>
               <ReviewStars />
-              <span style={{ marginLeft: "8px" }}>420 Reviews</span>
+              <span style={{ marginLeft: "8px" }}>250 Reviews</span>
             </span>
             <span style={internshipStyles.reviewItem}>
               <FaUsers size={20} color="green" style={{ marginRight: "8px" }} />
-              3000 Interns
+              2000 Interns
             </span>
           </div>
         </div>
@@ -237,4 +236,4 @@ const InternshipDataScience = () => {
   );
 };
 
-export default InternshipDataScience;
+export default IntershipNetworking;

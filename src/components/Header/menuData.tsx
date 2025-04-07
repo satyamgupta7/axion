@@ -30,6 +30,18 @@ const menuData: Menu[] = [
         path: "/internship/businessanalyst",
         newTab: false,
       },
+      {
+        id: 15,
+        title: "Networking Internship",
+        path: "/internship/networking",
+        newTab: false,
+      },
+      {
+        id: 16,
+        title: "Cyber Security Internship",
+        path: "/internship/cybersecurity",
+        newTab: false,
+      },
     ],
   },
   {
@@ -49,18 +61,6 @@ const menuData: Menu[] = [
         path: "/placement",
         newTab: false,
       },
-      // {
-      //   id: 23,
-      //   title: "Sign In Page",
-      //   path: "/signin",
-      //   newTab: false,
-      // },
-      // {
-      //   id: 24,
-      //   title: "Sign Up Page",
-      //   path: "/signup",
-      //   newTab: false,
-      // },
       // {
       //   id: 25,
       //   title: "Error Page",
