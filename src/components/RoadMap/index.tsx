@@ -1,112 +1,153 @@
 "use client";
-import { useState, useEffect } from "react";
-import {
-  FaUserCheck,
-  FaChalkboardTeacher,
-  FaFileAlt,
-  FaProjectDiagram,
-  FaBriefcase,
-} from "react-icons/fa";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
-const roadmapSteps = [
+const steps = [
   {
-    id: "registration",
     title: "Registration",
-    description: "Register for Free Internship Orientation Program",
-    icon: <FaUserCheck className="text-5xl text-blue-400" />,
+    description:
+      "Register at Unified Mentor VIP Program to transform your journey.",
   },
   {
-    id: "orientation",
-    title: "Orientation Program",
-    description: "Attend the Orientation Program and get guidance",
-    icon: <FaChalkboardTeacher className="text-yellow-400 text-5xl" />,
+    title: "Offer Letter & Projects",
+    description:
+      "You will receive an offer letter and access to start working on projects.",
   },
   {
-    id: "offer-letter",
-    title: "Offer Letter",
-    description: "Receive your official Offer Letter and start your journey",
-    icon: <FaFileAlt className="text-5xl text-green-400" />,
+    title: "Hands on Projects & Learning",
+    description:
+      "Work on projects on your own practice skill set, get help from modules and mentor support.",
   },
   {
-    id: "projects",
-    title: "Projects",
-    description: "Start building real-world projects with hands-on experience",
-    icon: <FaProjectDiagram className="text-5xl text-purple-400" />,
+    title: "Projects evaluation & Certification",
+    description:
+      "Projects you have worked on will be evaluated by industry team and verified certificate will be provided in a week.",
   },
   {
-    id: "placement",
     title: "Get Placement Opportunities",
     description:
-      "Top performers will get job portal access, LOR, and CV forwarded to tie-up companies",
-    icon: <FaBriefcase className="text-5xl text-red-400" />,
+      "Top performer will get dedicated job portal access with LOR and CVs will be forwarded to tie-up companies resume builder and CV checker.",
   },
 ];
 
-const RoadMap = () => {
-  const [visibleSteps, setVisibleSteps] = useState(0);
+export default function RoadMap() {
+  const [currentStep, setCurrentStep] = useState(0);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY + window.innerHeight;
-      const stepCount = roadmapSteps.length;
-
-      roadmapSteps.forEach((_, index) => {
-        const element = document.getElementById(`step-${index}`);
-        if (element) {
-          const elementPosition = element.offsetTop;
-          if (scrollPosition > elementPosition) {
-            setTimeout(() => {
-              setVisibleSteps((prev) => Math.min(prev + 1, stepCount));
-            }, index * 1200); // 1.2s delay for smooth animation
-          }
-        }
-      });
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const interval = setInterval(() => {
+      setCurrentStep((prev) => (prev + 1) % steps.length);
+    }, 3000);
+    return () => clearInterval(interval);
   }, []);
 
+  const stepPositions = [
+    { top: "60%", left: "8%" },
+    { top: "25%", left: "26%" },
+    { top: "60%", left: "46%" },
+    { top: "25%", left: "67%" },
+    { top: "60%", left: "88%" },
+  ];
+
   return (
-    <section className="bg-gray-400 px-8 py-12 md:px-16 md:py-16 lg:py-20">
-      <div className="container mx-auto">
-        <h2 className="text-center text-4xl font-bold text-white">
-          🚀 Roadmap of Internship Journey
-        </h2>
+    <div className="relative min-h-screen overflow-hidden bg-gray-900 px-4 py-16 text-white sm:px-6 lg:px-20">
+      <style>{`
+        .road-path {
+          stroke-dasharray: 8 12;
+          animation: dashMove 1s linear infinite;
+        }
 
-        {/* Roadmap Steps */}
-        <div className="mt-16 space-y-12">
-          {roadmapSteps.map((step, index) => (
+        @keyframes dashMove {
+          from {
+            stroke-dashoffset: 20;
+          }
+          to {
+            stroke-dashoffset: 0;
+          }
+        }
+
+        .pin {
+          width: 36px;
+          height: 36px;
+          background-color: #374151;
+          border-radius: 50% 50% 50% 0;
+          transform: rotate(-45deg);
+          position: relative;
+          box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 14px;
+          font-weight: bold;
+          color: white;
+        }
+
+        .pin-number {
+          transform: rotate(45deg);
+        }
+
+        .pin.active {
+          background-color: #9333ea;
+        }
+
+        @media (max-width: 768px) {
+          .pin {
+            width: 28px;
+            height: 28px;
+            font-size: 12px;
+          }
+        }
+      `}</style>
+
+      <h1 className="relative z-10 mb-16 text-center text-2xl font-bold sm:text-3xl md:text-4xl">
+        Roadmap of your Internship Journey
+      </h1>
+
+      <div className="relative mx-auto h-[500px] w-full max-w-7xl sm:h-[400px]">
+        <svg
+          viewBox="0 0 1000 300"
+          preserveAspectRatio="none"
+          className="absolute left-0 top-0 z-0 h-full w-full"
+        >
+          <path
+            d="M 0 200 C 250 0, 750 400, 1000 200"
+            fill="none"
+            stroke="#ffffff"
+            strokeWidth="4"
+            className="road-path"
+          />
+        </svg>
+
+        {/* Step Pins */}
+        {steps.map((step, index) => (
+          <div
+            key={index}
+            className="absolute flex w-36 flex-col items-center text-center sm:w-40"
+            style={{
+              top: stepPositions[index].top,
+              left: stepPositions[index].left,
+              transform: "translate(-50%, -50%)",
+            }}
+          >
             <motion.div
-              id={`step-${index}`}
-              key={step.id}
-              initial={{ opacity: 0, y: 50 }}
-              animate={index < visibleSteps ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 1, delay: index * 1.2 }} // Smooth animation delay
-              className="mx-auto flex w-full max-w-5xl items-center space-x-6 rounded-xl bg-gray-800 p-6 shadow-lg md:p-8"
+              animate={{
+                scale: index === currentStep ? 1.2 : 1,
+              }}
+              transition={{ duration: 0.4 }}
             >
-              {/* Icon */}
-              <div className="flex-shrink-0">{step.icon}</div>
-
-              {/* Content */}
-              <div>
-                {/* Step Number Inside Card */}
-                <span className="text-lg font-bold text-blue-400">
-                  Step {index + 1}
-                </span>
-
-                <h3 className="mt-1 text-2xl font-semibold text-white">
-                  {step.title}
-                </h3>
-                <p className="mt-2 text-lg text-gray-300">{step.description}</p>
+              <div className={`pin ${index === currentStep ? "active" : ""}`}>
+                <span className="pin-number">{index + 1}</span>
               </div>
             </motion.div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-};
 
-export default RoadMap;
+            <h2 className="mt-3 text-sm font-semibold sm:text-base">
+              {step.title}
+            </h2>
+            <p className="mt-1 text-xs text-gray-300 sm:text-sm">
+              {step.description}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}

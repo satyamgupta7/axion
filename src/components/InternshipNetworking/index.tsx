@@ -19,6 +19,7 @@ import Framework from "../Framework";
 import TimerSection from "../TimerSection";
 import HiringPartner from "../HiringPartners";
 import { motion } from "framer-motion";
+import RoadMap from "../RoadMap";
 
 const internshipStyles: Record<string, CSSProperties> = {
   container: {
@@ -307,6 +308,18 @@ const IntershipNetworking = () => {
         transition={{ duration: 0.5, delay: 0.4 }}
       >
         <TimerSection />
+      </motion.div>
+      <motion.div
+        style={{
+          width: "100%",
+          borderRadius: "16px",
+          overflow: "hidden",
+        }}
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+      >
+        <RoadMap />
       </motion.div>
       <motion.div
         style={{ width: "100%", marginTop: "2rem" }}

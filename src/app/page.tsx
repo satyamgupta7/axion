@@ -6,6 +6,7 @@ import HowWePrepare from "@/components/HowWePrepare";
 import Internship from "@/components/Internship";
 import OfferLetter from "@/components/OfferLetter";
 import PerksBenefits from "@/components/PerksBenefits";
+import RoadMap from "@/components/RoadMap";
 import Testimonials from "@/components/Testimonials";
 import WhyChoose from "@/components/WhyChoose";
 import { Metadata } from "next";
@@ -40,6 +41,7 @@ export default function Home() {
       <Internship />
       <HowWePrepare />
       <PerksBenefits />
+      <RoadMap />
       <Testimonials />
       <div style={{ width: "100%", marginTop: "2rem" }}>
         <HiringPartner />
