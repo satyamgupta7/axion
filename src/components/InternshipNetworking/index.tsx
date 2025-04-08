@@ -15,7 +15,6 @@ import {
 } from "react-icons/fa";
 import { SiCisco, SiTableau, SiWireshark } from "react-icons/si";
 import EnrollmentForm from "../EnrollmentForm";
-import RoadmapAnimation from "../RoadmapAnimation";
 import Framework from "../Framework";
 import TimerSection from "../TimerSection";
 import HiringPartner from "../HiringPartners";
@@ -295,20 +294,6 @@ const IntershipNetworking = () => {
 
       {/* Technologies Section */}
       <TechStackSection />
-
-      {/* <motion.div
-        style={{
-          width: "100%",
-          borderRadius: "16px",
-          overflow: "hidden",
-          marginTop: "2rem",
-        }}
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-      >
-        <RoadmapAnimation />
-      </motion.div> */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}

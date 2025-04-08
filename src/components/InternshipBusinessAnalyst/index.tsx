@@ -20,7 +20,6 @@ import Framework from "../Framework";
 import TimerSection from "../TimerSection";
 import HiringPartner from "../HiringPartners";
 import { motion } from "framer-motion";
-import RoadmapAnimation from "../RoadmapAnimation";
 
 const internshipStyles: Record<string, CSSProperties> = {
   container: {
@@ -306,19 +305,6 @@ const InternshipBusinessAnalyst = () => {
 
       {/* Technologies Section */}
       <TechStackSection />
-
-      {/* <motion.div
-        style={{
-          width: "100%",
-          borderRadius: "16px",
-          overflow: "hidden",
-        }}
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.2 }}
-      >
-        <RoadmapAnimation />
-      </motion.div> */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}

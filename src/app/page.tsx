@@ -1,4 +1,3 @@
-import Brands from "@/components/Brands";
 import ChallengeSolution from "@/components/ChallengeSolution";
 import ScrollUp from "@/components/Common/ScrollUp";
 import Hero from "@/components/Hero";
@@ -7,7 +6,6 @@ import HowWePrepare from "@/components/HowWePrepare";
 import Internship from "@/components/Internship";
 import OfferLetter from "@/components/OfferLetter";
 import PerksBenefits from "@/components/PerksBenefits";
-import RoadmapAnimation from "@/components/RoadmapAnimation";
 import Testimonials from "@/components/Testimonials";
 import WhyChoose from "@/components/WhyChoose";
 import { Metadata } from "next";
@@ -40,12 +38,9 @@ export default function Home() {
       <WhyChoose />
       <ChallengeSolution />
       <Internship />
-      {/* <RoadMap /> */}
-      {/* <RoadmapAnimation /> */}
       <HowWePrepare />
       <PerksBenefits />
       <Testimonials />
-      {/* <Brands /> */}
       <div style={{ width: "100%", marginTop: "2rem" }}>
         <HiringPartner />
       </div>
