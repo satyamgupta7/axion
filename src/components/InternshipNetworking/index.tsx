@@ -296,7 +296,7 @@ const IntershipNetworking = () => {
       {/* Technologies Section */}
       <TechStackSection />
 
-      <motion.div
+      {/* <motion.div
         style={{
           width: "100%",
           borderRadius: "16px",
@@ -308,7 +308,7 @@ const IntershipNetworking = () => {
         transition={{ duration: 0.5 }}
       >
         <RoadmapAnimation />
-      </motion.div>
+      </motion.div> */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}

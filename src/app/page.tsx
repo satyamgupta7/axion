@@ -41,7 +41,7 @@ export default function Home() {
       <ChallengeSolution />
       <Internship />
       {/* <RoadMap /> */}
-      <RoadmapAnimation />
+      {/* <RoadmapAnimation /> */}
       <HowWePrepare />
       <PerksBenefits />
       <Testimonials />

@@ -307,7 +307,7 @@ const InternshipBusinessAnalyst = () => {
       {/* Technologies Section */}
       <TechStackSection />
 
-      <motion.div
+      {/* <motion.div
         style={{
           width: "100%",
           borderRadius: "16px",
@@ -318,7 +318,7 @@ const InternshipBusinessAnalyst = () => {
         transition={{ duration: 0.6, delay: 0.2 }}
       >
         <RoadmapAnimation />
-      </motion.div>
+      </motion.div> */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
