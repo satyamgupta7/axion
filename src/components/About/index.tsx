@@ -194,7 +194,7 @@ const AboutSection = () => {
             industry-recognized certifications, and hands-on, industry-focused
             projects. We empower individuals to enhance their skills, build
             valuable portfolios, and significantly boost their career prospects
-            in today's competitive job market.
+            in today competitive job market.
           </motion.p>
           <motion.ul
             style={baseStyles.list}
@@ -254,7 +254,7 @@ const AboutSection = () => {
               icon: <AiFillFlag size={28} color="#00b894" />,
               color: "#00b894",
               content:
-                "Our mission is to connect talented individuals with their ideal careers. We equip you with the essential tools, knowledge, and real-world experience needed to thrive in today's fast-moving job market, ensuring you are well-prepared for the challenges ahead.",
+                "Our mission is to connect talented individuals with their ideal careers. We equip you with the essential tools, knowledge, and real-world experience needed to thrive in today fast-moving job market, ensuring you are well-prepared for the challenges ahead.",
             },
             {
               title: "Our Core Values",
