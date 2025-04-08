@@ -7,7 +7,6 @@ import HowWePrepare from "@/components/HowWePrepare";
 import Internship from "@/components/Internship";
 import OfferLetter from "@/components/OfferLetter";
 import PerksBenefits from "@/components/PerksBenefits";
-import RoadMap from "@/components/RoadMap";
 import RoadmapAnimation from "@/components/RoadmapAnimation";
 import Testimonials from "@/components/Testimonials";
 import WhyChoose from "@/components/WhyChoose";

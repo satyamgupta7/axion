@@ -16,11 +16,11 @@ import {
 import { SiTableau } from "react-icons/si";
 
 import EnrollmentForm from "../EnrollmentForm";
-import RoadmapAnimation from "../RoadmapAnimation";
 import Framework from "../Framework";
 import TimerSection from "../TimerSection";
 import HiringPartner from "../HiringPartners";
 import { motion } from "framer-motion";
+import RoadmapAnimation from "../RoadmapAnimation";
 
 const internshipStyles: Record<string, CSSProperties> = {
   container: {
