@@ -96,15 +96,15 @@ const Testimonials = () => {
         {/* Statistics Section */}
         <div className="mt-16 grid grid-cols-1 gap-6 text-center md:grid-cols-3">
           <div className="rounded-lg bg-white p-6 shadow-md">
-            <h2 className="text-3xl font-bold text-blue-600">5,000+</h2>
+            <h2 className="text-3xl font-bold text-blue-600">3,000+</h2>
             <p className="text-gray-600">Interns Placed</p>
           </div>
           <div className="rounded-lg bg-white p-6 shadow-md">
-            <h2 className="text-3xl font-bold text-blue-600">750+</h2>
+            <h2 className="text-3xl font-bold text-blue-600">400+</h2>
             <p className="text-gray-600">Partner Companies</p>
           </div>
           <div className="rounded-lg bg-white p-6 shadow-md">
-            <h2 className="text-3xl font-bold text-blue-600">45%</h2>
+            <h2 className="text-3xl font-bold text-blue-600">40%</h2>
             <p className="text-gray-600">Average Salary Increase</p>
           </div>
         </div>

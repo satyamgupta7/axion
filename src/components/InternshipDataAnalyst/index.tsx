@@ -35,7 +35,7 @@ const internshipStyles: Record<string, CSSProperties> = {
     maxWidth: "1400px",
     borderRadius: "12px",
     padding: "5%",
-    backgroundImage: "url('/images/programs/DataAnalyst.jpg')",
+    backgroundImage: "url('/images/programs/DataAnalyst.JPG')",
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
     color: "#ffffff",

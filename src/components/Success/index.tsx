@@ -3,6 +3,7 @@ import { FaUserTie, FaUsers, FaGraduationCap } from "react-icons/fa";
 import placementStyles from "@/styles/placementStyles";
 import Brands from "../Brands";
 import Testimonials from "../Testimonials";
+import HiringPartner from "../HiringPartners";
 
 const Success = () => {
   return (
@@ -23,7 +24,7 @@ const Success = () => {
           <div style={placementStyles.statsContainer}>
             <div style={placementStyles.statCard}>
               <FaUserTie size={32} />
-              <h3 style={placementStyles.statNumber}>500+</h3>
+              <h3 style={placementStyles.statNumber}>200+</h3>
               <p style={placementStyles.statLabel}>Expert Mentors</p>
             </div>
             <div style={placementStyles.statCard}>
@@ -33,7 +34,7 @@ const Success = () => {
             </div>
             <div style={placementStyles.statCard}>
               <FaGraduationCap size={32} />
-              <h3 style={placementStyles.statNumber}>5k+</h3>
+              <h3 style={placementStyles.statNumber}>3k+</h3>
               <p style={placementStyles.statLabel}>Placed Students</p>
             </div>
           </div>
@@ -43,7 +44,7 @@ const Success = () => {
         <Testimonials />
       </div>
       <div style={{ width: "100%", marginTop: "2rem" }}>
-        <Brands />
+        <HiringPartner />
       </div>
     </div>
   );

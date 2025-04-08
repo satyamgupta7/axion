@@ -2,6 +2,7 @@ import Brands from "@/components/Brands";
 import ChallengeSolution from "@/components/ChallengeSolution";
 import ScrollUp from "@/components/Common/ScrollUp";
 import Hero from "@/components/Hero";
+import HiringPartner from "@/components/HiringPartners";
 import HowWePrepare from "@/components/HowWePrepare";
 import Internship from "@/components/Internship";
 import OfferLetter from "@/components/OfferLetter";
@@ -45,7 +46,8 @@ export default function Home() {
       <HowWePrepare />
       <PerksBenefits />
       <Testimonials />
-      <Brands />
+      {/* <Brands /> */}
+      <HiringPartner />
     </>
   );
 }

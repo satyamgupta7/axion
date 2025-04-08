@@ -1,13 +1,23 @@
+import { Link } from "lucide-react";
 import React, { useEffect, useRef, useState } from "react";
 import { FaStopwatch } from "react-icons/fa";
 
 const TimerSection: React.FC = () => {
-  const now = new Date();
-  const target = new Date();
-  target.setDate(now.getDate() + 1);
-  target.setHours(18, 0, 0, 0); // 06:00 PM
+  const getTargetDate = () => {
+    const now = new Date();
+    const target = new Date();
 
-  const targetDateRef = useRef<Date>(target);
+    target.setHours(18, 0, 0, 0); // Set time to 6:00 PM today
+
+    if (now.getTime() >= target.getTime()) {
+      // If current time is past 6:00 PM, set target to tomorrow 6:00 PM
+      target.setDate(target.getDate() + 1);
+    }
+
+    return target;
+  };
+
+  const targetDateRef = useRef<Date>(getTargetDate());
 
   const [timeLeft, setTimeLeft] = useState({
     hours: 0,
@@ -28,7 +38,10 @@ const TimerSection: React.FC = () => {
 
         setTimeLeft({ hours, minutes, seconds });
       } else {
-        setTimeLeft({ hours: 0, minutes: 0, seconds: 0 });
+        // Once timer hits 0, move target to next day 6:00 PM
+        const nextTarget = new Date(targetDateRef.current);
+        nextTarget.setDate(nextTarget.getDate() + 1);
+        targetDateRef.current = nextTarget;
       }
     };
 
@@ -62,9 +75,14 @@ const TimerSection: React.FC = () => {
             {String(timeLeft.seconds).padStart(2, "0")}S
           </span>
         </div>
-        <button className="rounded-xl bg-blue-600 px-6 py-3 font-semibold text-white shadow-md transition hover:bg-blue-700">
+        <a
+          href="https://forms.gle/9gddAkJZyitpefzy8"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="rounded-xl bg-blue-600 px-6 py-3 font-semibold text-white shadow-md transition hover:bg-blue-700"
+        >
           Register for Free Orientation
-        </button>
+        </a>
       </div>
     </div>
   );
