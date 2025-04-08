@@ -15,6 +15,7 @@ import RoadmapAnimation from "../RoadMapAnimation";
 import Framework from "../Framework";
 import TimerSection from "../TimerSection";
 import HiringPartner from "../HiringPartners";
+import { motion } from "framer-motion";
 
 const internshipStyles: Record<string, CSSProperties> = {
   container: {
@@ -144,7 +145,12 @@ const ReviewStars = () =>
   ));
 
 const TechStackSection = () => (
-  <div style={{ padding: "40px 20px", backgroundColor: "#f9f9f9" }}>
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.5 }}
+    style={{ padding: "40px 20px", backgroundColor: "#f9f9f9" }}
+  >
     <h2
       style={{
         textAlign: "center",
@@ -156,33 +162,60 @@ const TechStackSection = () => (
     >
       Key Areas You Will Explore
     </h2>
-    <div style={internshipStyles.techCardContainer}>
-      {techStack.map((tech) => (
-        <div key={tech.title} style={internshipStyles.techCard}>
+    <motion.div style={internshipStyles.techCardContainer}>
+      {techStack.map((tech, index) => (
+        <motion.div
+          key={tech.title}
+          style={internshipStyles.techCard}
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.3, delay: index * 0.1 }}
+        >
           {tech.icon}
           <h3 style={{ color: "#003366", fontWeight: "bold", margin: 0 }}>
             {tech.title}
           </h3>
           <p style={{ marginTop: "10px" }}>{tech.desc}</p>
-        </div>
+        </motion.div>
       ))}
-    </div>
-  </div>
+    </motion.div>
+  </motion.div>
 );
 
 const IntershipCyberSecurity = () => {
   return (
-    <div style={internshipStyles.container}>
-      <div style={internshipStyles.overlay}>
+    <motion.div
+      style={internshipStyles.container}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.5 }}
+    >
+      <motion.div
+        style={internshipStyles.overlay}
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, delay: 0.2, ease: "easeInOut" }}
+      >
         {/* Content Section */}
         <div style={internshipStyles.contentSection}>
-          <h1 style={internshipStyles.heading}>
+          <motion.h1
+            style={internshipStyles.heading}
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
             Cyber Security{" "}
             <span style={{ fontWeight: "bold", color: "blue" }}>
               Internship Program
             </span>
-          </h1>
-          <p style={{ ...internshipStyles.paragraph, color: "#f0f0f0" }}>
+          </motion.h1>
+          <motion.p
+            style={{ ...internshipStyles.paragraph, color: "#f0f0f0" }}
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+          >
             Embark on a crucial journey into the world of digital defense with
             our hands-on Cyber Security Internship Program. Learn to protect
             systems and data from cyber threats using cutting-edge techniques
@@ -190,8 +223,13 @@ const IntershipCyberSecurity = () => {
             implementing security measures, and responding to incidents. Develop
             a strong foundation in the principles of information security and
             contribute to a safer digital landscape.
-          </p>
-          <ul style={internshipStyles.list}>
+          </motion.p>
+          <motion.ul
+            style={internshipStyles.list}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.8 }}
+          >
             <li style={internshipStyles.listItem}>
               <AiOutlineCheckCircle size={20} /> Work with industry expert on
               real time projects
@@ -202,8 +240,13 @@ const IntershipCyberSecurity = () => {
             <li style={internshipStyles.listItem}>
               <AiOutlineCheckCircle size={20} /> Job Placement Assistance
             </li>
-          </ul>
-          <div style={internshipStyles.reviewInternContainer}>
+          </motion.ul>
+          <motion.div
+            style={internshipStyles.reviewInternContainer}
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.4, delay: 1.0 }}
+          >
             <span style={internshipStyles.reviewItem}>
               <ReviewStars />
               <span style={{ marginLeft: "8px" }}>280 Reviews</span>
@@ -212,31 +255,58 @@ const IntershipCyberSecurity = () => {
               <FaUsers size={20} color="green" style={{ marginRight: "8px" }} />
               1800 Interns
             </span>
-          </div>
+          </motion.div>
         </div>
 
         {/* Form Section */}
-        <div style={internshipStyles.formSection}>
+        <motion.div
+          style={internshipStyles.formSection}
+          initial={{ opacity: 0, x: 30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+        >
           <EnrollmentForm />
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
 
       {/* Technologies Section */}
       <TechStackSection />
 
-      <div
+      <motion.div
         style={{
           width: "100%",
           borderRadius: "16px",
           overflow: "hidden",
         }}
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
       >
         <RoadmapAnimation />
-      </div>
-      <Framework />
-      <TimerSection />
-      <HiringPartner />
-    </div>
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.4 }}
+      >
+        <Framework />
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.5, delay: 0.6 }}
+      >
+        <TimerSection />
+      </motion.div>
+      <motion.div
+        style={{ width: "100%", marginTop: "2rem" }}
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.8 }}
+      >
+        <HiringPartner />
+      </motion.div>
+    </motion.div>
   );
 };
 

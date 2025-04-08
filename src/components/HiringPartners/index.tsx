@@ -83,7 +83,7 @@ const HiringPartner: React.FC = () => {
         Unlock Opportunities With 400+ Elite Hiring Partners
       </h1>
       <p className="mb-6 text-lg sm:text-base md:text-lg lg:text-xl">
-        Check out why our hiring partner trusts us
+        Experience the confidence our hiring partners have in us
       </p>
       <div className="relative w-full overflow-hidden">
         <div className="animate-scroll flex gap-[12rem] whitespace-nowrap">

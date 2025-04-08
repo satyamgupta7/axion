@@ -11,10 +11,11 @@ import {
 } from "react-icons/fa";
 import { SiTableau } from "react-icons/si";
 import EnrollmentForm from "../EnrollmentForm";
-import RoadmapAnimation from "../RoadMapAnimation";
+import RoadmapAnimation from "../RoadmapAnimation";
 import Framework from "../Framework";
 import TimerSection from "../TimerSection";
 import HiringPartner from "../HiringPartners";
+import { motion } from "framer-motion";
 
 const internshipStyles: Record<string, CSSProperties> = {
   container: {
@@ -144,8 +145,13 @@ const ReviewStars = () =>
   ));
 
 const TechStackSection = () => (
-  <div style={{ padding: "40px 20px", backgroundColor: "#f9f9f9" }}>
-    <h2
+  <motion.div
+    style={{ padding: "40px 20px", backgroundColor: "#f9f9f9" }}
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.5 }}
+  >
+    <motion.h2
       style={{
         textAlign: "center",
         marginBottom: "30px",
@@ -153,55 +159,114 @@ const TechStackSection = () => (
         fontSize: "32px",
         fontWeight: "bold",
       }}
+      initial={{ opacity: 0, y: -10 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.3, delay: 0.2 }}
     >
       Key Skills You Will Master
-    </h2>
-    <div style={internshipStyles.techCardContainer}>
+    </motion.h2>
+    <motion.div
+      style={internshipStyles.techCardContainer}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ delay: 0.4, staggerChildren: 0.1 }}
+    >
       {techStack.map((tech) => (
-        <div key={tech.title} style={internshipStyles.techCard}>
+        <motion.div
+          key={tech.title}
+          style={internshipStyles.techCard}
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.2 }}
+        >
           {tech.icon}
           <h3 style={{ color: "#003366", fontWeight: "bold", margin: 0 }}>
             {tech.title}
           </h3>
           <p style={{ marginTop: "10px" }}>{tech.desc}</p>
-        </div>
+        </motion.div>
       ))}
-    </div>
-  </div>
+    </motion.div>
+  </motion.div>
 );
 
 const InternshipDataAnalyst = () => {
   return (
-    <div style={internshipStyles.container}>
-      <div style={internshipStyles.overlay}>
+    <motion.div
+      style={internshipStyles.container}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+    >
+      <motion.div
+        style={internshipStyles.overlay}
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
         {/* Content Section */}
         <div style={internshipStyles.contentSection}>
-          <h1 style={internshipStyles.heading}>
+          <motion.h1
+            style={internshipStyles.heading}
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.4 }}
+          >
             Data Analyst{" "}
             <span style={{ fontWeight: "bold", color: "#003366" }}>
               Internship Program
             </span>
-          </h1>
-          <p style={{ ...internshipStyles.paragraph, color: "#f0f0f0" }}>
+          </motion.h1>
+          <motion.p
+            style={{ ...internshipStyles.paragraph, color: "#f0f0f0" }}
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
             Begin your journey to becoming a skilled Data Analyst with our
             immersive internship program. Learn to collect, clean, analyze, and
             interpret data to provide valuable insights and support
             decision-making. Gain practical experience with industry-standard
             tools and techniques.
-          </p>
-          <ul style={internshipStyles.list}>
-            <li style={internshipStyles.listItem}>
+          </motion.p>
+          <motion.ul
+            style={internshipStyles.list}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.4, staggerChildren: 0.1 }}
+          >
+            <motion.li
+              style={internshipStyles.listItem}
+              initial={{ opacity: 0, x: -10 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.2 }}
+            >
               <AiOutlineCheckCircle size={20} /> Work with industry expert on
               real time projects
-            </li>
-            <li style={internshipStyles.listItem}>
+            </motion.li>
+            <motion.li
+              style={internshipStyles.listItem}
+              initial={{ opacity: 0, x: -10 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.2, delay: 0.1 }}
+            >
               <AiOutlineCheckCircle size={20} /> Get the internship Certificate
-            </li>
-            <li style={internshipStyles.listItem}>
+            </motion.li>
+            <motion.li
+              style={internshipStyles.listItem}
+              initial={{ opacity: 0, x: -10 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.2, delay: 0.2 }}
+            >
               <AiOutlineCheckCircle size={20} /> Job Placement Assistance
-            </li>
-          </ul>
-          <div style={internshipStyles.reviewInternContainer}>
+            </motion.li>
+          </motion.ul>
+          <motion.div
+            style={internshipStyles.reviewInternContainer}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.6 }}
+          >
             <span style={internshipStyles.reviewItem}>
               <ReviewStars />
               <span style={{ marginLeft: "8px" }}>380 Reviews</span>
@@ -210,31 +275,58 @@ const InternshipDataAnalyst = () => {
               <FaUsers size={20} color="green" style={{ marginRight: "8px" }} />
               2800 Interns
             </span>
-          </div>
+          </motion.div>
         </div>
 
         {/* Form Section */}
-        <div style={internshipStyles.formSection}>
+        <motion.div
+          style={internshipStyles.formSection}
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.4 }}
+        >
           <EnrollmentForm />
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
 
       {/* Technologies Section */}
       <TechStackSection />
 
-      <div
+      <motion.div
         style={{
           width: "100%",
           borderRadius: "16px",
           overflow: "hidden",
         }}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
       >
         <RoadmapAnimation />
-      </div>
-      <Framework />
-      <TimerSection />
-      <HiringPartner />
-    </div>
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+      >
+        <Framework />
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.4 }}
+      >
+        <TimerSection />
+      </motion.div>
+      <motion.div
+        style={{ width: "100%", marginTop: "2rem" }}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.6 }}
+      >
+        <HiringPartner />
+      </motion.div>
+    </motion.div>
   );
 };
 

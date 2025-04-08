@@ -47,7 +47,9 @@ export default function Home() {
       <PerksBenefits />
       <Testimonials />
       {/* <Brands /> */}
-      <HiringPartner />
+      <div style={{ width: "100%", marginTop: "2rem" }}>
+        <HiringPartner />
+      </div>
     </>
   );
 }
