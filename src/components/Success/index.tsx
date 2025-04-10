@@ -221,7 +221,7 @@ const Success = () => {
   const salaryData = [
     { category: "Lowest", salary: 4, color: "#9ca3af" },
     { category: "Average", salary: 8, color: "#3b82f6" },
-    { category: "Highest", salary: 25, color: "#ef4444" },
+    { category: "Highest", salary: 25, color: "#22c55e" },
   ];
 
   return (

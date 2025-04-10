@@ -19,47 +19,47 @@ const baseStyles: Record<string, CSSProperties> = {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    padding: "15vh 1vw", // Adjusted padding for better responsiveness
+    padding: "15vh 1vw",
     flexDirection: "column",
-    backgroundColor: "#f7f7f7", // Light grey background for better contrast
-    overflow: "hidden", // Prevent background bleed
+    backgroundColor: "#f7f7f7",
+    overflow: "hidden",
   },
   overlay: {
     display: "flex",
     flexDirection: "column",
     flexWrap: "wrap",
-    width: "95%", // Slightly reduced width for better mobile spacing
-    maxWidth: "1200px", // Adjusted max width
+    width: "95%",
+    maxWidth: "1200px",
     borderRadius: "12px",
-    backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.65)), url('/images/hero/Placement.jpg')`, // Darker overlay
+    backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.65)), url('/images/hero/Placement.jpg')`,
     backgroundSize: "cover",
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
-    minHeight: "80vh", // Reduced min height for better initial view
-    padding: "40px", // Increased padding
+    minHeight: "auto",
+    padding: "40px",
     position: "relative",
     zIndex: 1,
     color: "#fff",
-    boxShadow: "0 10px 30px rgba(0, 0, 0, 0.2)", // Added subtle box shadow
+    boxShadow: "0 10px 30px rgba(0, 0, 0, 0.2)",
   },
   contentSection: {
-    flex: 1,
+    width: "100%",
     textAlign: "left",
-    maxWidth: "700px", // Adjusted max width
-    marginBottom: "3rem", // Added margin below text
+    maxWidth: "none",
+    marginBottom: "3rem",
   },
   heading: {
-    fontSize: "2.75rem", // Slightly larger heading
+    fontSize: "2.75rem",
     fontWeight: "bold",
     marginBottom: "1.25rem",
     color: "white",
-    textShadow: "2px 2px 4px rgba(0, 0, 0, 0.3)", // Added text shadow
+    textShadow: "2px 2px 4px rgba(0, 0, 0, 0.3)",
   },
   paragraph: {
     fontSize: "1.15rem",
     color: "#eee",
     lineHeight: "1.7",
-    marginBottom: "1.5rem",
+    // marginBottom: "1.5rem",
   },
   list: {
     listStyle: "none",
@@ -74,31 +74,27 @@ const baseStyles: Record<string, CSSProperties> = {
   },
   cardContainer: {
     display: "flex",
-    justifyContent: "space-around", // More even spacing
+    justifyContent: "space-around",
     gap: "1.5rem",
-    marginTop: "3rem",
+    // marginTop: "0rem",
     flexWrap: "wrap",
   },
   card: {
-    backgroundColor: "rgba(255, 255, 255, 0.9)", // Slightly more opaque white
+    backgroundColor: "rgba(255, 255, 255, 0.9)",
     padding: "2.5rem",
     borderRadius: "1rem",
     boxShadow: "0 8px 24px rgba(0, 0, 0, 0.1)",
-    width: "calc(33% - 1rem)", // Adjusted width for better spacing
+    width: "calc(33% - 1rem)",
     minWidth: "300px",
     marginBottom: "1.5rem",
     transition: "transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out",
     borderLeft: "8px solid",
-    // "&:hover": {
-    //   transform: "translateY(-5px)",
-    //   boxShadow: "0 12px 30px rgba(0, 0, 0, 0.18)",
-    // },
   },
   cardTitle: {
     fontSize: "1.6rem",
     fontWeight: "700",
     marginBottom: "1rem",
-    color: "#2c3e50", // Darker title color
+    color: "#2c3e50",
     display: "flex",
     alignItems: "center",
     gap: "0.75rem",
@@ -111,9 +107,9 @@ const baseStyles: Record<string, CSSProperties> = {
   sectionWrapper: {
     marginTop: "4rem",
     width: "100%",
-    padding: "2rem 5vw", // Consistent padding
+    padding: "2rem 5vw",
     maxWidth: "1400px",
-    margin: "4rem auto", // Center the section
+    margin: "4rem auto",
   },
 };
 
@@ -155,7 +151,7 @@ const AboutSection = () => {
   }, [controls, inView]);
 
   if (!mounted) {
-    return <div style={baseStyles.container}>Loading...</div>; // Basic loading state
+    return <div style={baseStyles.container}>Loading...</div>;
   }
 
   return (
@@ -179,22 +175,21 @@ const AboutSection = () => {
             variants={fadeUpVariants}
             custom={0}
           >
-            Empowering Careers Through{" "}
-            <span style={{ color: "#f39c12" }}>Internships</span>,{" "}
-            <span style={{ color: "#2ecc71" }}>Certifications</span> &{" "}
-            <span style={{ color: "#3498db" }}>Real-World Projects</span>
+            About Us: <span style={{ color: "#f39c12" }}>Real Projects.</span>{" "}
+            <span style={{ color: "#3498db" }}>Real Skills.</span>{" "}
+            <span style={{ color: "#2ecc71" }}>Real Growth.</span>
           </motion.h1>
           <motion.p
             style={baseStyles.paragraph}
             variants={fadeUpVariants}
             custom={1}
           >
-            At AxionGen, we aim to bridge the gap between academic knowledge and
-            real-world industry experience by providing immersive internships,
-            industry-recognized certifications, and hands-on, industry-focused
-            projects. We empower individuals to enhance their skills, build
-            valuable portfolios, and significantly boost their career prospects
-            in today competitive job market.
+            At Axion Gen, we aim to bridge the gap between academic knowledge
+            and real-world industry experience by providing immersive
+            internships, industry-recognized certifications, and hands-on,
+            industry-focused projects. We empower individuals to enhance their
+            skills, build valuable portfolios, and significantly boost their
+            career prospects in today competitive job market.
           </motion.p>
           <motion.ul
             style={baseStyles.list}
@@ -239,7 +234,6 @@ const AboutSection = () => {
           </motion.ul>
         </div>
 
-        {/* Vision, Mission, Values Cards with Animation */}
         <motion.div style={baseStyles.cardContainer}>
           {[
             {

@@ -12,7 +12,7 @@ const contactStyles: Record<string, CSSProperties> = {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    padding: "15vh 1vw", // Increased top padding
+    padding: "15vh 1vw",
     flexDirection: "column",
     backgroundColor: "#f8f9fa",
     transition: "background-color 0.5s ease-in-out",
@@ -20,16 +20,16 @@ const contactStyles: Record<string, CSSProperties> = {
   overlay: {
     display: "flex",
     flexWrap: "wrap",
-    width: "95%", // Increased width
-    maxWidth: "1400px", // Increased max width
+    width: "95%",
+    maxWidth: "1400px",
     borderRadius: "12px",
     justifyContent: "space-between",
     backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/images/hero/Contact1.jpg')`,
     backgroundSize: "cover",
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
-    minHeight: "70vh",
-    padding: "40px",
+    minHeight: "55vh",
+    padding: "25px",
     position: "relative",
     zIndex: 1,
     color: "#fff",
@@ -42,15 +42,15 @@ const contactStyles: Record<string, CSSProperties> = {
   contentSection: {
     flex: "1 1 40%",
     textAlign: "left",
-    paddingRight: "30px", // Increased right padding
+    paddingRight: "15px",
   },
   formSection: {
-    flex: "1 1 55%",
+    flex: "1 1 40%",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: "rgba(255, 255, 255, 0.9)",
-    padding: "40px", // Increased padding
+    padding: "25px",
     borderRadius: "12px",
     boxShadow: "0 6px 15px rgba(0, 0, 0, 0.15)",
     opacity: 0,
@@ -58,42 +58,44 @@ const contactStyles: Record<string, CSSProperties> = {
   },
   formCard: {
     width: "100%",
-    maxWidth: "500px", // Increased max width of the form card
+    maxWidth: "400px",
     backgroundColor: "transparent",
-    padding: "2.5rem", // Increased padding inside the form card
+    padding: "1.5rem",
     borderRadius: "12px",
     color: "#333",
   },
   heading: {
-    fontSize: "3rem", // Slightly larger heading
+    fontSize: "2rem",
     fontWeight: "bold",
-    marginBottom: "1.5rem",
+    marginBottom: "0.8rem",
     color: "#ff6b6b",
     textShadow: "1px 1px 2px rgba(0, 0, 0, 0.1)",
   },
   paragraph: {
-    fontSize: "1.2rem", // Slightly larger paragraph
+    fontSize: "0.9rem",
     color: "#eee",
-    lineHeight: "1.8",
-    marginBottom: "2rem",
+    lineHeight: "1.4",
+    marginBottom: "1.2rem",
   },
   list: {
     listStyle: "none",
-    paddingTop: "2.5rem",
+    paddingTop: "1.5rem",
   },
   listItem: {
     display: "flex",
     alignItems: "center",
-    gap: "1.2rem",
-    marginBottom: "2.5rem",
+    gap: "0.8rem",
+    marginBottom: "1.5rem",
   },
   input: {
     width: "100%",
-    padding: "1.1rem",
-    marginBottom: "1.4rem",
-    border: "1px solid #ddd",
+    padding: "0.6rem",
+    marginBottom: "0.8rem",
+    borderWidth: "1px",
+    borderStyle: "solid",
+    borderColor: "#ddd",
     borderRadius: "8px",
-    fontSize: "1.1rem",
+    fontSize: "0.8rem",
     transition: "border-color 0.3s ease-in-out",
   },
   inputFocus: {
@@ -101,13 +103,15 @@ const contactStyles: Record<string, CSSProperties> = {
   },
   textarea: {
     width: "100%",
-    height: "140px", // Slightly taller textarea
-    padding: "1.1rem",
-    border: "1px solid #ccc",
+    height: "100px",
+    padding: "0.6rem",
+    borderWidth: "1px",
+    borderStyle: "solid",
+    borderColor: "#ccc",
     borderRadius: "8px",
-    fontSize: "1.1rem",
+    fontSize: "0.8rem",
     resize: "vertical",
-    marginBottom: "1.7rem",
+    marginBottom: "1rem",
     transition: "border-color 0.3s ease-in-out",
   },
   textareaFocus: {
@@ -115,11 +119,11 @@ const contactStyles: Record<string, CSSProperties> = {
   },
   formLabel: {
     fontWeight: "bold",
-    fontSize: "1.6rem",
+    fontSize: "1.2rem",
     color: "#333",
     textAlign: "center",
     display: "block",
-    marginBottom: "1.4rem",
+    marginBottom: "0.8rem",
   },
   form: {
     display: "flex",
@@ -127,13 +131,13 @@ const contactStyles: Record<string, CSSProperties> = {
   },
   button: {
     width: "100%",
-    padding: "1.1rem",
+    padding: "0.6rem",
     backgroundColor: "#ff6b6b",
     color: "#fff",
     border: "none",
     borderRadius: "8px",
     cursor: "pointer",
-    fontSize: "1.3rem",
+    fontSize: "1rem",
     fontWeight: "bold",
     transition: "background-color 0.3s ease-in-out, transform 0.2s ease-in-out",
     boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)",
@@ -143,7 +147,7 @@ const contactStyles: Record<string, CSSProperties> = {
     transform: "scale(1.05)",
   },
   icon: {
-    marginRight: "18px", // Increased icon margin
+    marginRight: "10px",
     verticalAlign: "middle",
     color: "#eee",
   },
@@ -233,7 +237,7 @@ const Contact = () => {
               animate="visible"
               transition={{ duration: 0.4, delay: 0.8 }}
             >
-              <AiOutlinePhone size={30} style={contactStyles.iconInfo} />
+              <AiOutlinePhone size={20} style={contactStyles.iconInfo} />
               <div>
                 <strong>Call Us:</strong>
                 <br />
@@ -247,11 +251,11 @@ const Contact = () => {
               animate="visible"
               transition={{ duration: 0.4, delay: 0.9 }}
             >
-              <AiOutlineMail size={30} style={contactStyles.iconInfo} />
+              <AiOutlineMail size={20} style={contactStyles.iconInfo} />
               <div>
                 <strong>Email Us:</strong>
                 <br />
-                Axion.intern@gmail.com
+                hello@axiongen.com
               </div>
             </motion.li>
             <motion.li
@@ -261,7 +265,7 @@ const Contact = () => {
               animate="visible"
               transition={{ duration: 0.4, delay: 1.0 }}
             >
-              <FaMapMarkerAlt size={30} style={contactStyles.iconInfo} />
+              <FaMapMarkerAlt size={20} style={contactStyles.iconInfo} />
               <div>
                 <strong>Visit Us:</strong>
                 <br />
