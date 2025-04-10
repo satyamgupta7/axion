@@ -14,20 +14,58 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "AxionGen | Launch Your Tech Career",
   description:
-    "Start your tech journey with AxionGen. Real-world projects, expert mentorship, and guaranteed placement. Join 10,000+ students transforming their careers.",
+    "Launch your tech career with confidence. Join AxionGen for real-world internships, expert mentorship, and results that speak — 3,000+ success stories and counting.",
   keywords: [
     "AxionGen",
-    "Internship",
-    "Tech Career",
+    "Tech Internship",
+    "IT Training",
     "Placement Program",
-    "Real Projects",
-    "Mentorship",
-    "Web Development",
     "Full Stack Internship",
-    "Career Boost",
-    "IT Internship",
+    "Frontend Internship",
+    "Backend Internship",
+    "Real Projects",
+    "Career Launchpad",
+    "Web Development",
+    "Software Development",
+    "Mentorship",
+    "Job Ready Program",
+    "Internship with Offer Letter",
+    "Remote Internship",
   ],
   authors: [{ name: "AxionGen Team", url: "https://axiongen.com/about" }],
+  creator: "AxionGen",
+  publisher: "AxionGen",
+  metadataBase: new URL("https://axiongen.com"),
+  applicationName: "AxionGen - Tech Career Launchpad",
+  generator: "Next.js",
+  openGraph: {
+    title: "AxionGen | Launch Your Tech Career",
+    description:
+      "Accelerate your career with AxionGen's internship and placement programs. Learn from industry mentors, work on real-world projects, and get hired.",
+    url: "https://axiongen.com",
+    siteName: "AxionGen",
+    images: [
+      {
+        url: "https://axiongen.com/images/banner/AxionGen-OG.png",
+        width: 1200,
+        height: 630,
+        alt: "AxionGen - Internship & Placement for Tech Careers",
+      },
+    ],
+    locale: "en_IN",
+    type: "website",
+  },
+  category: "technology",
+  robots: {
+    index: true,
+    follow: true,
+    nocache: false,
+    googleBot: {
+      index: true,
+      follow: true,
+      noimageindex: false,
+    },
+  },
 };
 
 export default function Home() {
