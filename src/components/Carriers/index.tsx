@@ -192,6 +192,7 @@ const Carriers = () => {
   const [isFormVisible, setIsFormVisible] = useState(false);
   const [nameFocus, setNameFocus] = useState(false);
   const [phoneFocus, setPhoneFocus] = useState(false);
+  const [whatsappFocus, setWhatsappFocus] = useState(false);
   const [emailFocus, setEmailFocus] = useState(false);
   const [messageFocus, setMessageFocus] = useState(false);
   const [overlayHovered, setOverlayHovered] = useState(false);
@@ -322,9 +323,10 @@ const Carriers = () => {
                 }}
                 onFocus={handleInputFocus(setNameFocus)}
                 onBlur={handleInputBlur(setNameFocus)}
+                required
               />
               <input
-                type="text"
+                type="tel"
                 placeholder="Phone *"
                 style={{
                   ...contactStyles.input,
@@ -332,16 +334,18 @@ const Carriers = () => {
                 }}
                 onFocus={handleInputFocus(setPhoneFocus)}
                 onBlur={handleInputBlur(setPhoneFocus)}
+                required
               />
               <input
-                type="text"
-                placeholder="WhatsApp No*"
+                type="tel"
+                placeholder="WhatsApp No *"
                 style={{
                   ...contactStyles.input,
-                  ...(phoneFocus && contactStyles.inputFocus),
+                  ...(whatsappFocus && contactStyles.inputFocus),
                 }}
-                onFocus={handleInputFocus(setPhoneFocus)}
-                onBlur={handleInputBlur(setPhoneFocus)}
+                onFocus={handleInputFocus(setWhatsappFocus)}
+                onBlur={handleInputBlur(setWhatsappFocus)}
+                required
               />
               <input
                 type="email"
@@ -352,6 +356,7 @@ const Carriers = () => {
                 }}
                 onFocus={handleInputFocus(setEmailFocus)}
                 onBlur={handleInputBlur(setEmailFocus)}
+                required
               />
               <div className="mb-2">
                 <select
@@ -385,7 +390,6 @@ const Carriers = () => {
               <motion.button
                 type="submit"
                 style={contactStyles.button}
-                // whileHover={contactStyles.buttonHover}
                 whileTap={{ scale: 0.95 }}
                 transition={{ duration: 0.2 }}
               >
