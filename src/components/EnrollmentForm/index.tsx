@@ -1,129 +1,256 @@
 "use client";
-import { useState, CSSProperties } from "react";
+import { useState, useEffect, FocusEventHandler } from "react";
+import { motion } from "framer-motion";
+import toast from "react-hot-toast";
+import { contactStyles } from "./contactStyles";
 
-const internshipStyles: Record<string, CSSProperties> = {
-  formCard: {
-    backgroundColor: "#fff",
-    color: "#000",
-    borderRadius: "10px",
-    padding: "30px",
-    width: "100%",
-    maxWidth: "400px",
-    boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)",
-  },
-  radioContainer: {
-    display: "flex",
-    justifyContent: "space-between",
-    marginBottom: "20px",
-  },
-  form: {
-    display: "flex",
-    flexDirection: "column",
-    gap: "15px",
-  },
-  input: {
-    padding: "10px",
-    fontSize: "1rem",
-    borderRadius: "5px",
-    border: "1px solid #ccc",
-  },
-  input2: {
-    padding: "10px",
-    fontSize: "1rem",
-    borderRadius: "5px",
-    border: "1px solid #ccc",
-    width: "80px",
-    textAlign: "center",
-    backgroundColor: "#f0f0f0",
-  },
-  phoneContainer: {
-    display: "flex",
-    gap: "10px",
-  },
-  checkboxContainer: {
-    display: "flex",
-    alignItems: "center",
-    gap: "10px",
-  },
-  button: {
-    padding: "12px",
-    backgroundColor: "#003366",
-    color: "#fff",
-    fontWeight: "bold",
-    border: "none",
-    borderRadius: "5px",
-    cursor: "pointer",
-    marginTop: "10px",
-  },
-};
+interface FormData {
+  name: string;
+  phone: string;
+  whatsapp: string;
+  email: string;
+  interestedRole: string;
+  message: string;
+}
+
+const internshipRoles = [
+  "Full Stack Developer Intern",
+  "Data Science Intern",
+  "Data Analyst Intern",
+  "Business Analyst Intern",
+  "Networking Intern",
+  "Cyber Security Intern",
+];
 
 const EnrollmentForm = () => {
-  const [userType, setUserType] = useState("individual");
+  const [isFormVisible, setIsFormVisible] = useState(false);
+  const [nameFocus, setNameFocus] = useState(false);
+  const [phoneFocus, setPhoneFocus] = useState(false);
+  const [whatsappFocus, setWhatsappFocus] = useState(false);
+  const [emailFocus, setEmailFocus] = useState(false);
+  const [messageFocus, setMessageFocus] = useState(false);
+  const [selectFocus, setSelectFocus] = useState(false);
+  const [submissionLoading, setSubmissionLoading] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsFormVisible(true);
+    }, 500);
+
+    return () => clearTimeout(timer); // Cleanup the timeout on unmount
+  }, []);
+
+  // Define focus event handlers to reduce repetition
+  const handleInputFocus: (
+    setState: (value: boolean) => void,
+  ) => FocusEventHandler<
+    HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+  > = (setState) => () => {
+    setState(true);
+  };
+
+  const handleInputBlur: (
+    setState: (value: boolean) => void,
+  ) => FocusEventHandler<
+    HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+  > = (setState) => () => {
+    setState(false);
+  };
+
+  const [formData, setFormData] = useState<FormData>({
+    name: "",
+    phone: "",
+    whatsapp: "",
+    email: "",
+    interestedRole: "",
+    message: "",
+  });
+
+  const GOOGLE_SCRIPT_URL =
+    "https://script.google.com/macros/s/AKfycbx8upVfxPvv6EWjPVgGr5FqEbADTmEyxW9XlilyOjMUnfHUs6Ob1Y587LqiIglpRZzZ/exec";
+
+  const handleInputChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >,
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setSubmissionLoading(true);
+    toast.loading("Submitting your application...", { id: "submit-loading" });
+
+    const formPayload = new FormData();
+    formPayload.append("name", formData.name);
+    formPayload.append("phone", formData.phone);
+    formPayload.append("whatsapp", formData.whatsapp);
+    formPayload.append("email", formData.email);
+    formPayload.append("interestedRole", formData.interestedRole);
+    formPayload.append("message", formData.message);
+
+    try {
+      const response = await fetch(GOOGLE_SCRIPT_URL, {
+        method: "POST",
+        body: formPayload,
+      });
+
+      if (!response.ok) {
+        const text = await response.text();
+        toast.error("Submission failed. Please try again.", {
+          id: "submit-loading",
+        });
+        return;
+      }
+
+      const result = await response.json();
+      toast.success("Application submitted successfully!", {
+        id: "submit-loading",
+      });
+      setFormData({
+        name: "",
+        phone: "",
+        whatsapp: "",
+        email: "",
+        interestedRole: "",
+        message: "",
+      });
+    } catch (error) {
+      toast.error(
+        "Error submitting application. Please check your connection.",
+        { id: "submit-loading" },
+      );
+    } finally {
+      setSubmissionLoading(false);
+    }
+  };
+
+  const formVariants = {
+    hidden: { opacity: 0, translateY: 20 },
+    visible: { opacity: 1, translateY: 0 },
+  };
 
   return (
-    <div style={internshipStyles.formCard}>
-      <div style={internshipStyles.radioContainer}>
-        <label>
-          <input
-            type="radio"
-            name="userType"
-            value="individual"
-            checked={userType === "individual"}
-            onChange={() => setUserType("individual")}
-          />{" "}
-          Individual
-        </label>
-        <label>
-          <input
-            type="radio"
-            name="userType"
-            value="corporate"
-            checked={userType === "corporate"}
-            onChange={() => setUserType("corporate")}
-          />{" "}
-          Corporate
-        </label>
-      </div>
-      <form style={internshipStyles.form}>
-        <input
-          type="text"
-          placeholder="Name *"
-          style={internshipStyles.input}
-        />
-        <div style={internshipStyles.phoneContainer}>
+    // <div>
+    <motion.div
+      style={contactStyles.formSection}
+      variants={formVariants}
+      initial="hidden"
+      animate={isFormVisible ? "visible" : "hidden"}
+      transition={{ duration: 0.5, delay: 0.7 }}
+    >
+      <div style={contactStyles.formCard}>
+        <label style={contactStyles.formLabel}>Apply Now!</label>
+        <form style={contactStyles.form} onSubmit={handleSubmit}>
           <input
             type="text"
-            placeholder="🇮🇳 +91"
-            style={internshipStyles.input2}
-            disabled
+            name="name"
+            placeholder="Name *"
+            style={{
+              ...contactStyles.input,
+              ...(nameFocus && contactStyles.inputFocus),
+            }}
+            onFocus={handleInputFocus(setNameFocus)}
+            onBlur={handleInputBlur(setNameFocus)}
+            onChange={handleInputChange}
+            value={formData.name}
+            required
           />
           <input
-            type="text"
+            type="tel"
+            name="phone"
             placeholder="Phone *"
-            style={internshipStyles.input}
+            style={{
+              ...contactStyles.input,
+              ...(phoneFocus && contactStyles.inputFocus),
+            }}
+            onFocus={handleInputFocus(setPhoneFocus)}
+            onBlur={handleInputBlur(setPhoneFocus)}
+            onChange={handleInputChange}
+            value={formData.phone}
+            required
           />
-        </div>
-        <input
-          type="email"
-          placeholder="Email *"
-          style={internshipStyles.input}
-        />
-        <input
-          type="text"
-          placeholder="Current Location *"
-          style={internshipStyles.input}
-        />
-        <div style={internshipStyles.checkboxContainer}>
-          <input type="checkbox" id="terms" />
-          <label htmlFor="terms">
-            I agree with the <a href="#">terms and conditions</a>
-          </label>
-        </div>
-        <button type="submit" style={internshipStyles.button}>
-          ENROLL NOW
-        </button>
-      </form>
-    </div>
+          <input
+            type="tel"
+            name="whatsapp"
+            placeholder="WhatsApp No *"
+            style={{
+              ...contactStyles.input,
+              ...(whatsappFocus && contactStyles.inputFocus),
+            }}
+            onFocus={handleInputFocus(setWhatsappFocus)}
+            onBlur={handleInputBlur(setWhatsappFocus)}
+            onChange={handleInputChange}
+            value={formData.whatsapp}
+            required
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Email *"
+            style={{
+              ...contactStyles.input,
+              ...(emailFocus && contactStyles.inputFocus),
+            }}
+            onFocus={handleInputFocus(setEmailFocus)}
+            onBlur={handleInputBlur(setEmailFocus)}
+            onChange={handleInputChange}
+            value={formData.email}
+            required
+          />
+          <div className="mb-2">
+            <select
+              id="interestedRole"
+              name="interestedRole"
+              required
+              className="w-full rounded-md border border-gray-300 p-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              style={{
+                ...contactStyles.select,
+                ...(selectFocus && contactStyles.selectFocus),
+              }}
+              onFocus={handleInputFocus(setSelectFocus)}
+              onBlur={handleInputBlur(setSelectFocus)}
+              onChange={handleInputChange}
+              value={formData.interestedRole}
+            >
+              <option value="">Choose your Internship Role *</option>
+              {internshipRoles.map((role) => (
+                <option key={role} value={role}>
+                  {role}
+                </option>
+              ))}
+            </select>
+          </div>
+          <textarea
+            name="message"
+            placeholder="Your Message"
+            style={{
+              ...contactStyles.textarea,
+              ...(messageFocus && contactStyles.textareaFocus),
+            }}
+            onFocus={handleInputFocus(setMessageFocus)}
+            onBlur={handleInputBlur(setMessageFocus)}
+            onChange={handleInputChange}
+            value={formData.message}
+          />
+          <motion.button
+            type="submit"
+            style={contactStyles.button}
+            whileTap={{ scale: 0.95 }}
+            transition={{ duration: 0.2 }}
+            disabled={submissionLoading}
+          >
+            {submissionLoading ? "Submitting..." : "SUBMIT"}
+          </motion.button>
+        </form>
+      </div>
+    </motion.div>
+    // </div>
   );
 };
 
