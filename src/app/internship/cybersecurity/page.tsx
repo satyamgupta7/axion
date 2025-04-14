@@ -1,12 +1,20 @@
 import IntershipCyberSecurity from "@/components/InternshipCyberSecurity";
-import InternshipDataScience from "@/components/InternshipDataScience";
-import IntershipWebDev from "@/components/InternshipWebDev";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Web Development Internship | AxionGen",
-  description: "This is Web Development Internship Page for AxionGen",
-  // other metadata
+  title: "Cyber Security Internship | AxionGen",
+  description:
+    "Apply now for AxionGen's Cyber Security Internship. Gain hands-on experience, work on real-world projects, and kickstart your career in cybersecurity.",
+  keywords: [
+    "Cyber Security Internship",
+    "Cybersecurity Internship Program",
+    "AxionGen Internship",
+    "Cybersecurity training",
+    "Information Security Internship",
+    "Cybersecurity career",
+    "Internship for students",
+    "Cybersecurity jobs for freshers",
+  ],
 };
 
 const CyberSecurityPage = () => {
