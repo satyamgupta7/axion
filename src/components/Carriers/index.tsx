@@ -1,183 +1,8 @@
 "use client";
-import { CSSProperties, useState, useEffect, FocusEventHandler } from "react";
+import { useState, useEffect, FocusEventHandler } from "react";
 import { motion } from "framer-motion";
-
-type ContactStyles = Record<string, CSSProperties>;
-
-const contactStyles: ContactStyles = {
-  container: {
-    position: "relative",
-    width: "100%",
-    minHeight: "100vh",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    padding: "15vh 1vw",
-    flexDirection: "column",
-    backgroundColor: "#f8f9fa",
-    transition: "background-color 0.5s ease-in-out",
-  },
-  overlay: {
-    display: "flex",
-    flexWrap: "wrap",
-    width: "95%",
-    maxWidth: "1400px",
-    borderRadius: "12px",
-    justifyContent: "space-between",
-    backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/images/banner/Carrier.webp')`,
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-    backgroundRepeat: "no-repeat",
-    minHeight: "55vh",
-    padding: "25px",
-    position: "relative",
-    zIndex: 1,
-    color: "#fff",
-    boxShadow: "0 8px 20px rgba(0, 0, 0, 0.2)",
-    transition: "transform 0.3s ease-in-out",
-  },
-  overlayHover: {
-    transform: "scale(1.02)",
-  },
-  contentSection: {
-    flex: "1 1 40%",
-    textAlign: "left",
-    paddingRight: "15px",
-  },
-  formSection: {
-    flex: "1 1 40%",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "rgba(255, 255, 255, 0.9)",
-    padding: "25px",
-    borderRadius: "12px",
-    boxShadow: "0 6px 15px rgba(0, 0, 0, 0.15)",
-    opacity: 0,
-    transform: "translateY(20px)",
-  },
-  formCard: {
-    width: "100%",
-    maxWidth: "400px",
-    backgroundColor: "transparent",
-    padding: "1.5rem",
-    borderRadius: "12px",
-    color: "#333",
-  },
-  heading: {
-    fontSize: "2rem",
-    fontWeight: "bold",
-    marginBottom: "0.8rem",
-    color: "#ff6b6b",
-    textShadow: "1px 1px 2px rgba(0, 0, 0, 0.1)",
-  },
-  paragraph: {
-    fontSize: "0.9rem",
-    color: "#eee",
-    lineHeight: "1.4",
-    marginBottom: "1.2rem",
-  },
-  list: {
-    listStyle: "none",
-    paddingTop: "1.5rem",
-  },
-  listItem: {
-    display: "flex",
-    alignItems: "center",
-    gap: "0.8rem",
-    marginBottom: "1.5rem",
-  },
-  input: {
-    width: "100%",
-    padding: "0.6rem",
-    marginBottom: "0.8rem",
-    borderWidth: "1px",
-    borderStyle: "solid",
-    borderColor: "#ddd",
-    borderRadius: "8px",
-    fontSize: "0.8rem",
-    transition: "border-color 0.3s ease-in-out",
-  },
-  inputFocus: {
-    borderColor: "#ff6b6b",
-  },
-  textarea: {
-    width: "100%",
-    height: "100px",
-    padding: "0.6rem",
-    borderWidth: "1px",
-    borderStyle: "solid",
-    borderColor: "#ccc",
-    borderRadius: "8px",
-    fontSize: "0.8rem",
-    resize: "vertical",
-    marginBottom: "1rem",
-    transition: "border-color 0.3s ease-in-out",
-  },
-  textareaFocus: {
-    borderColor: "#ff6b6b",
-  },
-  formLabel: {
-    fontWeight: "bold",
-    fontSize: "1.2rem",
-    color: "#333",
-    textAlign: "center",
-    display: "block",
-    marginBottom: "0.8rem",
-  },
-  form: {
-    display: "flex",
-    flexDirection: "column",
-  },
-  button: {
-    width: "100%",
-    padding: "0.6rem",
-    backgroundColor: "#ff6b6b",
-    color: "#fff",
-    border: "none",
-    borderRadius: "8px",
-    cursor: "pointer",
-    fontSize: "1rem",
-    fontWeight: "bold",
-    transition: "background-color 0.3s ease-in-out, transform 0.2s ease-in-out",
-    boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)",
-  },
-  buttonHover: {
-    backgroundColor: "#e05252",
-    transform: "scale(1.05)",
-  },
-  icon: {
-    marginRight: "10px",
-    verticalAlign: "middle",
-    color: "#eee",
-  },
-  iconInfo: {
-    color: "#ff6b6b",
-  },
-  select: {
-    width: "100%",
-    padding: "0.6rem",
-    marginBottom: "0.8rem",
-    borderWidth: "1px",
-    borderStyle: "solid",
-    borderColor: "#ddd",
-    borderRadius: "8px",
-    fontSize: "0.8rem",
-    transition: "border-color 0.3s ease-in-out",
-    backgroundColor: "#fff",
-  },
-  selectFocus: {
-    borderColor: "#ff6b6b",
-  },
-  selectLabel: {
-    fontWeight: "bold",
-    fontSize: "0.8rem",
-    color: "#333",
-    display: "block",
-    marginBottom: "0.4rem",
-    textAlign: "left",
-  },
-};
+import { contactStyles } from "./contactStyles";
+import toast from "react-hot-toast";
 
 const internshipRoles = [
   "Full Stack Developer Intern",
@@ -187,6 +12,15 @@ const internshipRoles = [
   "Networking Intern",
   "Cyber Security Intern",
 ];
+
+interface FormData {
+  name: string;
+  phone: string;
+  whatsapp: string;
+  email: string;
+  interestedRole: string;
+  message: string;
+}
 
 const Carriers = () => {
   const [isFormVisible, setIsFormVisible] = useState(false);
@@ -221,6 +55,77 @@ const Carriers = () => {
     HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
   > = (setState) => () => {
     setState(false);
+  };
+
+  // useEffect(() => {
+  //   toast.success("Test toast Sucesss");
+  // }, []);
+
+  const [formData, setFormData] = useState<FormData>({
+    name: "",
+    phone: "",
+    whatsapp: "",
+    email: "",
+    interestedRole: "",
+    message: "",
+  });
+
+  const GOOGLE_SCRIPT_URL =
+    "https://script.google.com/macros/s/AKfycbxwXOTHrxWsjQ5ceN5eMT1PGfNOgBMM2lwjC4avbfo/dev";
+
+  const handleInputChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >,
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async () => {
+    const formPayload = new URLSearchParams();
+    formPayload.append("name", formData.name);
+    formPayload.append("phone", formData.phone);
+    formPayload.append("whatsapp", formData.whatsapp);
+    formPayload.append("email", formData.email);
+    formPayload.append("interestedRole", formData.interestedRole);
+    formPayload.append("message", formData.message);
+
+    try {
+      const response = await fetch(GOOGLE_SCRIPT_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: formPayload.toString(),
+      });
+
+      if (!response.ok) {
+        const text = await response.text();
+        console.error("Non-200 response:", text);
+        alert("Server error. Check console.");
+        toast.error("Something went wrong. Please try again.");
+        return;
+      }
+
+      const result = await response.json();
+      console.log("Form submitted:", result);
+      toast.success("Form submitted successfully!");
+      setFormData({
+        name: "",
+        phone: "",
+        whatsapp: "",
+        email: "",
+        interestedRole: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      toast.error("Error submitting form. Please check your connection.");
+    }
   };
 
   const formVariants = {
@@ -313,9 +218,10 @@ const Carriers = () => {
         >
           <div style={contactStyles.formCard}>
             <label style={contactStyles.formLabel}>Apply Now!</label>
-            <form style={contactStyles.form}>
+            <form style={contactStyles.form} onSubmit={handleSubmit}>
               <input
                 type="text"
+                name="name"
                 placeholder="Name *"
                 style={{
                   ...contactStyles.input,
@@ -323,10 +229,13 @@ const Carriers = () => {
                 }}
                 onFocus={handleInputFocus(setNameFocus)}
                 onBlur={handleInputBlur(setNameFocus)}
+                onChange={handleInputChange}
+                value={formData.name}
                 required
               />
               <input
                 type="tel"
+                name="phone"
                 placeholder="Phone *"
                 style={{
                   ...contactStyles.input,
@@ -334,10 +243,13 @@ const Carriers = () => {
                 }}
                 onFocus={handleInputFocus(setPhoneFocus)}
                 onBlur={handleInputBlur(setPhoneFocus)}
+                onChange={handleInputChange}
+                value={formData.phone}
                 required
               />
               <input
                 type="tel"
+                name="whatsapp"
                 placeholder="WhatsApp No *"
                 style={{
                   ...contactStyles.input,
@@ -345,10 +257,13 @@ const Carriers = () => {
                 }}
                 onFocus={handleInputFocus(setWhatsappFocus)}
                 onBlur={handleInputBlur(setWhatsappFocus)}
+                onChange={handleInputChange}
+                value={formData.whatsapp}
                 required
               />
               <input
                 type="email"
+                name="email"
                 placeholder="Email *"
                 style={{
                   ...contactStyles.input,
@@ -356,11 +271,14 @@ const Carriers = () => {
                 }}
                 onFocus={handleInputFocus(setEmailFocus)}
                 onBlur={handleInputBlur(setEmailFocus)}
+                onChange={handleInputChange}
+                value={formData.email}
                 required
               />
               <div className="mb-2">
                 <select
                   id="interestedRole"
+                  name="interestedRole"
                   required
                   className="w-full rounded-md border border-gray-300 p-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500"
                   style={{
@@ -369,6 +287,8 @@ const Carriers = () => {
                   }}
                   onFocus={handleInputFocus(setSelectFocus)}
                   onBlur={handleInputBlur(setSelectFocus)}
+                  onChange={handleInputChange}
+                  value={formData.interestedRole}
                 >
                   <option value="">Choose your Internship Role *</option>
                   {internshipRoles.map((role) => (
@@ -379,6 +299,7 @@ const Carriers = () => {
                 </select>
               </div>
               <textarea
+                name="message"
                 placeholder="Your Message"
                 style={{
                   ...contactStyles.textarea,
@@ -386,6 +307,8 @@ const Carriers = () => {
                 }}
                 onFocus={handleInputFocus(setMessageFocus)}
                 onBlur={handleInputBlur(setMessageFocus)}
+                onChange={handleInputChange}
+                value={formData.message}
               />
               <motion.button
                 type="submit"
