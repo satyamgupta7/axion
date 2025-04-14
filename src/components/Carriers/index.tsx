@@ -31,6 +31,7 @@ const Carriers = () => {
   const [messageFocus, setMessageFocus] = useState(false);
   const [overlayHovered, setOverlayHovered] = useState(false);
   const [selectFocus, setSelectFocus] = useState(false);
+  const [submissionLoading, setSubmissionLoading] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -58,7 +59,7 @@ const Carriers = () => {
   };
 
   // useEffect(() => {
-  //   toast.success("Test toast Sucesss");
+  //   toast.success("Internship application form loaded!");
   // }, []);
 
   const [formData, setFormData] = useState<FormData>({
@@ -71,7 +72,7 @@ const Carriers = () => {
   });
 
   const GOOGLE_SCRIPT_URL =
-    "https://script.google.com/macros/s/AKfycbxwXOTHrxWsjQ5ceN5eMT1PGfNOgBMM2lwjC4avbfo/dev";
+    "https://script.google.com/macros/s/AKfycbx8upVfxPvv6EWjPVgGr5FqEbADTmEyxW9XlilyOjMUnfHUs6Ob1Y587LqiIglpRZzZ/exec";
 
   const handleInputChange = (
     e: React.ChangeEvent<
@@ -85,8 +86,12 @@ const Carriers = () => {
     }));
   };
 
-  const handleSubmit = async () => {
-    const formPayload = new URLSearchParams();
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setSubmissionLoading(true);
+    toast.loading("Submitting your application...", { id: "submit-loading" });
+
+    const formPayload = new FormData();
     formPayload.append("name", formData.name);
     formPayload.append("phone", formData.phone);
     formPayload.append("whatsapp", formData.whatsapp);
@@ -97,23 +102,21 @@ const Carriers = () => {
     try {
       const response = await fetch(GOOGLE_SCRIPT_URL, {
         method: "POST",
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-        },
-        body: formPayload.toString(),
+        body: formPayload,
       });
 
       if (!response.ok) {
         const text = await response.text();
-        console.error("Non-200 response:", text);
-        alert("Server error. Check console.");
-        toast.error("Something went wrong. Please try again.");
+        toast.error("Submission failed. Please try again.", {
+          id: "submit-loading",
+        });
         return;
       }
 
       const result = await response.json();
-      console.log("Form submitted:", result);
-      toast.success("Form submitted successfully!");
+      toast.success("Application submitted successfully!", {
+        id: "submit-loading",
+      });
       setFormData({
         name: "",
         phone: "",
@@ -123,8 +126,12 @@ const Carriers = () => {
         message: "",
       });
     } catch (error) {
-      console.error("Error submitting form:", error);
-      toast.error("Error submitting form. Please check your connection.");
+      toast.error(
+        "Error submitting application. Please check your connection.",
+        { id: "submit-loading" },
+      );
+    } finally {
+      setSubmissionLoading(false);
     }
   };
 
@@ -315,8 +322,9 @@ const Carriers = () => {
                 style={contactStyles.button}
                 whileTap={{ scale: 0.95 }}
                 transition={{ duration: 0.2 }}
+                disabled={submissionLoading}
               >
-                SUBMIT
+                {submissionLoading ? "Submitting..." : "SUBMIT"}
               </motion.button>
             </form>
           </div>
