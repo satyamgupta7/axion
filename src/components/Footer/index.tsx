@@ -12,7 +12,7 @@ const Footer = () => {
               <div className="mb-10 max-w-[360px] lg:mb-16">
                 <Link href="/" className="mb-8 inline-block">
                   <Image
-                    src="/images/logo/AxionGen_logo4.png"
+                    src="/images/logo/AxionGen_Logo4.png"
                     alt="logo"
                     className="w-full dark:hidden"
                     width={140}
