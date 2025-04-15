@@ -1,7 +1,7 @@
 import { CSSProperties } from "react";
-export type ContactStyles = Record<string, CSSProperties>;
+export type EnrollmentStyles = Record<string, CSSProperties>;
 
-export const contactStyles: ContactStyles = {
+export const enrollmentStyles: EnrollmentStyles = {
   formSection: {
     flex: "1 1 40%",
     display: "flex",

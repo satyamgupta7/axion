@@ -2,7 +2,7 @@
 import { useState, useEffect, FocusEventHandler } from "react";
 import { motion } from "framer-motion";
 import toast from "react-hot-toast";
-import { contactStyles } from "./contactStyles";
+import { enrollmentStyles } from "./EnrollmentStyles";
 
 interface FormData {
   name: string;
@@ -136,24 +136,23 @@ const EnrollmentForm = () => {
   };
 
   return (
-    // <div>
     <motion.div
-      style={contactStyles.formSection}
+      style={enrollmentStyles.formSection}
       variants={formVariants}
       initial="hidden"
       animate={isFormVisible ? "visible" : "hidden"}
       transition={{ duration: 0.5, delay: 0.7 }}
     >
-      <div style={contactStyles.formCard}>
-        <label style={contactStyles.formLabel}>Apply Now!</label>
-        <form style={contactStyles.form} onSubmit={handleSubmit}>
+      <div style={enrollmentStyles.formCard}>
+        <label style={enrollmentStyles.formLabel}>Apply Now!</label>
+        <form style={enrollmentStyles.form} onSubmit={handleSubmit}>
           <input
             type="text"
             name="name"
             placeholder="Name *"
             style={{
-              ...contactStyles.input,
-              ...(nameFocus && contactStyles.inputFocus),
+              ...enrollmentStyles.input,
+              ...(nameFocus && enrollmentStyles.inputFocus),
             }}
             onFocus={handleInputFocus(setNameFocus)}
             onBlur={handleInputBlur(setNameFocus)}
@@ -166,8 +165,8 @@ const EnrollmentForm = () => {
             name="phone"
             placeholder="Phone *"
             style={{
-              ...contactStyles.input,
-              ...(phoneFocus && contactStyles.inputFocus),
+              ...enrollmentStyles.input,
+              ...(phoneFocus && enrollmentStyles.inputFocus),
             }}
             onFocus={handleInputFocus(setPhoneFocus)}
             onBlur={handleInputBlur(setPhoneFocus)}
@@ -180,8 +179,8 @@ const EnrollmentForm = () => {
             name="whatsapp"
             placeholder="WhatsApp No *"
             style={{
-              ...contactStyles.input,
-              ...(whatsappFocus && contactStyles.inputFocus),
+              ...enrollmentStyles.input,
+              ...(whatsappFocus && enrollmentStyles.inputFocus),
             }}
             onFocus={handleInputFocus(setWhatsappFocus)}
             onBlur={handleInputBlur(setWhatsappFocus)}
@@ -194,8 +193,8 @@ const EnrollmentForm = () => {
             name="email"
             placeholder="Email *"
             style={{
-              ...contactStyles.input,
-              ...(emailFocus && contactStyles.inputFocus),
+              ...enrollmentStyles.input,
+              ...(emailFocus && enrollmentStyles.inputFocus),
             }}
             onFocus={handleInputFocus(setEmailFocus)}
             onBlur={handleInputBlur(setEmailFocus)}
@@ -210,8 +209,8 @@ const EnrollmentForm = () => {
               required
               className="w-full rounded-md border border-gray-300 p-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500"
               style={{
-                ...contactStyles.select,
-                ...(selectFocus && contactStyles.selectFocus),
+                ...enrollmentStyles.select,
+                ...(selectFocus && enrollmentStyles.selectFocus),
               }}
               onFocus={handleInputFocus(setSelectFocus)}
               onBlur={handleInputBlur(setSelectFocus)}
@@ -230,8 +229,8 @@ const EnrollmentForm = () => {
             name="message"
             placeholder="Your Message"
             style={{
-              ...contactStyles.textarea,
-              ...(messageFocus && contactStyles.textareaFocus),
+              ...enrollmentStyles.textarea,
+              ...(messageFocus && enrollmentStyles.textareaFocus),
             }}
             onFocus={handleInputFocus(setMessageFocus)}
             onBlur={handleInputBlur(setMessageFocus)}
@@ -240,7 +239,7 @@ const EnrollmentForm = () => {
           />
           <motion.button
             type="submit"
-            style={contactStyles.button}
+            style={enrollmentStyles.button}
             whileTap={{ scale: 0.95 }}
             transition={{ duration: 0.2 }}
             disabled={submissionLoading}
@@ -250,7 +249,6 @@ const EnrollmentForm = () => {
         </form>
       </div>
     </motion.div>
-    // </div>
   );
 };
 

@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect, FocusEventHandler } from "react";
 import { motion } from "framer-motion";
-import { contactStyles } from "./contactStyles";
+import { carrierStyles } from "./CarrierStyles";
 import toast from "react-hot-toast";
 
 const internshipRoles = [
@@ -152,7 +152,7 @@ const Carriers = () => {
 
   return (
     <motion.div
-      style={contactStyles.container}
+      style={carrierStyles.container}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
@@ -160,8 +160,8 @@ const Carriers = () => {
     >
       <motion.div
         style={{
-          ...contactStyles.overlay,
-          ...(overlayHovered && contactStyles.overlayHover),
+          ...carrierStyles.overlay,
+          ...(overlayHovered && carrierStyles.overlayHover),
         }}
         onMouseEnter={() => setOverlayHovered(true)}
         onMouseLeave={() => setOverlayHovered(false)}
@@ -170,27 +170,27 @@ const Carriers = () => {
         transition={{ duration: 0.4, ease: "easeInOut" }}
       >
         <motion.div
-          style={contactStyles.contentSection}
+          style={carrierStyles.contentSection}
           initial="hidden"
           animate="visible"
           variants={contentVariants}
         >
-          <h2 style={contactStyles.heading}>
+          <h2 style={carrierStyles.heading}>
             💼 Internship Opportunities <br /> Apply Now!
           </h2>
-          <p style={contactStyles.paragraph}>
+          <p style={carrierStyles.paragraph}>
             We are hiring interns across multiple domains. Work on real-world
             projects, boost your skills, and grow your career. Check out the
             open roles below!
           </p>
           <ul
-            style={{ ...contactStyles.list, padding: 0, marginTop: "0.5rem" }}
+            style={{ ...carrierStyles.list, padding: 0, marginTop: "0.5rem" }}
           >
             {internshipRoles.map((role, index) => (
               <motion.li
                 key={index}
                 style={{
-                  ...contactStyles.listItem,
+                  ...carrierStyles.listItem,
                   marginBottom: "0.4rem",
                   paddingTop: "0.2rem",
                   paddingBottom: "0.2rem",
@@ -200,13 +200,13 @@ const Carriers = () => {
                 animate="visible"
                 transition={{ delay: 0.1 * index }}
               >
-                <span style={contactStyles.iconInfo}>🔥</span> {role}
+                <span style={carrierStyles.iconInfo}>🔥</span> {role}
               </motion.li>
             ))}
           </ul>
           <p
             style={{
-              ...contactStyles.paragraph,
+              ...carrierStyles.paragraph,
               marginTop: "1rem",
               fontWeight: "bold",
             }}
@@ -216,23 +216,24 @@ const Carriers = () => {
           </p>
         </motion.div>
 
+        {/* Form Section */}
         <motion.div
-          style={contactStyles.formSection}
+          style={carrierStyles.formSection}
           variants={formVariants}
           initial="hidden"
           animate={isFormVisible ? "visible" : "hidden"}
           transition={{ duration: 0.5, delay: 0.7 }}
         >
-          <div style={contactStyles.formCard}>
-            <label style={contactStyles.formLabel}>Apply Now!</label>
-            <form style={contactStyles.form} onSubmit={handleSubmit}>
+          <div style={carrierStyles.formCard}>
+            <label style={carrierStyles.formLabel}>Apply Now!</label>
+            <form style={carrierStyles.form} onSubmit={handleSubmit}>
               <input
                 type="text"
                 name="name"
                 placeholder="Name *"
                 style={{
-                  ...contactStyles.input,
-                  ...(nameFocus && contactStyles.inputFocus),
+                  ...carrierStyles.input,
+                  ...(nameFocus && carrierStyles.inputFocus),
                 }}
                 onFocus={handleInputFocus(setNameFocus)}
                 onBlur={handleInputBlur(setNameFocus)}
@@ -245,8 +246,8 @@ const Carriers = () => {
                 name="phone"
                 placeholder="Phone *"
                 style={{
-                  ...contactStyles.input,
-                  ...(phoneFocus && contactStyles.inputFocus),
+                  ...carrierStyles.input,
+                  ...(phoneFocus && carrierStyles.inputFocus),
                 }}
                 onFocus={handleInputFocus(setPhoneFocus)}
                 onBlur={handleInputBlur(setPhoneFocus)}
@@ -259,8 +260,8 @@ const Carriers = () => {
                 name="whatsapp"
                 placeholder="WhatsApp No *"
                 style={{
-                  ...contactStyles.input,
-                  ...(whatsappFocus && contactStyles.inputFocus),
+                  ...carrierStyles.input,
+                  ...(whatsappFocus && carrierStyles.inputFocus),
                 }}
                 onFocus={handleInputFocus(setWhatsappFocus)}
                 onBlur={handleInputBlur(setWhatsappFocus)}
@@ -273,8 +274,8 @@ const Carriers = () => {
                 name="email"
                 placeholder="Email *"
                 style={{
-                  ...contactStyles.input,
-                  ...(emailFocus && contactStyles.inputFocus),
+                  ...carrierStyles.input,
+                  ...(emailFocus && carrierStyles.inputFocus),
                 }}
                 onFocus={handleInputFocus(setEmailFocus)}
                 onBlur={handleInputBlur(setEmailFocus)}
@@ -289,8 +290,8 @@ const Carriers = () => {
                   required
                   className="w-full rounded-md border border-gray-300 p-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500"
                   style={{
-                    ...contactStyles.select,
-                    ...(selectFocus && contactStyles.selectFocus),
+                    ...carrierStyles.select,
+                    ...(selectFocus && carrierStyles.selectFocus),
                   }}
                   onFocus={handleInputFocus(setSelectFocus)}
                   onBlur={handleInputBlur(setSelectFocus)}
@@ -307,10 +308,10 @@ const Carriers = () => {
               </div>
               <textarea
                 name="message"
-                placeholder="Your Message"
+                placeholder="Why you want to Join?"
                 style={{
-                  ...contactStyles.textarea,
-                  ...(messageFocus && contactStyles.textareaFocus),
+                  ...carrierStyles.textarea,
+                  ...(messageFocus && carrierStyles.textareaFocus),
                 }}
                 onFocus={handleInputFocus(setMessageFocus)}
                 onBlur={handleInputBlur(setMessageFocus)}
@@ -319,7 +320,7 @@ const Carriers = () => {
               />
               <motion.button
                 type="submit"
-                style={contactStyles.button}
+                style={carrierStyles.button}
                 whileTap={{ scale: 0.95 }}
                 transition={{ duration: 0.2 }}
                 disabled={submissionLoading}

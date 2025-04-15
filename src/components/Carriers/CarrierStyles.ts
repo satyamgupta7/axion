@@ -1,10 +1,6 @@
-// components/contactStyles.ts
-
 import { CSSProperties } from "react";
-
-export type ContactStyles = Record<string, CSSProperties>;
-
-export const contactStyles: ContactStyles = {
+export type CarrierStyles = Record<string, CSSProperties>;
+export const carrierStyles: CarrierStyles = {
   container: {
     position: "relative",
     width: "100%",
@@ -24,7 +20,7 @@ export const contactStyles: ContactStyles = {
     maxWidth: "1400px",
     borderRadius: "12px",
     justifyContent: "space-between",
-    backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/images/banner/Carrier.webp')`,
+    backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/images/banner/Carrier2.jpg')`,
     backgroundSize: "cover",
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",

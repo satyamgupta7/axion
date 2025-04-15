@@ -11,17 +11,17 @@ const Footer = () => {
             <div className="w-full px-4 md:w-1/2 lg:w-4/12 xl:w-5/12">
               <div className="mb-10 max-w-[360px] lg:mb-16">
                 <Link href="/" className="mb-8 inline-block">
-                  {/* <Image
-                    src="/images/logo/logo-2.svg"
+                  <Image
+                    src="/images/logo/AxionGen_logo4.png"
                     alt="logo"
                     className="w-full dark:hidden"
                     width={140}
                     height={30}
-                  /> */}
+                  />
                 </Link>
-                <h2 className="mb-6 text-xl font-bold text-white dark:text-white">
+                {/* <h2 className="mb-6 text-xl font-bold text-white dark:text-white">
                   AxionGen
-                </h2>
+                </h2> */}
                 <p className="mb-9 text-base leading-relaxed text-body-color dark:text-body-color-dark">
                   Unlocking career potential through real-world experience and
                   expert mentorship.
