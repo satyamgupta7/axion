@@ -64,7 +64,7 @@ const PerksBenefits = () => {
         <h2 className="mb-4 text-4xl font-bold text-primary">
           Perks & Benefits
         </h2>
-        <p className="mx-auto whitespace-nowrap text-lg text-gray-900">
+        <p className="mx-auto text-lg text-gray-900">
           Unlock real industry value, certifications, and opportunities to power
           up your career.
         </p>

@@ -2,7 +2,7 @@
 import React from "react";
 import Image from "next/image";
 
-// Array of company logo details
+// Company logo sets
 const companyLogos = [
   { src: "/images/brands/Accenture.png", alt: "Accenture" },
   { src: "/images/brands/allianz.webp", alt: "Allianz" },
@@ -28,110 +28,96 @@ const companyLogos2 = [
 ];
 
 const companyLogos3 = [
-  { src: "/images/brands/Bluestock.png", alt: "MS" },
+  { src: "/images/brands/Bluestock.png", alt: "Bluestock" },
   { src: "/images/brands/hsbc.webp", alt: "Hsbc" },
   { src: "/images/brands/IBM.png", alt: "IBM" },
   { src: "/images/brands/ms.webp", alt: "MS" },
-  { src: "/images/brands/Natixis.png", alt: "Natix" },
+  { src: "/images/brands/Natixis.png", alt: "Natixis" },
   { src: "/images/brands/PWC.png", alt: "PWC" },
   { src: "/images/brands/TCS.png", alt: "TCS" },
   { src: "/images/brands/TechMahindra.png", alt: "TechMahindra" },
   { src: "/images/brands/ZylaHealth.png", alt: "ZylaHealth" },
 ];
 
-// Function to render the logos
-const renderLogos = () =>
-  companyLogos.map((logo, index) => (
+const renderLogos = (logos: typeof companyLogos) =>
+  logos.map((logo, index) => (
     <Image
       key={`${logo.alt}-${index}`}
       src={logo.src}
       alt={logo.alt}
       width={100}
       height={50}
-      className="object-contain"
-    />
-  ));
-
-const renderLogos2 = () =>
-  companyLogos2.map((logo, index) => (
-    <Image
-      key={`${logo.alt}-${index}`}
-      src={logo.src}
-      alt={logo.alt}
-      width={100}
-      height={50}
-      className="object-contain"
-    />
-  ));
-
-const renderLogos3 = () =>
-  companyLogos3.map((logo, index) => (
-    <Image
-      key={`${logo.alt}-${index}`}
-      src={logo.src}
-      alt={logo.alt}
-      width={100}
-      height={50}
-      className="object-contain"
+      className="mx-4 object-contain"
     />
   ));
 
 const HiringPartner: React.FC = () => {
   return (
-    <div className="flex flex-col items-center p-4">
-      <h1 className="mb-4 text-3xl font-bold sm:text-2xl md:text-3xl lg:text-4xl">
+    <div className="flex flex-col items-center overflow-hidden p-4">
+      <h1 className="mb-4 text-center text-3xl font-bold sm:text-2xl md:text-3xl lg:text-4xl">
         Unlock Opportunities With 400+ Elite Hiring Partners
       </h1>
-      <p className="mb-6 text-lg sm:text-base md:text-lg lg:text-xl">
+      <p className="mb-6 text-center text-lg sm:text-base md:text-lg lg:text-xl">
         Experience the confidence our hiring partners have in us
       </p>
+
+      {/* Row 1 */}
       <div className="relative w-full overflow-hidden">
-        <div className="animate-scroll flex gap-[12rem] whitespace-nowrap">
-          {Array(2).fill(renderLogos())}
+        <div className="animate-marquee flex gap-[6rem] whitespace-nowrap">
+          {renderLogos(companyLogos)}
+          {renderLogos(companyLogos)}
         </div>
       </div>
 
-      <div
-        className="relative w-full overflow-hidden"
-        style={{ paddingTop: "3rem" }}
-      >
-        <div className="animate-scroll-reverse flex gap-[12rem] whitespace-nowrap">
-          {Array(2).fill(renderLogos2())}
+      {/* Row 2 (reverse direction) */}
+      <div className="relative w-full overflow-hidden pt-12">
+        <div className="animate-marquee-reverse flex gap-[6rem] whitespace-nowrap">
+          {renderLogos(companyLogos2)}
+          {renderLogos(companyLogos2)}
         </div>
       </div>
 
-      <div
-        className="relative w-full overflow-hidden"
-        style={{ paddingTop: "3rem" }}
-      >
-        <div className="animate-scroll flex gap-[12rem] whitespace-nowrap">
-          {Array(2).fill(renderLogos3())}
+      {/* Row 3 */}
+      <div className="relative w-full overflow-hidden pt-12">
+        <div className="animate-marquee flex gap-[6rem] whitespace-nowrap">
+          {renderLogos(companyLogos3)}
+          {renderLogos(companyLogos3)}
         </div>
       </div>
+
       {/* Custom animation styles */}
       <style jsx>{`
-        @keyframes scroll {
+        @keyframes marquee {
           0% {
-            transform: translateX(0);
+            transform: translateX(0%);
           }
           100% {
             transform: translateX(-50%);
           }
-        }
-        .animate-scroll {
-          animation: scroll 20s linear infinite;
         }
 
-        @keyframes scroll-reverse {
+        @keyframes marquee-reverse {
           0% {
             transform: translateX(-50%);
           }
           100% {
-            transform: translateX(0);
+            transform: translateX(0%);
           }
         }
-        .animate-scroll-reverse {
-          animation: scroll-reverse 20s linear infinite;
+
+        .animate-marquee {
+          animation: marquee 12s linear infinite;
+        }
+
+        .animate-marquee-reverse {
+          animation: marquee-reverse 12s linear infinite;
+        }
+
+        @media (max-width: 768px) {
+          .animate-marquee,
+          .animate-marquee-reverse {
+            animation-duration: 6s;
+          }
         }
       `}</style>
     </div>
