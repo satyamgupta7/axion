@@ -1,7 +1,5 @@
 "use client";
-
 import { useState, useEffect } from "react";
-import SectionTitle from "../Common/SectionTitle";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -61,13 +59,19 @@ const WhyChoose = () => {
   return (
     <section id="features" className="py-12 md:py-16 lg:py-20">
       <div className="container">
-        {/* Centered Title */}
+        {/* Title Section */}
         <div className="mb-2 flex justify-center">
-          <SectionTitle
-            title="Why Professionals Trust AxionGen"
-            paragraph=""
-            center
-          />
+          <h2 className="text-4xl font-extrabold text-primary md:text-5xl">
+            Why Professionals Trust AxionGen
+          </h2>
+        </div>
+
+        {/* Subtitle Section */}
+        <div className="mb-6 text-center">
+          <p className="text-lg font-normal text-gray-700 md:text-xl">
+            Join thousands of professionals who have accelerated their careers
+            with us.
+          </p>
         </div>
 
         <div className="flex flex-col gap-4 md:flex-row md:items-start md:gap-6">
