@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 import {
   FaArrowRight,
@@ -9,7 +10,7 @@ import {
   FaBusinessTime,
   FaNetworkWired,
   FaShieldAlt,
-} from "react-icons/fa"; // Importing icons
+} from "react-icons/fa";
 
 const internshipPrograms = [
   {
@@ -26,6 +27,7 @@ const internshipPrograms = [
         "Build projects like e-commerce platforms and social media apps.",
       ],
     },
+    route: "internship/webdev",
   },
   {
     id: "data-science",
@@ -41,6 +43,7 @@ const internshipPrograms = [
         "Hands-on projects like fraud detection, sentiment analysis.",
       ],
     },
+    route: "/internship/datascience",
   },
   {
     id: "data-analytics",
@@ -56,6 +59,7 @@ const internshipPrograms = [
         "Work on projects like market segmentation, trend analysis.",
       ],
     },
+    route: "/internship/dataanalyst",
   },
   {
     id: "business-analyst",
@@ -71,6 +75,7 @@ const internshipPrograms = [
         "Conduct market research and business process optimization.",
       ],
     },
+    route: "/internship/businessanalyst",
   },
   {
     id: "networking",
@@ -86,6 +91,7 @@ const internshipPrograms = [
         "Hands-on practice with Cisco Packet Tracer and network configuration.",
       ],
     },
+    route: "/internship/networking",
   },
   {
     id: "cyber-security",
@@ -101,6 +107,7 @@ const internshipPrograms = [
         "Hands-on projects on penetration testing and vulnerability assessment.",
       ],
     },
+    route: "/internship/cybersecurity",
   },
 ];
 
@@ -170,9 +177,11 @@ const Internship = () => {
                   </li>
                 ))}
               </ul>
-              <button className="mt-6 flex items-center rounded-md bg-blue-600 px-6 py-3 text-lg font-semibold text-white transition hover:bg-blue-700">
-                Get More Details <FaArrowRight className="ml-2" />
-              </button>
+              <Link href={selectedProgram.route} passHref>
+                <button className="mt-6 flex items-center rounded-md bg-blue-600 px-6 py-3 text-lg font-semibold text-white transition hover:bg-blue-700">
+                  Get More Details <FaArrowRight className="ml-2" />
+                </button>
+              </Link>
             </div>
           </div>
         </div>
