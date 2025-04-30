@@ -55,7 +55,7 @@ const Header = () => {
                 } `}
               >
                 <Image
-                  src="/images/logo/AxionGen_Logo4.png"
+                  src="/images/logo/logo01.png"
                   alt="logo"
                   width={140}
                   height={20}
