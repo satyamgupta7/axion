@@ -87,10 +87,6 @@ const testimonialData: Testimonial[] = [
   },
 ];
 
-interface TestimonialWithCompany extends Testimonial {
-  internshipType?: string;
-}
-
 const SingleTestimonial = ({
   testimonial,
 }: {
@@ -99,7 +95,7 @@ const SingleTestimonial = ({
   const { name, image, content, designation, company, linkedin } = testimonial;
 
   return (
-    <div className="flex min-h-[320px] w-[320px] flex-col justify-between rounded-xl bg-white p-6 shadow-lg transition-all duration-300 hover:scale-[1.02] hover:shadow-xl">
+    <div className="flex min-h-[320px] w-full flex-col justify-between rounded-xl bg-white p-6 shadow-lg transition-all duration-300 hover:scale-[1.02] hover:shadow-xl">
       <div>
         <div className="mb-4 flex items-center justify-between">
           <div className="flex items-center">
@@ -144,32 +140,35 @@ const SingleTestimonial = ({
 const Testimonials = () => {
   return (
     <section className="relative z-10 bg-gray-100 py-12">
-      <div className="container mx-auto px-4">
+      <div className="mx-auto w-full max-w-7xl px-4">
         <SectionTitle title="Success Stories" paragraph="" center />
-        <Swiper
-          modules={[Navigation, Pagination, Autoplay]}
-          spaceBetween={30}
-          slidesPerView={1}
-          breakpoints={{
-            768: { slidesPerView: 2 },
-            1024: { slidesPerView: 3 },
-          }}
-          autoplay={{
-            delay: 4000,
-            disableOnInteraction: false,
-          }}
-          navigation
-          pagination={{ clickable: true }}
-          className="mt-8"
-        >
-          {testimonialData.map((testimonial) => (
-            <SwiperSlide key={testimonial.id}>
-              <div className="px-2">
-                <SingleTestimonial testimonial={testimonial} />
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+        <div className="mt-8">
+          <Swiper
+            modules={[Navigation, Pagination, Autoplay]}
+            spaceBetween={20}
+            slidesPerView={1}
+            breakpoints={{
+              640: { slidesPerView: 1 },
+              768: { slidesPerView: 2 },
+              1024: { slidesPerView: 3 },
+            }}
+            autoplay={{
+              delay: 4000,
+              disableOnInteraction: false,
+            }}
+            navigation
+            pagination={{ clickable: true }}
+            className="!px-4 md:!px-6 lg:!px-8"
+          >
+            {testimonialData.map((testimonial) => (
+              <SwiperSlide key={testimonial.id}>
+                <div className="h-full p-2">
+                  <SingleTestimonial testimonial={testimonial} />
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
       </div>
     </section>
   );

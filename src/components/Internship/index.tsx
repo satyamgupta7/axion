@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   FaArrowRight,
   FaChartBar,
@@ -10,6 +10,7 @@ import {
   FaBusinessTime,
   FaNetworkWired,
   FaShieldAlt,
+  FaSpinner, // Import the spinner icon
 } from "react-icons/fa";
 
 const internshipPrograms = [
@@ -113,10 +114,24 @@ const internshipPrograms = [
 
 const Internship = () => {
   const [activeTab, setActiveTab] = useState("full-stack-development");
+  const [loading, setLoading] = useState(false); // Add loading state
 
-  const selectedProgram = internshipPrograms.find(
-    (program) => program.id === activeTab,
+  const [selectedProgram, setSelectedProgram] = useState(
+    internshipPrograms.find((program) => program.id === activeTab),
   );
+
+  useEffect(() => {
+    setLoading(true); // Set loading to true when tab changes
+    // Simulate data loading with a timeout
+    const timer = setTimeout(() => {
+      setSelectedProgram(
+        internshipPrograms.find((program) => program.id === activeTab),
+      );
+      setLoading(false); // Set loading to false after data is "loaded"
+    }, 300); // Reduced timeout to 300ms for faster transition
+
+    return () => clearTimeout(timer); // Clear timeout on unmount or tab change
+  }, [activeTab]);
 
   return (
     <section
@@ -147,43 +162,51 @@ const Internship = () => {
 
         {/* Dynamic Content Card */}
         <div className="mt-10 flex flex-col items-center">
-          <div className="w-full max-w-3xl transform overflow-hidden rounded-lg border border-gray-200 bg-white shadow-xl transition-all duration-300 hover:scale-105">
-            {/* Image Section with Title & Icon */}
-            <div className="relative h-60 w-full">
-              <Image
-                src={selectedProgram.image}
-                alt={selectedProgram.title}
-                className="h-full w-full object-cover"
-                fill
-                priority
-              />
-              <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-60 p-4">
-                {selectedProgram.icon}
-                <h3 className="mt-4 flex items-center text-2xl font-bold text-white">
-                  {selectedProgram.content.heading}
-                </h3>
+          {loading ? (
+            // Show loader while loading
+            <div className="flex items-center justify-center py-10">
+              <FaSpinner className="animate-spin text-4xl text-blue-600" />
+            </div>
+          ) : (
+            // Show content when not loading
+            <div className="w-full max-w-3xl transform overflow-hidden rounded-lg border border-gray-200 bg-white shadow-xl transition-all duration-300 hover:scale-105">
+              {/* Image Section with Title & Icon */}
+              <div className="relative h-60 w-full">
+                <Image
+                  src={selectedProgram.image}
+                  alt={selectedProgram.title}
+                  className="h-full w-full object-cover"
+                  fill
+                  priority
+                />
+                <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-60 p-4">
+                  {selectedProgram.icon}
+                  <h3 className="mt-4 flex items-center text-2xl font-bold text-white">
+                    {selectedProgram.content.heading}
+                  </h3>
+                </div>
+              </div>
+
+              {/* Content Section */}
+              <div className="p-6">
+                <p className="text-lg text-gray-700">
+                  {selectedProgram.content.description}
+                </p>
+                <ul className="mt-4 space-y-3 text-lg text-gray-700">
+                  {selectedProgram.content.points.map((point, index) => (
+                    <li key={index} className="flex items-start">
+                      <span className="mr-2 text-blue-600">✅</span> {point}
+                    </li>
+                  ))}
+                </ul>
+                <Link href={selectedProgram.route} passHref>
+                  <button className="mt-6 flex items-center rounded-md bg-blue-600 px-6 py-3 text-lg font-semibold text-white transition hover:bg-blue-700">
+                    Get More Details <FaArrowRight className="ml-2" />
+                  </button>
+                </Link>
               </div>
             </div>
-
-            {/* Content Section */}
-            <div className="p-6">
-              <p className="text-lg text-gray-700">
-                {selectedProgram.content.description}
-              </p>
-              <ul className="mt-4 space-y-3 text-lg text-gray-700">
-                {selectedProgram.content.points.map((point, index) => (
-                  <li key={index} className="flex items-start">
-                    <span className="mr-2 text-blue-600">✅</span> {point}
-                  </li>
-                ))}
-              </ul>
-              <Link href={selectedProgram.route} passHref>
-                <button className="mt-6 flex items-center rounded-md bg-blue-600 px-6 py-3 text-lg font-semibold text-white transition hover:bg-blue-700">
-                  Get More Details <FaArrowRight className="ml-2" />
-                </button>
-              </Link>
-            </div>
-          </div>
+          )}
         </div>
       </div>
     </section>
