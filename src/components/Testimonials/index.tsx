@@ -10,6 +10,10 @@ import { FaLinkedin } from "react-icons/fa";
 import { Testimonial } from "@/types/testimonial";
 import SectionTitle from "../Common/SectionTitle";
 
+interface TestimonialWithCompany extends Testimonial {
+  internshipType?: string;
+}
+
 const testimonialData: Testimonial[] = [
   {
     id: 1,
@@ -84,7 +88,6 @@ const testimonialData: Testimonial[] = [
 ];
 
 interface TestimonialWithCompany extends Testimonial {
-  company?: string;
   internshipType?: string;
 }
 
@@ -125,7 +128,9 @@ const SingleTestimonial = ({
         </div>
         <hr className="my-4 border-gray-200" />
         <div className="mb-4">
-          <h4 className="text-md font-semibold text-blue-600">{company}</h4>
+          {company && (
+            <h4 className="text-md font-semibold text-blue-600">{company}</h4>
+          )}
           <p className="text-sm text-gray-500">{designation}</p>
         </div>
         <div className="mt-2 w-full rounded-md bg-blue-500 p-4 text-white">
