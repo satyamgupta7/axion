@@ -10,7 +10,8 @@ import {
   FaBusinessTime,
   FaNetworkWired,
   FaShieldAlt,
-  FaSpinner, // Import the spinner icon
+  FaSpinner,
+  FaCheckCircle,
 } from "react-icons/fa";
 
 const internshipPrograms = [
@@ -114,23 +115,22 @@ const internshipPrograms = [
 
 const Internship = () => {
   const [activeTab, setActiveTab] = useState("full-stack-development");
-  const [loading, setLoading] = useState(false); // Add loading state
+  const [loading, setLoading] = useState(false);
 
   const [selectedProgram, setSelectedProgram] = useState(
     internshipPrograms.find((program) => program.id === activeTab),
   );
 
   useEffect(() => {
-    setLoading(true); // Set loading to true when tab changes
-    // Simulate data loading with a timeout
+    setLoading(true);
     const timer = setTimeout(() => {
       setSelectedProgram(
         internshipPrograms.find((program) => program.id === activeTab),
       );
-      setLoading(false); // Set loading to false after data is "loaded"
-    }, 300); // Reduced timeout to 300ms for faster transition
+      setLoading(false);
+    }, 300);
 
-    return () => clearTimeout(timer); // Clear timeout on unmount or tab change
+    return () => clearTimeout(timer);
   }, [activeTab]);
 
   return (
@@ -144,15 +144,23 @@ const Internship = () => {
         </h2>
 
         {/* Tabs Section */}
-        <div className="mt-8 flex flex-wrap justify-center gap-6 border-b border-gray-300 pb-4">
+        <div className="mt-8 flex flex-wrap justify-center gap-1 sm:gap-2 md:gap-3">
           {internshipPrograms.map((program) => (
             <button
               key={program.id}
-              className={`rounded-lg px-6 py-3 text-lg font-semibold transition-all ${
-                activeTab === program.id
-                  ? "scale-105 transform bg-blue-700 text-white shadow-lg"
-                  : "bg-gray-200 text-gray-700 hover:bg-gray-300"
-              }`}
+              className={`
+                whitespace-nowrap rounded-full border-2 border-transparent px-3
+                py-1.5 text-xs font-semibold transition-all
+                sm:px-4
+                sm:py-2 sm:text-sm
+                ${
+                  activeTab === program.id
+                    ? "border-blue-600 bg-blue-600 text-white shadow-lg"
+                    : "border-gray-200/80 bg-gray-100 text-gray-700 hover:bg-blue-100/80 hover:text-blue-700"
+                }
+                text-center
+                hover:scale-105
+              `}
               onClick={() => setActiveTab(program.id)}
             >
               {program.title}
@@ -163,12 +171,10 @@ const Internship = () => {
         {/* Dynamic Content Card */}
         <div className="mt-10 flex flex-col items-center">
           {loading ? (
-            // Show loader while loading
             <div className="flex items-center justify-center py-10">
               <FaSpinner className="animate-spin text-4xl text-blue-600" />
             </div>
           ) : (
-            // Show content when not loading
             <div className="w-full max-w-3xl transform overflow-hidden rounded-lg border border-gray-200 bg-white shadow-xl transition-all duration-300 hover:scale-105">
               {/* Image Section with Title & Icon */}
               <div className="relative h-60 w-full">
@@ -189,21 +195,37 @@ const Internship = () => {
 
               {/* Content Section */}
               <div className="p-6">
-                <p className="text-lg text-gray-700">
+                <p className="mb-4 text-sm text-gray-700 sm:text-base">
                   {selectedProgram.content.description}
                 </p>
-                <ul className="mt-4 space-y-3 text-lg text-gray-700">
+                <ul className="list-none pl-0">
                   {selectedProgram.content.points.map((point, index) => (
-                    <li key={index} className="flex items-start">
-                      <span className="mr-2 text-blue-600">✅</span> {point}
+                    <li key={index} className="flex items-center py-1">
+                      <FaCheckCircle className="mr-2 h-5 w-5 text-green-500" />
+                      <span className="text-sm text-gray-700 sm:text-base">
+                        {point}
+                      </span>
                     </li>
                   ))}
                 </ul>
-                <Link href={selectedProgram.route} passHref>
-                  <button className="mt-6 flex items-center rounded-md bg-blue-600 px-6 py-3 text-lg font-semibold text-white transition hover:bg-blue-700">
-                    Get More Details <FaArrowRight className="ml-2" />
-                  </button>
-                </Link>
+                <div className="mt-6 flex justify-center">
+                  <Link href={selectedProgram.route} passHref>
+                    <button
+                      className={`
+                            flex w-full items-center
+                            justify-center gap-2 whitespace-nowrap
+                            rounded-full
+                            border-2 border-blue-600
+                            border-transparent bg-blue-600 px-6 py-2
+                            text-sm font-semibold
+                            text-white shadow-lg
+                            transition-all hover:scale-105 hover:bg-blue-700 sm:w-auto
+                        `}
+                    >
+                      Get More Details <FaArrowRight className="ml-2" />
+                    </button>
+                  </Link>
+                </div>
               </div>
             </div>
           )}
