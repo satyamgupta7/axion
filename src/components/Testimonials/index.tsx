@@ -85,6 +85,16 @@ const testimonialData: Testimonial[] = [
     image: "/images/testimonials/Vipin.jpg",
     linkedin: "https://www.linkedin.com/in/vipin-kumar-dubey-87254b161/",
   },
+  {
+    id: 8,
+    name: "Ankit Sinha",
+    designation: "Network Engineer",
+    company: "Infosys",
+    content:
+      "The network engineering internship at Axiongen provided a strong foundation in network protocols and infrastructure. I gained valuable experience with advanced technologies.",
+    image: "/images/testimonials/Ankit.jpg",
+    linkedin: "https://www.linkedin.com/in/ankit-sinhation/",
+  },
 ];
 
 const SingleTestimonial = ({

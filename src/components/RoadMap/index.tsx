@@ -49,7 +49,10 @@ export default function RoadMap() {
   ];
 
   return (
-    <div className="relative min-h-screen overflow-hidden bg-gray-900 px-4 py-16 text-white sm:px-6 lg:px-20">
+    <div
+      className="relative min-h-screen overflow-hidden px-4 py-16 text-gray-900 sm:px-6 lg:px-20"
+      style={{ backgroundColor: "#98F5F9" }}
+    >
       <style>{`
         .road-path {
           stroke-dasharray: 8 12;
@@ -98,7 +101,7 @@ export default function RoadMap() {
         }
       `}</style>
 
-      <h1 className="relative z-10 mb-16 text-center text-2xl font-bold sm:text-3xl md:text-4xl">
+      <h1 className="relative z-10 mb-16 text-center text-2xl font-bold text-gray-900 sm:text-3xl md:text-4xl">
         Roadmap of your Internship Journey
       </h1>
 
@@ -111,7 +114,7 @@ export default function RoadMap() {
           <path
             d="M 0 200 C 250 0, 750 400, 1000 200"
             fill="none"
-            stroke="#ffffff"
+            stroke="#4B5563"
             strokeWidth="4"
             className="road-path"
           />
@@ -139,10 +142,10 @@ export default function RoadMap() {
               </div>
             </motion.div>
 
-            <h2 className="mt-3 text-sm font-semibold sm:text-base">
+            <h2 className="mt-3 text-sm font-semibold text-gray-900 sm:text-base">
               {step.title}
             </h2>
-            <p className="mt-1 text-xs text-gray-300 sm:text-sm">
+            <p className="mt-1 text-xs text-gray-700 sm:text-sm">
               {step.description}
             </p>
           </div>

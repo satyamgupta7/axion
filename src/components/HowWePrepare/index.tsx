@@ -72,12 +72,15 @@ const cardVariants = {
 
 const HowWePrepare = () => {
   return (
-    <section className="bg-gray-900 px-8 py-16 text-white md:px-16 lg:py-24">
+    <section
+      className="px-8 py-16 md:px-16 lg:py-24"
+      style={{ backgroundColor: "#98F5F9" }}
+    >
       <div className="container mx-auto max-w-6xl text-center">
         <h2 className="text-4xl font-extrabold tracking-tight text-primary md:text-5xl">
           How We Prepare You
         </h2>
-        <p className="mt-4 text-lg text-gray-300 md:text-xl">
+        <p className="mt-4 text-lg text-gray-800 md:text-xl">
           Our structured program ensures you gain industry-level expertise and
           career readiness.
         </p>
@@ -87,7 +90,7 @@ const HowWePrepare = () => {
           {roadmapSteps.map((step, index) => (
             <motion.div
               key={step.id}
-              className="group flex flex-col items-center rounded-2xl border border-primary bg-white p-6 shadow-md transition-all duration-300 hover:scale-[1.03] hover:shadow-xl"
+              className="group relative flex flex-col items-center rounded-2xl border border-primary bg-white p-6 shadow-md transition-all duration-300 hover:scale-[1.03] hover:shadow-xl"
               variants={cardVariants}
               initial="hidden"
               whileInView="visible"

@@ -1,4 +1,4 @@
-"use client"; // Include this if you're using App Router
+"use client";
 
 import Link from "next/link";
 import {
@@ -14,7 +14,8 @@ const OfferLetter = () => {
   return (
     <section
       id="features"
-      className="bg-gradient-to-br from-gray-800 via-gray-700 to-gray-900 py-12 md:py-16 lg:py-20"
+      className="py-12 md:py-16 lg:py-20"
+      style={{ backgroundColor: "#98F5F9" }}
     >
       <div className="container mx-auto px-4 text-center">
         {/* Header Section */}
@@ -27,7 +28,7 @@ const OfferLetter = () => {
           <h2 className="text-4xl font-extrabold text-primary md:text-5xl">
             Receive Your Offer Letter Today!
           </h2>
-          <p className="mt-4 text-lg font-normal text-gray-200 md:text-xl">
+          <p className="mt-4 text-lg font-normal text-gray-800 md:text-xl">
             Join our Orientation Program to kickstart your internship journey.
             Discover our Future-Ready Framework to Fast-Track your career, gain
             skills, experience, and network for career success!
@@ -38,11 +39,11 @@ const OfferLetter = () => {
         <div className="mx-auto grid max-w-3xl grid-cols-1 gap-6 md:grid-cols-2">
           {[
             {
-              icon: <FaLinkedin className="text-5xl text-blue-500" />,
+              icon: <FaLinkedin className="text-5xl text-blue-600" />,
               text: "Learn from industry experts and enhance your LinkedIn profile.",
             },
             {
-              icon: <FaProjectDiagram className="text-5xl text-green-500" />,
+              icon: <FaProjectDiagram className="text-5xl text-green-600" />,
               text: "Apply knowledge to real projects & create an ATS-friendly resume.",
             },
             {
@@ -84,7 +85,7 @@ const OfferLetter = () => {
           </Link>
           <Link
             href="#internship"
-            className="inline-block rounded-full border border-white bg-transparent px-8 py-4 text-lg font-semibold text-white shadow-md transition-all duration-300 hover:scale-105 hover:bg-white hover:text-black"
+            className="inline-block rounded-full border border-black bg-transparent px-8 py-4 text-lg font-semibold text-black shadow-md transition-all duration-300 hover:scale-105 hover:bg-black hover:text-white"
           >
             Learn More
           </Link>

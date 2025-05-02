@@ -3,7 +3,7 @@ import { Menu } from "@/types/menu";
 const menuData: Menu[] = [
   {
     id: 1,
-    title: "Programs",
+    title: "All Program",
     newTab: false,
     submenu: [
       {

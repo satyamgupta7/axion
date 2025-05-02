@@ -21,12 +21,13 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative z-10 overflow-hidden bg-white pb-16 pt-20 dark:bg-gray-dark md:pb-[120px] md:pt-32 xl:pb-[160px] xl:pt-44 2xl:pb-[200px] 2xl:pt-52"
+      className="relative z-10 overflow-hidden bg-cover bg-center pb-16 pt-20 md:pb-[120px] md:pt-32 xl:pb-[160px] xl:pt-44 2xl:pb-[200px] 2xl:pt-52"
+      style={{ backgroundImage: "url('/images/banner/landing01.jpg')" }}
     >
       <div className="container">
         <div className="-mx-4 flex flex-wrap">
           <div className="w-full px-4">
-            <div className="mx-auto max-w-[850px] rounded-2xl border-4 border-primary bg-gradient-to-br from-white to-gray-100 p-10 text-center shadow-xl dark:from-gray-800 dark:to-gray-900">
+            <div className="mx-auto max-w-[850px] text-center">
               <h1 className="mb-5 text-4xl font-extrabold leading-tight text-primary dark:text-white sm:text-5xl md:text-6xl">
                 Your Internship Journey Begins Here!
               </h1>
@@ -37,14 +38,14 @@ const Hero = () => {
               <div className="flex flex-col items-center justify-center space-y-4 sm:flex-row sm:space-x-6 sm:space-y-0">
                 <Link
                   href="https://forms.gle/9gddAkJZyitpefzy8"
-                  className="rounded-full bg-primary px-8 py-4 text-lg font-semibold text-white shadow-md transition-all hover:scale-105 hover:bg-primary/80"
+                  className="rounded-md bg-primary px-8 py-4 text-lg font-semibold text-white shadow-md transition-all hover:scale-105 hover:bg-primary/80"
                 >
                   🔥 Get On Board Now!
                 </Link>
                 <a
                   href="#internship"
                   onClick={scrollToInternship}
-                  className="inline-block rounded-full border border-black bg-black px-8 py-4 text-lg font-semibold text-white shadow-md transition-all hover:scale-105 hover:bg-black/90 dark:border-white/10 dark:bg-white/10 dark:hover:bg-white/5"
+                  className="inline-block rounded-md border border-black bg-black px-8 py-4 text-lg font-semibold text-white shadow-md transition-all hover:scale-105 hover:bg-black/90 dark:border-white/10 dark:bg-white/10 dark:hover:bg-white/5"
                 >
                   Explore Programs
                 </a>
@@ -54,20 +55,20 @@ const Hero = () => {
         </div>
 
         {/* Stats Cards */}
-        <div className="mt-20 grid grid-cols-1 gap-8 sm:grid-cols-3">
+        <div className="mt-20 grid grid-cols-1 gap-6 sm:grid-cols-3">
           {[
             {
-              icon: <FaBriefcase className="mb-4 text-5xl text-blue-600" />,
+              icon: <FaBriefcase className="mb-2 text-3xl text-blue-600" />,
               count: "2000+",
-              label: "Working professionals",
+              label: "Working Professionals",
             },
             {
-              icon: <FaUsers className="mb-4 text-5xl text-green-600" />,
+              icon: <FaUsers className="mb-2 text-3xl text-green-600" />,
               count: "3000+",
-              label: "People transformed",
+              label: "People Transformed",
             },
             {
-              icon: <FaHandshake className="mb-4 text-5xl text-purple-600" />,
+              icon: <FaHandshake className="mb-2 text-3xl text-purple-600" />,
               count: "400+",
               label: "Hiring Partners",
             },
@@ -78,14 +79,18 @@ const Hero = () => {
               initial="initial"
               whileInView="animate"
               viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
-              className="flex flex-col items-center rounded-xl bg-gray-100 p-8 shadow-xl transition-shadow duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-2xl"
+              transition={{
+                duration: 0.4,
+                delay: index * 0.2,
+                ease: "easeOut",
+              }}
+              className="flex cursor-pointer flex-col items-center rounded-xl bg-white/90 p-6 shadow-md backdrop-blur-lg transition-transform duration-300 hover:-translate-y-1 hover:scale-105 hover:shadow-xl dark:bg-white/10"
             >
               {card.icon}
-              <h3 className="text-4xl font-extrabold text-black">
+              <h3 className="text-2xl font-bold text-black dark:text-white">
                 {card.count}
               </h3>
-              <p className="mt-2 text-lg font-medium text-gray-700">
+              <p className="mt-1 text-base font-medium text-gray-700 dark:text-gray-300">
                 {card.label}
               </p>
             </motion.div>
