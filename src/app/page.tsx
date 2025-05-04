@@ -51,6 +51,12 @@ export const metadata: Metadata = {
         height: 630,
         alt: "AxionGen - Internship & Placement for Tech Careers",
       },
+      {
+        url: "https://axiongen.com/images/banner/axiongen.png",
+        width: 1200,
+        height: 630,
+        alt: "AxionGen - Hands-on experience with real-world projects",
+      },
     ],
     locale: "en_IN",
     type: "website",
