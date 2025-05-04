@@ -74,7 +74,7 @@ const HowWePrepare = () => {
   return (
     <section
       className="px-8 py-16 md:px-16 lg:py-24"
-      style={{ backgroundColor: "#98F5F9" }}
+      style={{ backgroundColor: "#CCFAFC" }}
     >
       <div className="container mx-auto max-w-6xl text-center">
         <h2 className="text-4xl font-extrabold tracking-tight text-primary md:text-5xl">

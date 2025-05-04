@@ -15,7 +15,7 @@ const OfferLetter = () => {
     <section
       id="features"
       className="py-12 md:py-16 lg:py-20"
-      style={{ backgroundColor: "#98F5F9" }}
+      style={{ backgroundColor: "#CCFAFC" }}
     >
       <div className="container mx-auto px-4 text-center">
         {/* Header Section */}

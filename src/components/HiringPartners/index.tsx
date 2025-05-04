@@ -33,7 +33,7 @@ const companyLogos3 = [
   { src: "/images/brands/IBM.png", alt: "IBM" },
   { src: "/images/brands/ms.webp", alt: "MS" },
   { src: "/images/brands/Natixis.png", alt: "Natixis" },
-  { src: "/images/brands/PWC.png", alt: "PWC" },
+  { src: "/images/brands/Pwc.png", alt: "PWC" },
   { src: "/images/brands/TCS.png", alt: "TCS" },
   { src: "/images/brands/TechMahindra.png", alt: "TechMahindra" },
   { src: "/images/brands/ZylaHealth.png", alt: "ZylaHealth" },

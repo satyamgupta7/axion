@@ -51,7 +51,7 @@ export default function RoadMap() {
   return (
     <div
       className="relative min-h-screen overflow-hidden px-4 py-16 text-gray-900 sm:px-6 lg:px-20"
-      style={{ backgroundColor: "#98F5F9" }}
+      style={{ backgroundColor: "#CCFAFC" }}
     >
       <style>{`
         .road-path {
