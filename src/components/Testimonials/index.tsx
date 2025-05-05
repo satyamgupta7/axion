@@ -17,6 +17,16 @@ interface TestimonialWithCompany extends Testimonial {
 const testimonialData: Testimonial[] = [
   {
     id: 1,
+    name: "Ankit Sinha",
+    designation: "Full Stack Developer",
+    company: "Infosys",
+    content:
+      "The network engineering internship at Axiongen provided a strong foundation in network protocols and infrastructure. I gained valuable experience with advanced technologies.",
+    image: "/images/testimonials/Ankit.jpg",
+    linkedin: "https://www.linkedin.com/in/ankit-sinhation/",
+  },
+  {
+    id: 2,
     name: "Sumit Kant Jha",
     designation: "Network Engineer",
     company: "Cisco",
@@ -26,7 +36,7 @@ const testimonialData: Testimonial[] = [
     linkedin: "https://www.linkedin.com/in/sumitkantjha/",
   },
   {
-    id: 2,
+    id: 3,
     name: "Shaik Salman",
     designation: "Cloud Engineer",
     company: "Apna",
@@ -36,7 +46,7 @@ const testimonialData: Testimonial[] = [
     linkedin: "https://www.linkedin.com/in/shaik-salman-5b4651191/",
   },
   {
-    id: 3,
+    id: 4,
     name: "Mrinal Kumar",
     designation: "Full Stack Developer",
     company: "HyperThink Systems",
@@ -46,7 +56,7 @@ const testimonialData: Testimonial[] = [
     linkedin: "https://www.linkedin.com/in/mrinal-kumar-5046-backend/",
   },
   {
-    id: 4,
+    id: 5,
     name: "Ujjwal Raj",
     designation: "DevOps Engineer",
     company: "HyperThink Systems",
@@ -56,7 +66,7 @@ const testimonialData: Testimonial[] = [
     linkedin: "https://www.linkedin.com/in/ujjwal-raj04/",
   },
   {
-    id: 5,
+    id: 6,
     name: "Aniket Kumar",
     designation: "Business Analyst",
     company: "Big Truck",
@@ -66,7 +76,7 @@ const testimonialData: Testimonial[] = [
     linkedin: "https://www.linkedin.com/in/g-kumar-842578209/",
   },
   {
-    id: 6,
+    id: 7,
     name: "Sanjeev Kumar",
     designation: "Full Stack Java Developer",
     company: "TCS",
@@ -76,7 +86,7 @@ const testimonialData: Testimonial[] = [
     linkedin: "https://www.linkedin.com/in/sanjeevkmr1210/",
   },
   {
-    id: 7,
+    id: 8,
     name: "Vipin Kumar Dubey",
     designation: "Java Developer",
     company: "Enhancesys Innovation",
@@ -84,16 +94,6 @@ const testimonialData: Testimonial[] = [
       "The internship at Axiongen provided a great platform to enhance my Java development skills. I gained valuable experience working on real-world projects",
     image: "/images/testimonials/Vipin.jpg",
     linkedin: "https://www.linkedin.com/in/vipin-kumar-dubey-87254b161/",
-  },
-  {
-    id: 8,
-    name: "Ankit Sinha",
-    designation: "Network Engineer",
-    company: "Infosys",
-    content:
-      "The network engineering internship at Axiongen provided a strong foundation in network protocols and infrastructure. I gained valuable experience with advanced technologies.",
-    image: "/images/testimonials/Ankit.jpg",
-    linkedin: "https://www.linkedin.com/in/ankit-sinhation/",
   },
 ];
 

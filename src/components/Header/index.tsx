@@ -54,14 +54,19 @@ const Header = () => {
                   sticky ? "py-5 lg:py-2" : "py-8"
                 } `}
               >
-                <Image
+                {/* <Image
                   src="/images/logo/logo01.png"
                   alt="logo"
                   width={140}
                   height={20}
                   className="w-full dark:hidden"
-                />
+                /> */}
                 {/* <div className="text-4xl font-bold">AxionGen</div> */}
+                <div className="inline-block rounded-md border-2 border-indigo-900 bg-white px-4 py-1.5 shadow-md">
+                  <div className="bg-gradient-to-r from-indigo-900 via-purple-900 to-pink-900 bg-clip-text font-[Poppins] text-2xl font-extrabold tracking-tight text-transparent">
+                    AxionGen
+                  </div>
+                </div>
               </Link>
             </div>
             <div className="flex w-full items-center justify-between px-4">
