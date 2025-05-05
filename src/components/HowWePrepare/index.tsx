@@ -10,6 +10,7 @@ import {
 } from "react-icons/fa";
 import { motion } from "framer-motion";
 
+// Roadmap steps data
 const roadmapSteps = [
   {
     id: "real-world-projects",
@@ -61,6 +62,7 @@ const roadmapSteps = [
   },
 ];
 
+// Card animation variants
 const cardVariants = {
   hidden: { opacity: 0, y: 50 },
   visible: (i: number) => ({
@@ -73,24 +75,24 @@ const cardVariants = {
 const HowWePrepare = () => {
   return (
     <section
-      className="px-8 py-16 md:px-16 lg:py-24"
+      className="px-8 py-4 md:px-16 lg:py-12" // Adjusted padding
       style={{ backgroundColor: "#CCFAFC" }}
     >
       <div className="container mx-auto max-w-6xl text-center">
-        <h2 className="text-4xl font-extrabold tracking-tight text-primary md:text-5xl">
+        <h2 className="text-3xl font-extrabold tracking-tight text-primary md:text-4xl">
           How We Prepare You
         </h2>
-        <p className="mt-4 text-lg text-gray-800 md:text-xl">
+        <p className="mt-1 text-base text-gray-800 md:text-lg">
           Our structured program ensures you gain industry-level expertise and
           career readiness.
         </p>
 
         {/* Cards Grid */}
-        <div className="mt-16 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {roadmapSteps.map((step, index) => (
             <motion.div
               key={step.id}
-              className="group relative flex flex-col items-center rounded-2xl border border-primary bg-white p-6 shadow-md transition-all duration-300 hover:scale-[1.03] hover:shadow-xl"
+              className="group relative mx-auto flex w-full max-w-xs flex-col items-center rounded-xl border border-primary bg-white p-4 shadow-md transition-all duration-300 hover:scale-[1.03] hover:shadow-xl" // Reduced size and adjusted width
               variants={cardVariants}
               initial="hidden"
               whileInView="visible"
@@ -102,10 +104,14 @@ const HowWePrepare = () => {
               >
                 {step.icon}
               </div>
-
-              <h3 className="text-xl font-semibold text-black">{step.title}</h3>
-              <p className="mt-2 text-gray-700">{step.description}</p>
-              <div className="absolute bottom-0 left-0 h-1 w-full rounded-bl-2xl rounded-br-2xl bg-gradient-to-r from-blue-500 to-purple-500" />
+              <h3 className="text-lg font-semibold text-black">{step.title}</h3>{" "}
+              {/* Reduced font size */}
+              <p className="mt-2 text-sm text-gray-700">
+                {step.description}
+              </p>{" "}
+              {/* Reduced font size */}
+              {/* Updated bottom line */}
+              <div className="absolute bottom-0 left-0 right-0 mx-auto h-1 w-11/12 rounded-bl-2xl rounded-br-2xl bg-gradient-to-r from-blue-500 to-purple-500" />
             </motion.div>
           ))}
         </div>

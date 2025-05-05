@@ -53,7 +53,10 @@ const renderLogos = (logos: typeof companyLogos) =>
 
 const HiringPartner: React.FC = () => {
   return (
-    <div className="flex flex-col items-center overflow-hidden p-4">
+    <div
+      className="flex flex-col items-center overflow-hidden p-4"
+      style={{ backgroundColor: "#CCFAFC" }}
+    >
       <h1 className="mb-4 text-center text-3xl font-bold sm:text-2xl md:text-3xl lg:text-4xl">
         Unlock Opportunities With 400+ Elite Hiring Partners
       </h1>

@@ -149,7 +149,7 @@ const SingleTestimonial = ({
 
 const Testimonials = () => {
   return (
-    <section className="relative z-10 bg-gray-100 py-12">
+    <section className="relative z-10 bg-white py-12">
       <div className="mx-auto w-full max-w-7xl px-4">
         <SectionTitle title="Success Stories" paragraph="" center />
         <div className="mt-8">

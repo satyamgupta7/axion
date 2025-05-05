@@ -79,8 +79,8 @@ export default function Home() {
     <>
       <ScrollUp />
       <Hero />
-      <OfferLetter />
       <WhyChoose />
+      <OfferLetter />
       <ChallengeSolution />
       <Internship />
       <HowWePrepare />

@@ -8,6 +8,7 @@ import {
 } from "react-icons/fa";
 import { motion } from "framer-motion";
 
+// Roadmap steps data
 const roadmapSteps = [
   {
     id: "offer-letter",
@@ -59,36 +60,39 @@ const roadmapSteps = [
 
 const PerksBenefits = () => {
   return (
-    <section className="bg-white px-8 py-12 md:px-16 md:py-16 lg:py-20">
-      <div className="container mx-auto text-center">
-        <h2 className="mb-4 text-4xl font-bold text-primary">
+    <section className="bg-white py-8 md:px-12 lg:py-12">
+      <div className="container mx-auto px-6 text-center">
+        <h2 className="mb-4 text-3xl font-bold text-primary">
           Perks & Benefits
         </h2>
-        <p className="mx-auto text-lg text-gray-900">
+        <p className="mx-auto mb-8 max-w-screen-sm text-lg text-gray-800 md:max-w-3xl">
           Unlock real industry value, certifications, and opportunities to power
           up your career.
         </p>
 
-        <div className="mt-16 grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
           {roadmapSteps.map((step, index) => (
             <motion.div
               key={step.id}
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group flex flex-col items-center rounded-2xl border border-primary bg-primary p-6 shadow-md transition-all duration-300 hover:scale-[1.03] hover:shadow-xl"
+              className="group relative mx-auto flex w-full flex-col items-center justify-start rounded-xl border border-primary bg-primary p-4 shadow-md transition-all duration-300 hover:scale-[1.03] hover:shadow-xl sm:w-[110%] md:w-[115%] lg:w-[105%] xl:w-[100%]"
             >
               <div
-                className={`mb-4 rounded-full bg-gradient-to-br ${step.iconBg} p-4 text-3xl text-white shadow-lg transition-transform duration-300 group-hover:scale-110`}
+                className={`mb-3 rounded-full bg-gradient-to-br ${step.iconBg} p-3 text-2xl text-white shadow-lg transition-transform duration-300 group-hover:scale-110`}
               >
                 {step.icon}
               </div>
 
-              <h3 className="text-xl font-semibold text-white">{step.title}</h3>
+              <h3 className="text-lg font-semibold text-white">{step.title}</h3>
 
-              <p className="mt-2 text-gray-700">{step.description}</p>
-              <div className="absolute bottom-0 left-0 h-1 w-full rounded-bl-2xl rounded-br-2xl bg-gradient-to-r from-blue-500 to-purple-500" />
+              <p className="mt-1 text-sm" style={{ color: "#CCFAFC" }}>
+                {step.description}
+              </p>
+
+              <div className="absolute bottom-0 left-4 right-4 h-0.5 rounded-bl-xl rounded-br-xl bg-gradient-to-r from-blue-500 to-purple-500" />
             </motion.div>
           ))}
         </div>
