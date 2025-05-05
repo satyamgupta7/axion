@@ -19,9 +19,9 @@ const TermsAndConditionsPage = () => {
               Agreement to Our Terms
             </h2>
             <p className="leading-relaxed text-gray-700">
-              By accessing and using this website ("AxionGen"), you acknowledge
-              and agree to be bound by the following terms and conditions.
-              Please read them carefully.
+              By accessing and using this website (&quot;AxionGen&quot;), you
+              acknowledge and agree to be bound by the following terms and
+              conditions. Please read them carefully.
             </p>
           </section>
 
@@ -204,9 +204,9 @@ const TermsAndConditionsPage = () => {
               AxionGen shall not be liable for any direct, indirect, incidental,
               consequential, or special damages arising out of or in connection
               with your use or inability to use the platform or its content. The
-              platform and its content are provided "as is" and without any
-              warranties of any kind, whether express or implied. AxionGen
-              disclaims all warranties, including but not limited to
+              platform and its content are provided &quot;as is&quot; and
+              without any warranties of any kind, whether express or implied.
+              AxionGen disclaims all warranties, including but not limited to
               merchantability, fitness for a particular purpose, and
               non-infringement.
             </p>
@@ -267,16 +267,18 @@ const TermsAndConditionsPage = () => {
               Internship Terms and Conditions
             </h2>
             <p className="leading-relaxed text-gray-700">
-              Welcome to axiongen.com (referred to as the "Site" or "AxionGen"),
-              an online platform operated by AxionGen Technologies (hereinafter
-              referred to as "AxionGen"). These internship terms and conditions
-              ("Internship Terms") constitute a legal agreement between you and
+              Welcome to axiongen.com (referred to as the &quot;Site&quot; or
+              &quot;AxionGen&quot;), an online platform operated by AxionGen
+              Technologies (hereinafter referred to as &quot;AxionGen&quot;).
+              These internship terms and conditions (&quot;Internship
+              Terms&quot;) constitute a legal agreement between you and
               AxionGen, specifically applicable to internship opportunities
               offered through the Site. Your use of this Site to apply for
               internships signifies your unconditional acceptance of these
               Internship Terms, which are in addition to the general Terms and
               Conditions outlined above. Individuals applying for internships
-              are referred to as "Applicant" or "Applicants."
+              are referred to as &quot;Applicant&quot; or
+              &quot;Applicants.&quot;
             </p>
             <h3 className="mt-4 text-lg font-semibold text-gray-800">
               Key Internship Terms & Conditions:
@@ -289,10 +291,10 @@ const TermsAndConditionsPage = () => {
               </li>
               <li>
                 <strong>Swag Eligibility:</strong> Eligibility for any
-                promotional items ("swag") is subject to meeting specific
-                requirements as communicated by AxionGen. Furthermore, any
-                instance of code plagiarism may result in disqualification from
-                current and future opportunities on the AxionGen platform.
+                promotional items (&quot;swag&quot;) is subject to meeting
+                specific requirements as communicated by AxionGen. Furthermore,
+                any instance of code plagiarism may result in disqualification
+                from current and future opportunities on the AxionGen platform.
               </li>
               <li>
                 <strong>Stipend or Payment:</strong> Please note that unless
@@ -304,7 +306,7 @@ const TermsAndConditionsPage = () => {
                 <strong>Registration Data and Account Security:</strong> When
                 using the Site, you agree to: (a) provide accurate, current, and
                 complete information as required in any registration forms
-                ("Registration Data"); (b) maintain the accuracy and
+                (&quot;Registration Data&quot;); (b) maintain the accuracy and
                 completeness of your Registration Data and any other information
                 provided to AxionGen; (c) safeguard the security of your
                 password and identification credentials; (d) promptly notify us
