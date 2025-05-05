@@ -190,7 +190,7 @@ const TermsAndConditionsPage = () => {
               are the intellectual property of AxionGen or its content providers
               and are protected by copyright, trademark, and other intellectual
               property laws. You are prohibited from using, reproducing,
-              distributing, or displaying any of the platform's content without
+              distributing, or displaying any of the platform content without
               obtaining prior written permission from AxionGen or the respective
               content owners.
             </p>
@@ -219,7 +219,7 @@ const TermsAndConditionsPage = () => {
             <p className="leading-relaxed text-gray-700">
               You agree to indemnify and hold harmless AxionGen, its affiliates,
               instructors, and partners from any claims, damages, losses,
-              liabilities, and expenses (including attorneys' fees) arising out
+              liabilities, and expenses (including attorneys fees) arising out
               of your use of the platform or any breach of these terms and
               conditions.
             </p>
@@ -296,7 +296,7 @@ const TermsAndConditionsPage = () => {
               </li>
               <li>
                 <strong>Stipend or Payment:</strong> Please note that unless
-                explicitly stated otherwise in your offer letter, AxionGen's
+                explicitly stated otherwise in your offer letter, AxionGen
                 internship programs are typically unpaid for both students and
                 experienced individuals.
               </li>

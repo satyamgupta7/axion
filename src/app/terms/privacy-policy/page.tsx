@@ -88,9 +88,8 @@ const PrivacyPolicyPage = () => {
                 and timeliness.
               </li>
               <li>
-                Conduct in-depth analysis to elevate our platform's
-                functionality, refine user experience, and introduce
-                groundbreaking features.
+                Conduct in-depth analysis to elevate our platform functionality,
+                refine user experience, and introduce groundbreaking features.
               </li>
               <li>
                 Curate a hyper-personalized learning journey, suggesting
@@ -130,7 +129,7 @@ const PrivacyPolicyPage = () => {
               Strategic Information Sharing with Trusted Partners
             </h2>
             <p className="leading-relaxed text-gray-700">
-              To optimize our platform's operations and enhance your experience,
+              To optimize our platform operations and enhance your experience,
               we may selectively collaborate with trusted third-party service
               providers specializing in areas such as secure payment processing
               and premium customer support. We maintain stringent
@@ -160,11 +159,11 @@ const PrivacyPolicyPage = () => {
               Protecting the Digital Footprint of Minors
             </h2>
             <p className="leading-relaxed text-gray-700">
-              AxionGen's platform is exclusively designed for individuals aged
-              13 and above. If you are a parent or legal guardian and have
-              reason to suspect that your child has inadvertently provided us
-              with personal information, please initiate immediate contact with
-              our dedicated privacy team at{" "}
+              AxionGen platform is exclusively designed for individuals aged 13
+              and above. If you are a parent or legal guardian and have reason
+              to suspect that your child has inadvertently provided us with
+              personal information, please initiate immediate contact with our
+              dedicated privacy team at{" "}
               <a
                 href="mailto:hello@axiongen.com"
                 className="text-teal-600 hover:underline"
