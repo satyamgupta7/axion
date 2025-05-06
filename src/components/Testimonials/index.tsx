@@ -21,7 +21,7 @@ const testimonialData: Testimonial[] = [
     designation: "Full Stack Developer",
     company: "Infosys",
     content:
-      "The network engineering internship at Axiongen provided a strong foundation in network protocols and infrastructure. I gained valuable experience with advanced technologies.",
+      "The internship at Axiongen provided a solid foundation in both front-end and back-end technologies. I gained valuable experience working with modern frameworks and developing scalable applications.",
     image: "/images/testimonials/Ankit.jpg",
     linkedin: "https://www.linkedin.com/in/ankit-sinhation/",
   },
